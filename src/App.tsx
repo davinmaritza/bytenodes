@@ -8,6 +8,8 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import Tickets from "./pages/Tickets";
 import Login from "./pages/client/Login";
 import Register from "./pages/client/Register";
 import Dashboard from "./pages/client/Dashboard";
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/tickets" element={<Tickets />} />
           <Route path="/client/login" element={<Login />} />
           <Route path="/client/register" element={<Register />} />
           <Route path="/client/dashboard" element={<Dashboard />} />
