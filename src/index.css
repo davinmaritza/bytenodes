@@ -9,89 +9,89 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 25% 20%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 20%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 20%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 228 80% 28%;
+    --primary: 222 89% 36%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 25% 20%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 228 80% 28%;
+    --accent: 186 100% 44%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 228 80% 28%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 89% 36%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --navy: 228 80% 28%;
-    --navy-dark: 228 80% 20%;
-    --navy-light: 228 80% 40%;
-    --cyan: 195 80% 50%;
-    --cyan-light: 195 80% 60%;
-    --cyan-dark: 195 80% 40%;
+    --navy: 222 89% 36%;
+    --navy-dark: 222 89% 28%;
+    --navy-light: 222 89% 44%;
+    --cyan: 186 100% 44%;
+    --cyan-light: 186 100% 52%;
+    --cyan-dark: 186 100% 36%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 220 25% 20%;
-    --sidebar-primary: 228 80% 28%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 89% 36%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 220 25% 20%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 228 80% 28%;
+    --sidebar-accent: 214 32% 91%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 222 89% 36%;
   }
 
   .dark {
-    --background: 228 80% 8%;
-    --foreground: 0 0% 95%;
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
 
-    --card: 228 80% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 222 84% 10%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 228 80% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 222 84% 10%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 195 80% 50%;
-    --primary-foreground: 228 80% 8%;
+    --primary: 186 100% 44%;
+    --primary-foreground: 222 84% 5%;
 
-    --secondary: 228 80% 18%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 228 80% 18%;
-    --muted-foreground: 220 10% 65%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 195 80% 50%;
-    --accent-foreground: 228 80% 8%;
+    --accent: 186 100% 44%;
+    --accent-foreground: 222 84% 5%;
 
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 228 80% 20%;
-    --input: 228 80% 20%;
-    --ring: 195 80% 50%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 186 100% 44%;
 
-    --sidebar-background: 228 80% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 195 80% 50%;
-    --sidebar-primary-foreground: 228 80% 8%;
-    --sidebar-accent: 228 80% 18%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 228 80% 20%;
-    --sidebar-ring: 195 80% 50%;
+    --sidebar-background: 222 84% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 186 100% 44%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 186 100% 44%;
   }
 }
 
@@ -102,12 +102,37 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.6;
   }
 }
 
@@ -117,27 +142,27 @@ All colors MUST be HSL.
   }
   
   .gradient-cyan-navy {
-    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 100%);
+    background: linear-gradient(135deg, hsl(var(--cyan)) 0%, hsl(var(--navy)) 100%);
   }
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--cyan)) 100%);
+    background-image: linear-gradient(90deg, hsl(var(--navy)) 0%, hsl(var(--cyan)) 100%);
   }
 
   .glow-cyan {
-    box-shadow: 0 4px 20px hsl(var(--navy) / 0.1);
+    box-shadow: 0 4px 20px hsla(var(--cyan), 0.15);
   }
 
   .glow-cyan-strong {
-    box-shadow: 0 8px 30px hsl(var(--navy) / 0.2);
+    box-shadow: 0 8px 30px hsla(var(--cyan), 0.25);
   }
 
   .btn-primary {
-    @apply bg-navy hover:bg-navy-dark text-white rounded-full px-6 py-3 font-semibold transition-all;
+    @apply bg-navy hover:bg-navy-dark text-white rounded-full px-8 py-3 font-semibold transition-all shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-secondary text-navy border-2 border-navy rounded-full px-6 py-3 font-semibold transition-all;
+    @apply bg-white hover:bg-secondary text-navy border-2 border-border rounded-full px-8 py-3 font-semibold transition-all hover:border-navy;
   }
 }
