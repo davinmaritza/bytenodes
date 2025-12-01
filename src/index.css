@@ -150,6 +150,10 @@ All colors MUST be HSL.
     background-image: linear-gradient(90deg, hsl(var(--navy)) 0%, hsl(var(--cyan)) 100%);
   }
 
+  .gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+
   .glow-cyan {
     box-shadow: 0 4px 20px hsla(var(--cyan), 0.15);
   }
