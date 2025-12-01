@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { PricingFAQ } from "@/components/PricingFAQ";
 import { GuaranteeBanner } from "@/components/GuaranteeBanner";
 import { AnimatedStats } from "@/components/AnimatedStats";
+import { FloatingShapes } from "@/components/FloatingShapes";
+import { TechnologyStack } from "@/components/TechnologyStack";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -77,6 +79,9 @@ const Pricing = () => {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-navy-light/30 rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan/10 to-transparent rounded-full"></div>
         </div>
+
+        {/* Floating Shapes */}
+        <FloatingShapes />
 
         <div className="container mx-auto text-center relative z-10">
           <div className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
@@ -192,6 +197,8 @@ const Pricing = () => {
           </div>
         </div>
       </section>
+
+      <TechnologyStack />
 
       <GuaranteeBanner />
 
