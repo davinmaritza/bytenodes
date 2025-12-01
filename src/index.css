@@ -9,89 +9,89 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 100% 15%;
+    --foreground: 220 25% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 100% 15%;
+    --card-foreground: 220 25% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 100% 15%;
+    --popover-foreground: 220 25% 20%;
 
-    --primary: 215 100% 35%;
+    --primary: 228 80% 28%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 100% 50%;
-    --secondary-foreground: 215 100% 15%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 25% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215 40% 40%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 195 100% 50%;
-    --accent-foreground: 215 100% 15%;
+    --accent: 228 80% 28%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 195 100% 50%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 228 80% 28%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --navy: 215 100% 35%;
-    --navy-dark: 215 100% 20%;
-    --navy-light: 215 100% 45%;
-    --cyan: 195 100% 50%;
-    --cyan-light: 195 100% 65%;
-    --cyan-dark: 195 100% 40%;
+    --navy: 228 80% 28%;
+    --navy-dark: 228 80% 20%;
+    --navy-light: 228 80% 40%;
+    --cyan: 195 80% 50%;
+    --cyan-light: 195 80% 60%;
+    --cyan-dark: 195 80% 40%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 215 100% 20%;
-    --sidebar-primary: 215 100% 35%;
+    --sidebar-foreground: 220 25% 20%;
+    --sidebar-primary: 228 80% 28%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 195 100% 50%;
-    --sidebar-accent-foreground: 215 100% 15%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 25% 20%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 195 100% 50%;
+    --sidebar-ring: 228 80% 28%;
   }
 
   .dark {
-    --background: 215 100% 12%;
+    --background: 228 80% 8%;
     --foreground: 0 0% 95%;
 
-    --card: 215 100% 18%;
+    --card: 228 80% 12%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 215 100% 18%;
+    --popover: 228 80% 12%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 195 100% 55%;
-    --primary-foreground: 215 100% 12%;
+    --primary: 195 80% 50%;
+    --primary-foreground: 228 80% 8%;
 
-    --secondary: 215 100% 30%;
+    --secondary: 228 80% 18%;
     --secondary-foreground: 0 0% 95%;
 
-    --muted: 215 100% 22%;
-    --muted-foreground: 215 20% 75%;
+    --muted: 228 80% 18%;
+    --muted-foreground: 220 10% 65%;
 
-    --accent: 195 100% 55%;
-    --accent-foreground: 215 100% 12%;
+    --accent: 195 80% 50%;
+    --accent-foreground: 228 80% 8%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 100% 25%;
-    --input: 215 100% 25%;
-    --ring: 195 100% 55%;
+    --border: 228 80% 20%;
+    --input: 228 80% 20%;
+    --ring: 195 80% 50%;
 
-    --sidebar-background: 215 100% 15%;
+    --sidebar-background: 228 80% 10%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 195 100% 55%;
-    --sidebar-primary-foreground: 215 100% 12%;
-    --sidebar-accent: 215 100% 30%;
+    --sidebar-primary: 195 80% 50%;
+    --sidebar-primary-foreground: 228 80% 8%;
+    --sidebar-accent: 228 80% 18%;
     --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 215 100% 25%;
-    --sidebar-ring: 195 100% 55%;
+    --sidebar-border: 228 80% 20%;
+    --sidebar-ring: 195 80% 50%;
   }
 }
 
@@ -117,19 +117,27 @@ All colors MUST be HSL.
   }
   
   .gradient-cyan-navy {
-    background: linear-gradient(135deg, hsl(var(--cyan)) 0%, hsl(var(--navy)) 100%);
+    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 100%);
   }
 
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--cyan)) 0%, hsl(var(--cyan-light)) 100%);
+    background-image: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--cyan)) 100%);
   }
 
   .glow-cyan {
-    box-shadow: 0 0 20px hsl(var(--cyan) / 0.3);
+    box-shadow: 0 4px 20px hsl(var(--navy) / 0.1);
   }
 
   .glow-cyan-strong {
-    box-shadow: 0 0 40px hsl(var(--cyan) / 0.5);
+    box-shadow: 0 8px 30px hsl(var(--navy) / 0.2);
+  }
+
+  .btn-primary {
+    @apply bg-navy hover:bg-navy-dark text-white rounded-full px-6 py-3 font-semibold transition-all;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-secondary text-navy border-2 border-navy rounded-full px-6 py-3 font-semibold transition-all;
   }
 }

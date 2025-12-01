@@ -25,30 +25,30 @@ const features = [
 
 export const Features = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-navy-dark/10 to-background">
+    <section className="py-24 px-4 bg-white">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Why Choose <span className="text-gradient">ByteNodes</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-navy">
+            Why Choose ByteNodes
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We provide enterprise-grade infrastructure with the flexibility and support your business needs
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="text-center group hover:scale-105 transition-transform duration-300"
+              className="text-center group hover:scale-105 transition-all duration-300"
             >
-              <div className="mb-4 mx-auto w-16 h-16 rounded-2xl bg-cyan/10 flex items-center justify-center group-hover:bg-cyan/20 transition-colors glow-cyan">
-                <feature.icon className="w-8 h-8 text-cyan" />
+              <div className="mb-6 mx-auto w-20 h-20 rounded-3xl bg-navy/5 flex items-center justify-center group-hover:bg-navy group-hover:shadow-xl transition-all">
+                <feature.icon className="w-10 h-10 text-navy group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold mb-2 group-hover:text-cyan transition-colors">
+              <h3 className="text-xl font-bold mb-3 text-navy group-hover:text-navy-dark transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
