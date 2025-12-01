@@ -7,42 +7,42 @@ export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 text-xl font-bold">
-            <Server className="w-6 h-6 text-cyan" />
-            <span className="text-gradient">ByteNodes</span>
+            <Server className="w-7 h-7 text-navy" />
+            <span className="text-navy">ByteNodes</span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium hover:text-cyan transition-colors">
+          <div className="hidden md:flex items-center gap-8">
+            <Link to="/" className="text-sm font-semibold hover:text-navy transition-colors">
               Home
             </Link>
-            <Link to="/services" className="text-sm font-medium hover:text-cyan transition-colors">
+            <Link to="/services" className="text-sm font-semibold hover:text-navy transition-colors">
               Services
             </Link>
-            <Link to="/pricing" className="text-sm font-medium hover:text-cyan transition-colors">
+            <Link to="/pricing" className="text-sm font-semibold hover:text-navy transition-colors">
               Pricing
             </Link>
-            <Link to="/blog" className="text-sm font-medium hover:text-cyan transition-colors">
+            <Link to="/blog" className="text-sm font-semibold hover:text-navy transition-colors">
               Blog
             </Link>
-            <Link to="/about" className="text-sm font-medium hover:text-cyan transition-colors">
+            <Link to="/about" className="text-sm font-semibold hover:text-navy transition-colors">
               About
             </Link>
-            <Link to="/contact" className="text-sm font-medium hover:text-cyan transition-colors">
+            <Link to="/contact" className="text-sm font-semibold hover:text-navy transition-colors">
               Contact
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <Link to="/client/login">
-              <Button variant="ghost">Login</Button>
+              <Button variant="ghost" className="text-navy font-semibold">Login</Button>
             </Link>
             <Link to="/client/register">
-              <Button className="gradient-cyan-navy glow-cyan">Get Started</Button>
+              <Button className="bg-navy hover:bg-navy-dark text-white rounded-full px-6 font-semibold">Get Started</Button>
             </Link>
           </div>
 
