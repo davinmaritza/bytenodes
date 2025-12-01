@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { PricingFAQ } from "@/components/PricingFAQ";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
@@ -176,6 +177,8 @@ const Pricing = () => {
           </div>
         </div>
       </section>
+
+      <PricingFAQ />
 
       <Footer />
     </div>
