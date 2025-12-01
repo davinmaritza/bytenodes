@@ -9,6 +9,9 @@ import Pricing from "./pages/Pricing";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import Payment from "./pages/Payment";
 import Tickets from "./pages/Tickets";
 import Login from "./pages/client/Login";
 import Register from "./pages/client/Register";
@@ -29,8 +32,11 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/tickets" element={<Tickets />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
+        <Route path="/tickets" element={<Tickets />} />
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/payment" element={<Payment />} />
           <Route path="/client/login" element={<Login />} />
           <Route path="/client/register" element={<Register />} />
           <Route path="/client/dashboard" element={<Dashboard />} />

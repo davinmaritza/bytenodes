@@ -112,9 +112,7 @@ const Blog = () => {
                       variant="link" 
                       className="p-0 h-auto text-cyan hover:text-cyan-light"
                       onClick={() => {
-                        // TODO: Navigate to blog post detail page
-                        // window.location.href = `/blog/${post.id}`;
-                        alert('Connect this to your PHP backend API');
+                        window.location.href = `/blog/${post.id}`;
                       }}
                     >
                       Read more <ArrowRight className="w-4 h-4 ml-1" />

@@ -18,12 +18,12 @@ export const Hero = () => {
             <span className="text-sm text-cyan font-medium">Professional Hosting Solutions</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up text-white">
             Power Your Digital
-            <span className="text-gradient block">Presence</span>
+            <span className="text-cyan block">Presence</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg md:text-xl text-white/80 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Enterprise-grade hosting solutions with 99.9% uptime guarantee.
             Deploy your applications with confidence on ByteNodes infrastructure.
           </p>
@@ -36,7 +36,7 @@ export const Hero = () => {
               </Button>
             </Link>
             <Link to="/pricing">
-              <Button size="lg" variant="outline" className="text-lg px-8 border-cyan/50 hover:bg-cyan/10">
+              <Button size="lg" variant="outline" className="text-lg px-8 bg-white text-navy hover:bg-white/90 border-white">
                 View Pricing
               </Button>
             </Link>
@@ -45,15 +45,15 @@ export const Hero = () => {
           <div className="mt-12 grid grid-cols-3 gap-8 max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <div>
               <div className="text-3xl font-bold text-cyan">99.9%</div>
-              <div className="text-sm text-muted-foreground">Uptime</div>
+              <div className="text-sm text-white/70">Uptime</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-cyan">24/7</div>
-              <div className="text-sm text-muted-foreground">Support</div>
+              <div className="text-sm text-white/70">Support</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-cyan">1000+</div>
-              <div className="text-sm text-muted-foreground">Clients</div>
+              <div className="text-sm text-white/70">Clients</div>
             </div>
           </div>
         </div>
