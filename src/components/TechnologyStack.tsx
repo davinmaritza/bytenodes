@@ -1,3 +1,7 @@
+import samsungLogo from "@/assets/samsung-logo.png";
+import asrockLogo from "@/assets/asrock-logo.png";
+import ovhLogo from "@/assets/ovh-logo.png";
+
 const technologies = [
   {
     name: "Proxmox",
@@ -17,11 +21,11 @@ const technologies = [
   },
   {
     name: "Samsung",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg"
+    logo: samsungLogo
   },
   {
     name: "ASRock",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/ASRock_logo.svg"
+    logo: asrockLogo
   },
   {
     name: "Cloudflare",
@@ -29,7 +33,7 @@ const technologies = [
   },
   {
     name: "OVH",
-    logo: "https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-07/OVHcloud-logo.png"
+    logo: ovhLogo
   }
 ];
 
