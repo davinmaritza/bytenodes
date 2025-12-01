@@ -70,14 +70,14 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/blog" className="text-muted-foreground hover:text-cyan transition-colors">
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-cyan transition-colors">
-                  Careers
-                </a>
+                <Link to="/pricing" className="text-muted-foreground hover:text-cyan transition-colors">
+                  Pricing
+                </Link>
               </li>
             </ul>
           </div>
@@ -86,14 +86,14 @@ export const Footer = () => {
             <h4 className="font-bold mb-4 text-cyan">Support</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/blog" className="text-muted-foreground hover:text-cyan transition-colors">
                   Knowledge Base
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-cyan transition-colors">
-                  Documentation
-                </a>
+                <Link to="/tickets" className="text-muted-foreground hover:text-cyan transition-colors">
+                  Support Tickets
+                </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-muted-foreground hover:text-cyan transition-colors">
@@ -101,16 +101,16 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-cyan transition-colors">
-                  Status Page
-                </a>
+                <Link to="/blog" className="text-muted-foreground hover:text-cyan transition-colors">
+                  Documentation
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 ByteNodes. All rights reserved.</p>
+          <p>&copy; 2025 ByteNodes. All rights reserved.</p>
         </div>
       </div>
     </footer>

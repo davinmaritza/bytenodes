@@ -26,6 +26,9 @@ export const Navbar = () => {
             <Link to="/pricing" className="text-sm font-medium hover:text-cyan transition-colors">
               Pricing
             </Link>
+            <Link to="/blog" className="text-sm font-medium hover:text-cyan transition-colors">
+              Blog
+            </Link>
             <Link to="/about" className="text-sm font-medium hover:text-cyan transition-colors">
               About
             </Link>
@@ -76,6 +79,13 @@ export const Navbar = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Pricing
+              </Link>
+              <Link
+                to="/blog"
+                className="text-sm font-medium hover:text-cyan transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Blog
               </Link>
               <Link
                 to="/about"
