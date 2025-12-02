@@ -1,32 +1,34 @@
 import { Link } from "react-router-dom";
-import { Server, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { FaWhatsapp, FaInstagram, FaDiscord } from "react-icons/fa";
+import { Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export const Footer = () => {
   return (
     <footer className="bg-card/30 border-t border-border/50 py-16 px-4">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
-          <div className="col-span-2">
+          <div className="col-span-2 lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-4">
-              <Server className="w-6 h-6 text-cyan" />
+              <img src={logo} alt="ByteNodes" className="w-8 h-8 object-contain" />
               <span className="text-gradient">ByteNodes</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">
               Professional hosting solutions for businesses of all sizes. Reliable, fast, and secure infrastructure.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="Facebook">
-                <Facebook className="w-5 h-5" />
+              <a href="https://wa.me/6285126080236" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="WhatsApp">
+                <FaWhatsapp className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="Twitter">
-                <Twitter className="w-5 h-5" />
+              <a href="https://instagram.com/bytenodes" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Instagram">
+                <FaInstagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="Instagram">
-                <Instagram className="w-5 h-5" />
+              <a href="https://discord.gg/bytenodes" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Discord">
+                <FaDiscord className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5" />
+              <a href="mailto:support@bytenodes.id" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Email">
+                <Mail className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -36,70 +38,23 @@ export const Footer = () => {
             <h4 className="font-bold mb-4 text-foreground">Products</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Hosting Dedicated
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  VPS KVM
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/pricing/servers" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Game Server
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  RDP
+                <Link to="/pricing/vps" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                  VPS KVM
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Domain Registration
+                <Link to="/pricing/vps" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                  VPS Premium
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Website Service
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="font-bold mb-4 text-foreground">Company</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/about" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  Affiliates
+                <Link to="/pricing/vps" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                  RDP Windows
                 </Link>
               </li>
             </ul>
@@ -125,17 +80,12 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/docs" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Documentation
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  System Status
-                </Link>
-              </li>
-              <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/faq" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   FAQs
                 </Link>
               </li>
@@ -147,33 +97,60 @@ export const Footer = () => {
             <h4 className="font-bold mb-4 text-foreground">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/terms" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/cookies" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Cookie Policy
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/acceptable-use" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Acceptable Use
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/sla" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   SLA
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                <Link to="/refund" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Refund Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-bold mb-4 text-foreground">Company</h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/about" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                  Pricing
                 </Link>
               </li>
             </ul>
@@ -183,11 +160,7 @@ export const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>&copy; 2025 ByteNodes. All rights reserved.</p>
-            <div className="flex gap-6">
-              <Link to="#" className="hover:text-primary transition-all duration-300 hover:scale-105">Payment Methods</Link>
-              <Link to="#" className="hover:text-primary transition-all duration-300 hover:scale-105">Security</Link>
-              <Link to="#" className="hover:text-primary transition-all duration-300 hover:scale-105">Compliance</Link>
-            </div>
+            <p>Made with ❤️ in Indonesia</p>
           </div>
         </div>
       </div>

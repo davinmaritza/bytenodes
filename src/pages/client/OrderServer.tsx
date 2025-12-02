@@ -27,14 +27,13 @@ const OrderServer = () => {
 
     setOrdering(productId);
     
-    // Simulate order creation
+    // Redirect to Discord for ordering
     setTimeout(() => {
-      toast.success(`Order untuk ${productName} berhasil dibuat! Silahkan lakukan pembayaran.`);
+      toast.success(`Anda akan diarahkan ke Discord untuk order ${productName}`);
       setOrdering(null);
-      // For now, redirect to WhatsApp for payment
-      const message = encodeURIComponent(`Halo ByteNodes, saya ingin order ${productName} dengan harga ${formatPrice(price)}/bulan. Email: ${user.email}`);
-      window.open(`https://wa.me/6285126080236?text=${message}`, '_blank');
-    }, 1000);
+      // Redirect to Discord
+      window.open('https://discord.gg/bytenodes', '_blank');
+    }, 500);
   };
 
   return (

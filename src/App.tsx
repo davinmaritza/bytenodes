@@ -19,11 +19,20 @@ import BlogPost from "./pages/BlogPost";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import Payment from "./pages/Payment";
 import Tickets from "./pages/Tickets";
+import FAQ from "./pages/FAQ";
+import Documentation from "./pages/Documentation";
 import Login from "./pages/client/Login";
 import Register from "./pages/client/Register";
 import Dashboard from "./pages/client/Dashboard";
 import OrderServer from "./pages/client/OrderServer";
 import NotFound from "./pages/NotFound";
+// Legal Pages
+import TermsOfService from "./pages/legal/TermsOfService";
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import CookiePolicy from "./pages/legal/CookiePolicy";
+import AcceptableUse from "./pages/legal/AcceptableUse";
+import SLA from "./pages/legal/SLA";
+import RefundPolicy from "./pages/legal/RefundPolicy";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +51,17 @@ const AnimatedRoutes = () => {
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
         <Route path="/blog/:id" element={<PageTransition><BlogPost /></PageTransition>} />
+        <Route path="/faq" element={<PageTransition><FAQ /></PageTransition>} />
+        <Route path="/docs" element={<PageTransition><Documentation /></PageTransition>} />
+        
+        {/* Legal Pages */}
+        <Route path="/terms" element={<PageTransition><TermsOfService /></PageTransition>} />
+        <Route path="/privacy" element={<PageTransition><PrivacyPolicy /></PageTransition>} />
+        <Route path="/cookies" element={<PageTransition><CookiePolicy /></PageTransition>} />
+        <Route path="/acceptable-use" element={<PageTransition><AcceptableUse /></PageTransition>} />
+        <Route path="/sla" element={<PageTransition><SLA /></PageTransition>} />
+        <Route path="/refund" element={<PageTransition><RefundPolicy /></PageTransition>} />
+        
         <Route path="/client/login" element={<PageTransition><Login /></PageTransition>} />
         <Route path="/client/register" element={<PageTransition><Register /></PageTransition>} />
         
@@ -84,7 +104,6 @@ const AnimatedRoutes = () => {
           </PageTransition>
         } />
         
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>

@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@bytenodes.id",
+      "password": "admin123",
+      "role": "admin",
+      "balance": 0,
+      "createdAt": "2025-01-01T00:00:00Z"
+    }
+  ]
+}
