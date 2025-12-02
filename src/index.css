@@ -56,41 +56,41 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222 84% 5%;
-    --foreground: 210 40% 98%;
+    --background: 222 47% 8%;
+    --foreground: 210 40% 96%;
 
-    --card: 222 84% 10%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 96%;
 
-    --popover: 222 84% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 96%;
 
     --primary: 186 100% 44%;
-    --primary-foreground: 222 84% 5%;
+    --primary-foreground: 222 47% 8%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 210 40% 96%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 60%;
 
     --accent: 186 100% 44%;
-    --accent-foreground: 222 84% 5%;
+    --accent-foreground: 222 47% 8%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
+    --border: 217 33% 20%;
+    --input: 217 33% 15%;
     --ring: 186 100% 44%;
 
-    --sidebar-background: 222 84% 8%;
-    --sidebar-foreground: 210 40% 98%;
+    --sidebar-background: 222 47% 10%;
+    --sidebar-foreground: 210 40% 96%;
     --sidebar-primary: 186 100% 44%;
-    --sidebar-primary-foreground: 222 84% 5%;
-    --sidebar-accent: 217 33% 17%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 33% 17%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 217 33% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 217 33% 20%;
     --sidebar-ring: 186 100% 44%;
   }
 }
@@ -163,11 +163,11 @@ All colors MUST be HSL.
   }
 
   .btn-primary {
-    @apply bg-navy hover:bg-navy-dark text-white rounded-full px-8 py-3 font-semibold transition-all shadow-sm hover:shadow-md;
+    @apply bg-cyan hover:bg-cyan-light text-background rounded-full px-8 py-3 font-semibold transition-all shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-secondary text-navy border-2 border-border rounded-full px-8 py-3 font-semibold transition-all hover:border-navy;
+    @apply bg-secondary hover:bg-secondary/80 text-foreground border-2 border-border rounded-full px-8 py-3 font-semibold transition-all hover:border-cyan;
   }
 
   /* Floating animations */
@@ -225,5 +225,32 @@ All colors MUST be HSL.
 
   .animate-spin-slow {
     animation: spin-slow 20s linear infinite;
+  }
+
+  /* Animated Gradient Background */
+  @keyframes gradient {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes gradient-reverse {
+    0%, 100% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient 8s ease-in-out infinite;
+  }
+
+  .animate-gradient-reverse {
+    animation: gradient-reverse 8s ease-in-out infinite;
   }
 }
