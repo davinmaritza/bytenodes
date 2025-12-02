@@ -1,7 +1,7 @@
 // API Service Layer for PHP/MySQL Backend
 
-// TODO: Replace with your actual VPS domain
-const API_URL = 'https://your-vps-domain.com/api';
+// Base API URL from environment variable
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
 
 const getAuthToken = () => localStorage.getItem('authToken');
 

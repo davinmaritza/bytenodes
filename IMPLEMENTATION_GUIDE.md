@@ -1,6 +1,53 @@
-# ByteNodes Frontend Implementation Guide
+# ByteNodes - Quick Deployment Guide
 
-## Overview
+## 🚀 Quick Start (5 Menit Setup!)
+
+### Development (Local)
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Copy environment file
+cp .env.example .env
+
+# 3. Run development server
+npm run dev
+```
+
+Buka browser: `http://localhost:8080`
+
+### Production (VPS)
+```bash
+# 1. Install dependencies
+npm install
+
+# 2. Edit .env.production dengan domain VPS Anda
+nano .env.production
+# Ganti: VITE_API_URL=https://api.bytenodes.id/api
+
+# 3. Build untuk production
+npm run build
+
+# 4. Upload folder 'dist' ke VPS Anda
+```
+
+---
+
+## 📁 File Penting
+
+### Environment Configuration
+- `.env.example` - Template konfigurasi (untuk development)
+- `.env.production` - Konfigurasi production (edit ini!)
+- `.env` - Konfigurasi lokal Anda (auto-generated, jangan commit)
+
+**PENTING**: Edit `.env.production` sebelum build:
+```env
+VITE_API_URL=https://api.bytenodes.id/api  # Ganti dengan domain VPS Anda
+```
+
+---
+
+## 📋 Overview
 Your React frontend is now fully configured to integrate with a PHP/MySQL backend. After successful registration, users are automatically redirected to the login page.
 
 ## What's Been Implemented
@@ -73,13 +120,24 @@ Your React frontend is now fully configured to integrate with a PHP/MySQL backen
 
 ## Next Steps for Backend Implementation
 
-### 1. Set Up Your PHP Backend
+### 1. Konfigurasi API URL
 
-Replace the API URL in these files:
-- `src/lib/api.ts` (line 4)
-- `src/contexts/AuthContext.tsx` (line 23)
+**TIDAK PERLU EDIT FILE MANUAL!** Cukup edit file `.env.production`:
 
-Change `https://your-vps-domain.com/api` to your actual VPS domain.
+```bash
+# Edit file ini sebelum build
+nano .env.production
+```
+
+Ganti baris ini:
+```env
+VITE_API_URL=https://api.bytenodes.id/api
+```
+
+Dengan domain VPS Anda:
+```env
+VITE_API_URL=https://your-actual-domain.com/api
+```
 
 ### 2. Database Setup
 
@@ -319,20 +377,123 @@ For backend implementation questions, refer to:
 - Database schema suggestions in documentation
 - Example PHP code snippets in documentation
 
-## Deployment
+## 🌐 Deployment ke VPS
 
-### Frontend (React)
-1. Build: `npm run build`
-2. Upload `dist/` folder to your VPS
-3. Configure web server to serve static files
-4. Point all routes to `index.html` for React Router
+### Step 1: Build Frontend
+```bash
+# 1. Edit .env.production dengan domain VPS Anda
+nano .env.production
 
-### Backend (PHP)
-1. Upload PHP files to your VPS
-2. Configure Apache/Nginx to route `/api/*` to PHP
-3. Set up SSL certificate
-4. Configure environment variables
-5. Test all endpoints with Postman
+# 2. Build project
+npm run build
+
+# 3. Folder 'dist' siap di-upload ke VPS
+```
+
+### Step 2: Upload ke VPS
+```bash
+# Option 1: Menggunakan SCP
+scp -r dist/* user@your-vps-ip:/var/www/bytenodes
+
+# Option 2: Menggunakan FTP/SFTP
+# Upload folder 'dist' ke /var/www/bytenodes
+```
+
+### Step 3: Konfigurasi Nginx (Recommended)
+```nginx
+# /etc/nginx/sites-available/bytenodes
+server {
+    listen 80;
+    server_name bytenodes.id www.bytenodes.id;
+    root /var/www/bytenodes;
+    index index.html;
+
+    # React Router - redirect semua ke index.html
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Cache static files
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
+```
+
+```bash
+# Enable site dan restart nginx
+sudo ln -s /etc/nginx/sites-available/bytenodes /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+### Step 4: SSL Certificate (Optional tapi Recommended)
+```bash
+# Install Certbot
+sudo apt install certbot python3-certbot-nginx
+
+# Generate SSL
+sudo certbot --nginx -d bytenodes.id -d www.bytenodes.id
+```
+
+### Step 5: Deploy Backend PHP
+```bash
+# 1. Upload PHP backend files ke /var/www/api.bytenodes.id
+# 2. Setup database MySQL
+# 3. Configure PHP environment variables
+# 4. Test endpoints
+```
+
+---
+
+## 📝 Development Workflow
+
+### Untuk Development Lokal
+```bash
+npm run dev          # Start dev server di localhost:8080
+```
+
+### Untuk Testing Production Build
+```bash
+npm run build        # Build production
+npm run preview      # Preview build di localhost:4173
+```
+
+### Untuk Update di VPS
+```bash
+# 1. Pull latest changes
+git pull
+
+# 2. Build ulang
+npm run build
+
+# 3. Upload dist ke VPS
+scp -r dist/* user@vps:/var/www/bytenodes
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### Issue: API tidak terkoneksi
+**Solution**: 
+1. Cek `.env.production` sudah benar
+2. Pastikan PHP backend sudah running
+3. Cek CORS di PHP backend
+
+### Issue: 404 setelah refresh di VPS
+**Solution**: 
+Pastikan nginx config sudah benar dengan `try_files $uri $uri/ /index.html`
+
+### Issue: Build error
+**Solution**:
+```bash
+# Clear cache dan reinstall
+rm -rf node_modules dist
+npm install
+npm run build
+```
 
 ---
 
