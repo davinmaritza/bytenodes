@@ -26,9 +26,22 @@ export const Navbar = () => {
             <Link to="/services" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
               Services
             </Link>
-            <Link to="/pricing" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
-              Pricing
-            </Link>
+            <div className="relative group">
+              <button className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
+                Pricing
+              </button>
+              <div className="absolute top-full left-0 mt-2 w-48 bg-card border border-border/50 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <Link to="/pricing" className="block px-4 py-3 hover:bg-secondary hover:text-primary transition-all text-sm">
+                  General Pricing
+                </Link>
+                <Link to="/pricing/servers" className="block px-4 py-3 hover:bg-secondary hover:text-primary transition-all text-sm">
+                  Game Servers
+                </Link>
+                <Link to="/pricing/vps" className="block px-4 py-3 hover:bg-secondary hover:text-primary transition-all text-sm">
+                  VPS & RDP
+                </Link>
+              </div>
+            </div>
             <Link to="/blog" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
               Blog
             </Link>
@@ -100,13 +113,30 @@ export const Navbar = () => {
               >
                 Services
               </Link>
-              <Link
-                to="/pricing"
-                className="text-sm font-medium hover:text-primary transition-all duration-300"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Pricing
-              </Link>
+              <div className="space-y-2">
+                <p className="text-sm font-semibold text-muted-foreground">Pricing</p>
+                <Link
+                  to="/pricing"
+                  className="text-sm font-medium hover:text-primary transition-all duration-300 block pl-4"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  General Pricing
+                </Link>
+                <Link
+                  to="/pricing/servers"
+                  className="text-sm font-medium hover:text-primary transition-all duration-300 block pl-4"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Game Servers
+                </Link>
+                <Link
+                  to="/pricing/vps"
+                  className="text-sm font-medium hover:text-primary transition-all duration-300 block pl-4"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  VPS & RDP
+                </Link>
+              </div>
               <Link
                 to="/blog"
                 className="text-sm font-medium hover:text-primary transition-all duration-300"
