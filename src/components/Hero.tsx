@@ -21,10 +21,10 @@ export const Hero = () => {
               <span className="text-xs text-foreground/80 font-medium tracking-wide uppercase">Premium Hosting Solutions</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight uppercase">
               <span className="text-foreground">BYTENODES,</span>
               <br />
-              <span className="bg-gradient-to-r from-cyan via-cyan-light to-cyan bg-clip-text text-transparent">
+              <span className="text-foreground">
                 A BYTE OF POWER
               </span>
             </h1>
@@ -35,13 +35,13 @@ export const Hero = () => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/client/register">
-                <Button size="lg" className="rounded-lg text-base px-8 py-6 shadow-lg shadow-cyan/20 hover:shadow-xl hover:shadow-cyan/30 transition-all font-semibold">
+                <Button size="lg" className="text-base px-8 py-6 font-semibold">
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
               <Link to="/pricing">
-                <Button size="lg" variant="outline" className="rounded-lg text-base px-8 py-6 font-semibold">
+                <Button size="lg" variant="outline" className="text-base px-8 py-6 font-semibold">
                   Explore Premium Plans
                 </Button>
               </Link>
@@ -50,7 +50,7 @@ export const Hero = () => {
             <div className="flex items-center gap-2 text-sm text-foreground/60">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-cyan text-cyan" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
               <span>Read our reviews on Trustpilot</span>
