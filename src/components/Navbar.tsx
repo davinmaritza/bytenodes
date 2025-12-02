@@ -3,47 +3,49 @@ import { Button } from "@/components/ui/button";
 import { Server, Menu, X, User, LogOut } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { user, logout } = useAuth();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 text-xl font-bold">
-            <Server className="w-7 h-7 text-navy" />
-            <span className="text-navy">ByteNodes</span>
+            <Server className="w-7 h-7 text-cyan" />
+            <span className="text-foreground">ByteNodes</span>
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm font-semibold hover:text-navy transition-colors">
+            <Link to="/" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
               Home
             </Link>
-            <Link to="/services" className="text-sm font-semibold hover:text-navy transition-colors">
+            <Link to="/services" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
               Services
             </Link>
-            <Link to="/pricing" className="text-sm font-semibold hover:text-navy transition-colors">
+            <Link to="/pricing" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
               Pricing
             </Link>
-            <Link to="/blog" className="text-sm font-semibold hover:text-navy transition-colors">
+            <Link to="/blog" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
               Blog
             </Link>
-            <Link to="/about" className="text-sm font-semibold hover:text-navy transition-colors">
+            <Link to="/about" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
               About
             </Link>
-            <Link to="/contact" className="text-sm font-semibold hover:text-navy transition-colors">
+            <Link to="/contact" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
               Contact
             </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             {user ? (
               <>
                 <Link to={user.role === 'admin' ? '/admin' : '/client/dashboard'}>
-                  <Button variant="ghost" className="text-navy font-semibold gap-2">
+                  <Button variant="ghost" className="gap-2">
                     <User className="w-4 h-4" />
                     {user.name}
                   </Button>
@@ -51,7 +53,7 @@ export const Navbar = () => {
                 <Button 
                   onClick={logout}
                   variant="outline" 
-                  className="gap-2 border-navy text-navy hover:bg-navy hover:text-white"
+                  className="gap-2"
                 >
                   <LogOut className="w-4 h-4" />
                   Logout
@@ -60,22 +62,24 @@ export const Navbar = () => {
             ) : (
               <>
                 <Link to="/client/login">
-                  <Button variant="ghost" className="text-navy font-semibold">Login</Button>
+                  <Button variant="ghost">Login</Button>
                 </Link>
                 <Link to="/client/register">
-                  <Button className="bg-navy hover:bg-navy-dark text-white rounded-full px-6 font-semibold">Get Started</Button>
+                  <Button className="rounded-full px-6 font-semibold">Get Started</Button>
                 </Link>
               </>
             )}
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
