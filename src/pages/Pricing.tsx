@@ -185,15 +185,36 @@ const Pricing = () => {
             })}
           </div>
 
-          <div className="mt-16 text-center">
-            <p className="text-muted-foreground mb-4">
-              Need a custom solution? Contact our sales team.
-            </p>
-            <Link to="/contact">
-              <Button variant="outline" size="lg">
-                Contact Sales
-              </Button>
-            </Link>
+          <div className="mt-16 text-center space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-4">Looking for Specific Packages?</h3>
+              <p className="text-muted-foreground mb-6">
+                Explore our specialized pricing for Game Servers, VPS, and RDP
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <Link to="/pricing/servers">
+                  <Button variant="default" size="lg" className="hover-lift">
+                    Game Server Pricing
+                  </Button>
+                </Link>
+                <Link to="/pricing/vps">
+                  <Button variant="default" size="lg" className="hover-lift">
+                    VPS & RDP Pricing
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="pt-8 border-t border-border/50">
+              <p className="text-muted-foreground mb-4">
+                Need a custom solution? Contact our sales team.
+              </p>
+              <Link to="/contact">
+                <Button variant="outline" size="lg">
+                  Contact Sales
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
