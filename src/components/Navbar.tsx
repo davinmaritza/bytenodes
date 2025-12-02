@@ -10,32 +10,32 @@ export const Navbar = () => {
   const { user, logout } = useAuth();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 text-xl font-bold">
-            <Server className="w-7 h-7 text-cyan" />
+            <Server className="w-7 h-7 text-primary" />
             <span className="text-foreground">ByteNodes</span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="/" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
+          <div className="hidden md:flex items-center gap-6">
+            <Link to="/" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
               Home
             </Link>
-            <Link to="/services" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
+            <Link to="/services" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
               Services
             </Link>
-            <Link to="/pricing" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
+            <Link to="/pricing" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
               Pricing
             </Link>
-            <Link to="/blog" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
+            <Link to="/blog" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
               Blog
             </Link>
-            <Link to="/about" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
+            <Link to="/about" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
               About
             </Link>
-            <Link to="/contact" className="text-sm font-semibold text-foreground hover:text-cyan transition-colors">
+            <Link to="/contact" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
               Contact
             </Link>
           </div>
@@ -88,42 +88,42 @@ export const Navbar = () => {
             <div className="flex flex-col gap-4">
               <Link
                 to="/"
-                className="text-sm font-medium hover:text-cyan transition-colors"
+                className="text-sm font-medium hover:text-primary transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/services"
-                className="text-sm font-medium hover:text-cyan transition-colors"
+                className="text-sm font-medium hover:text-primary transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 to="/pricing"
-                className="text-sm font-medium hover:text-cyan transition-colors"
+                className="text-sm font-medium hover:text-primary transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Pricing
               </Link>
               <Link
                 to="/blog"
-                className="text-sm font-medium hover:text-cyan transition-colors"
+                className="text-sm font-medium hover:text-primary transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Blog
               </Link>
               <Link
                 to="/about"
-                className="text-sm font-medium hover:text-cyan transition-colors"
+                className="text-sm font-medium hover:text-primary transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 to="/contact"
-                className="text-sm font-medium hover:text-cyan transition-colors"
+                className="text-sm font-medium hover:text-primary transition-all duration-300"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contact
