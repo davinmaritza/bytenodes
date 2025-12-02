@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Server, Menu, X } from "lucide-react";
+import { Server, Menu, X, User, LogOut } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
@@ -38,12 +40,33 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <Link to="/client/login">
-              <Button variant="ghost" className="text-navy font-semibold">Login</Button>
-            </Link>
-            <Link to="/client/register">
-              <Button className="bg-navy hover:bg-navy-dark text-white rounded-full px-6 font-semibold">Get Started</Button>
-            </Link>
+            {user ? (
+              <>
+                <Link to={user.role === 'admin' ? '/admin' : '/client/dashboard'}>
+                  <Button variant="ghost" className="text-navy font-semibold gap-2">
+                    <User className="w-4 h-4" />
+                    {user.name}
+                  </Button>
+                </Link>
+                <Button 
+                  onClick={logout}
+                  variant="outline" 
+                  className="gap-2 border-navy text-navy hover:bg-navy hover:text-white"
+                >
+                  <LogOut className="w-4 h-4" />
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/client/login">
+                  <Button variant="ghost" className="text-navy font-semibold">Login</Button>
+                </Link>
+                <Link to="/client/register">
+                  <Button className="bg-navy hover:bg-navy-dark text-white rounded-full px-6 font-semibold">Get Started</Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,12 +124,39 @@ export const Navbar = () => {
               >
                 Contact
               </Link>
-              <Link to="/client/login" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="ghost" className="w-full">Login</Button>
-              </Link>
-              <Link to="/client/register" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full gradient-cyan-navy">Get Started</Button>
-              </Link>
+              {user ? (
+                <>
+                  <Link 
+                    to={user.role === 'admin' ? '/admin' : '/client/dashboard'} 
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <Button variant="ghost" className="w-full gap-2">
+                      <User className="w-4 h-4" />
+                      {user.name}
+                    </Button>
+                  </Link>
+                  <Button 
+                    onClick={() => {
+                      logout();
+                      setMobileMenuOpen(false);
+                    }}
+                    variant="outline" 
+                    className="w-full gap-2"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link to="/client/login" onClick={() => setMobileMenuOpen(false)}>
+                    <Button variant="ghost" className="w-full">Login</Button>
+                  </Link>
+                  <Link to="/client/register" onClick={() => setMobileMenuOpen(false)}>
+                    <Button className="w-full gradient-cyan-navy">Get Started</Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         )}

@@ -114,7 +114,7 @@ const Dashboard = () => {
                   </Button>
                 </div>
               ))}
-              <Link to="/services">
+              <Link to="/client/order">
                 <Button className="w-full gradient-cyan-navy">
                   Order New Service
                 </Button>
