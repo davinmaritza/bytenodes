@@ -44,40 +44,40 @@ const services = [
 
 export const Services = () => {
   return (
-    <section className="py-24 px-4 bg-secondary/20">
+    <section className="py-24 px-4 bg-background">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-navy">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Our Services
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base text-foreground/60 max-w-2xl mx-auto">
             Comprehensive hosting solutions designed to meet all your infrastructure needs
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 bg-white group rounded-2xl"
+              className="p-6 hover:shadow-xl hover:shadow-cyan/5 transition-all duration-300 hover:-translate-y-1 bg-card border-border group"
             >
-              <div className="mb-6 p-4 rounded-2xl bg-navy/5 w-fit group-hover:bg-navy group-hover:scale-110 transition-all">
-                <service.icon className="w-10 h-10 text-navy group-hover:text-white transition-colors" />
+              <div className="mb-4 p-3 rounded-lg bg-cyan/10 w-fit group-hover:bg-cyan/20 transition-all">
+                <service.icon className="w-8 h-8 text-cyan" />
               </div>
-              <h3 className="text-2xl font-bold mb-3 text-navy group-hover:text-navy-dark transition-colors">
+              <h3 className="text-xl font-bold mb-2 text-foreground">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
-              <ul className="space-y-3 mb-8">
+              <p className="text-foreground/60 mb-4 text-sm leading-relaxed">{service.description}</p>
+              <ul className="space-y-2 mb-6">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-sm font-medium">
-                    <div className="w-2 h-2 rounded-full bg-navy mr-3"></div>
+                  <li key={idx} className="flex items-center text-xs text-foreground/70">
+                    <div className="w-1.5 h-1.5 rounded-full bg-cyan mr-2"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
               <Link to="/pricing">
-                <Button variant="outline" className="w-full rounded-full border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold transition-all">
+                <Button variant="outline" className="w-full text-sm">
                   Learn More
                 </Button>
               </Link>

@@ -39,33 +39,33 @@ const technologies = [
 
 export const TechnologyStack = () => {
   return (
-    <section className="py-16 px-4 bg-muted/20 border-y border-border">
+    <section className="py-20 px-4 bg-secondary/20 border-y border-border">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            Powered by <span className="text-gradient">Industry Leaders</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-foreground">
+            Powered by Industry Leaders
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-foreground/60 text-base">
             We use the best technology stack to ensure top-tier performance and reliability
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center max-w-7xl mx-auto">
           {technologies.map((tech, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-4 bg-white rounded-lg border border-border hover:shadow-md transition-all hover:scale-105 group"
+              className="flex items-center justify-center p-4 bg-card rounded-lg border border-border hover:shadow-md hover:shadow-cyan/5 transition-all hover:scale-105 group"
             >
               <img
                 src={tech.logo}
                 alt={tech.name}
-                className="h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all opacity-60 group-hover:opacity-100"
+                className="h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all opacity-50 group-hover:opacity-100"
                 onError={(e) => {
                   // Fallback if image fails to load
                   e.currentTarget.style.display = 'none';
                   const parent = e.currentTarget.parentElement;
                   if (parent) {
-                    parent.innerHTML = `<span class="text-sm font-semibold text-muted-foreground">${tech.name}</span>`;
+                    parent.innerHTML = `<span class="text-sm font-semibold text-foreground/60">${tech.name}</span>`;
                   }
                 }}
               />
@@ -74,7 +74,7 @@ export const TechnologyStack = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground/50">
             Enterprise-grade infrastructure trusted by thousands of businesses worldwide
           </p>
         </div>
