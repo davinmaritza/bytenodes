@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Server, Cloud, Globe, Monitor, Gamepad2, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useScrollAnimation, scrollVariants, staggerContainer } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -43,24 +45,35 @@ const services = [
 ];
 
 export const Services = () => {
+  const { ref, isInView } = useScrollAnimation();
+
   return (
-    <section className="py-24 px-4 bg-background">
+    <section ref={ref} className="py-24 px-4 bg-background">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
+        <motion.div
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={scrollVariants}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
             Our Services
           </h2>
           <p className="text-base text-foreground/60 max-w-2xl mx-auto">
             Comprehensive hosting solutions designed to meet all your infrastructure needs
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {services.map((service, index) => (
-            <Card
-              key={index}
-              className="p-8 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 bg-card border-border/50 hover:border-primary/50 group"
-            >
+            <motion.div key={index} variants={scrollVariants}>
+              <Card className="p-8 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 bg-card border-border/50 hover:border-primary/50 group h-full"
+              >
               <div className="mb-6 p-4 rounded-xl bg-primary/5 w-fit group-hover:bg-primary/15 transition-all duration-300 group-hover:scale-110">
                 <service.icon className="w-8 h-8 text-primary" />
               </div>
@@ -76,14 +89,15 @@ export const Services = () => {
                   </li>
                 ))}
               </ul>
-              <Link to="/pricing">
-                <Button variant="outline" className="w-full text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                  Learn More
-                </Button>
-              </Link>
-            </Card>
+                <Link to="/pricing">
+                  <Button variant="outline" className="w-full text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    Learn More
+                  </Button>
+                </Link>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
