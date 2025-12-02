@@ -1,0 +1,170 @@
+{
+  "termsOfService": {
+    "title": "Terms of Service",
+    "lastUpdated": "2025-01-01",
+    "sections": [
+      {
+        "title": "1. Penerimaan Ketentuan",
+        "content": "Dengan mengakses dan menggunakan layanan ByteNodes, Anda setuju untuk terikat oleh Ketentuan Layanan ini. Jika Anda tidak setuju dengan ketentuan ini, harap jangan gunakan layanan kami."
+      },
+      {
+        "title": "2. Deskripsi Layanan",
+        "content": "ByteNodes menyediakan layanan hosting termasuk VPS, Game Server, RDP, dan layanan terkait lainnya. Kami berhak untuk mengubah, menangguhkan, atau menghentikan layanan kapan saja dengan pemberitahuan yang wajar."
+      },
+      {
+        "title": "3. Akun Pengguna",
+        "content": "Anda bertanggung jawab untuk menjaga kerahasiaan akun dan password Anda. Anda setuju untuk segera memberitahu kami tentang penggunaan akun Anda yang tidak sah. ByteNodes tidak bertanggung jawab atas kerugian yang timbul dari penggunaan akun Anda oleh pihak lain."
+      },
+      {
+        "title": "4. Pembayaran dan Penagihan",
+        "content": "Semua pembayaran harus dilakukan di muka. Layanan akan diaktifkan setelah pembayaran dikonfirmasi. Harga dapat berubah dengan pemberitahuan 30 hari sebelumnya."
+      },
+      {
+        "title": "5. Penggunaan yang Dilarang",
+        "content": "Anda dilarang menggunakan layanan kami untuk: aktivitas ilegal, spam, DDoS, phishing, distribusi malware, konten dewasa ilegal, pelanggaran hak cipta, atau aktivitas yang merugikan infrastruktur kami."
+      },
+      {
+        "title": "6. Penangguhan dan Penghentian",
+        "content": "Kami berhak menangguhkan atau menghentikan akun Anda jika melanggar ketentuan ini. Tidak ada pengembalian dana untuk layanan yang ditangguhkan karena pelanggaran."
+      },
+      {
+        "title": "7. Batasan Tanggung Jawab",
+        "content": "ByteNodes tidak bertanggung jawab atas kerusakan tidak langsung, insidental, atau konsekuensial. Tanggung jawab maksimum kami terbatas pada jumlah yang Anda bayarkan untuk layanan dalam 12 bulan terakhir."
+      },
+      {
+        "title": "8. Perubahan Ketentuan",
+        "content": "Kami dapat mengubah ketentuan ini kapan saja. Perubahan akan berlaku setelah dipublikasikan di website kami. Penggunaan layanan setelah perubahan merupakan persetujuan Anda terhadap ketentuan baru."
+      }
+    ]
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "2025-01-01",
+    "sections": [
+      {
+        "title": "1. Informasi yang Kami Kumpulkan",
+        "content": "Kami mengumpulkan informasi yang Anda berikan secara langsung seperti nama, email, nomor telepon, dan informasi pembayaran. Kami juga mengumpulkan data otomatis seperti alamat IP, browser, dan pola penggunaan."
+      },
+      {
+        "title": "2. Penggunaan Informasi",
+        "content": "Informasi Anda digunakan untuk: menyediakan layanan, memproses pembayaran, mengirim pemberitahuan penting, meningkatkan layanan kami, dan mematuhi kewajiban hukum."
+      },
+      {
+        "title": "3. Berbagi Informasi",
+        "content": "Kami tidak menjual informasi pribadi Anda. Kami hanya berbagi informasi dengan: penyedia layanan pembayaran, otoritas hukum jika diperlukan, dan pihak ketiga dengan persetujuan Anda."
+      },
+      {
+        "title": "4. Keamanan Data",
+        "content": "Kami menerapkan langkah-langkah keamanan yang wajar untuk melindungi informasi Anda. Namun, tidak ada metode transmisi internet yang 100% aman."
+      },
+      {
+        "title": "5. Retensi Data",
+        "content": "Kami menyimpan informasi Anda selama akun Anda aktif atau selama diperlukan untuk menyediakan layanan. Data akan dihapus atas permintaan Anda, kecuali jika diperlukan untuk kewajiban hukum."
+      },
+      {
+        "title": "6. Hak Anda",
+        "content": "Anda berhak untuk: mengakses informasi Anda, memperbarui informasi yang tidak akurat, meminta penghapusan data, dan menolak pemrosesan tertentu."
+      },
+      {
+        "title": "7. Cookie",
+        "content": "Kami menggunakan cookie untuk meningkatkan pengalaman Anda. Anda dapat mengontrol cookie melalui pengaturan browser Anda."
+      }
+    ]
+  },
+  "cookiePolicy": {
+    "title": "Cookie Policy",
+    "lastUpdated": "2025-01-01",
+    "sections": [
+      {
+        "title": "1. Apa itu Cookie?",
+        "content": "Cookie adalah file teks kecil yang disimpan di perangkat Anda saat mengunjungi website. Cookie membantu website mengingat preferensi Anda."
+      },
+      {
+        "title": "2. Jenis Cookie yang Kami Gunakan",
+        "content": "Essential Cookies: diperlukan untuk fungsi dasar website. Performance Cookies: membantu kami memahami bagaimana pengunjung menggunakan website. Functional Cookies: mengingat preferensi Anda."
+      },
+      {
+        "title": "3. Mengelola Cookie",
+        "content": "Anda dapat mengontrol cookie melalui pengaturan browser. Menonaktifkan cookie mungkin mempengaruhi pengalaman Anda di website kami."
+      }
+    ]
+  },
+  "acceptableUse": {
+    "title": "Acceptable Use Policy",
+    "lastUpdated": "2025-01-01",
+    "sections": [
+      {
+        "title": "1. Penggunaan yang Diperbolehkan",
+        "content": "Anda dapat menggunakan layanan kami untuk: hosting website, aplikasi web, game server, bot, development, dan keperluan bisnis yang sah lainnya."
+      },
+      {
+        "title": "2. Penggunaan yang Dilarang",
+        "content": "Dilarang keras: DDoS atau serangan jaringan, spamming, phishing, malware distribution, illegal content hosting, crypto mining tanpa izin, torrent/file sharing ilegal, proxy untuk aktivitas ilegal."
+      },
+      {
+        "title": "3. Penggunaan Resource",
+        "content": "Anda harus menggunakan resource sesuai dengan paket yang dibeli. Penggunaan berlebihan yang mempengaruhi pengguna lain akan ditindaklanjuti."
+      },
+      {
+        "title": "4. Konten",
+        "content": "Anda bertanggung jawab penuh atas konten yang Anda host. Konten yang melanggar hukum Indonesia akan dihapus tanpa pemberitahuan."
+      },
+      {
+        "title": "5. Konsekuensi Pelanggaran",
+        "content": "Pelanggaran dapat mengakibatkan: peringatan, suspensi sementara, penghentian layanan permanen, tanpa pengembalian dana."
+      }
+    ]
+  },
+  "sla": {
+    "title": "Service Level Agreement (SLA)",
+    "lastUpdated": "2025-01-01",
+    "sections": [
+      {
+        "title": "1. Uptime Guarantee",
+        "content": "ByteNodes menjamin uptime 99.9% untuk semua layanan VPS dan Game Server. Uptime dihitung per bulan kalender, tidak termasuk maintenance terjadwal."
+      },
+      {
+        "title": "2. Kompensasi",
+        "content": "Jika uptime di bawah 99.9%, Anda berhak mendapat kredit: 99.0%-99.9%: 10% kredit, 98.0%-99.0%: 25% kredit, 95.0%-98.0%: 50% kredit, Di bawah 95.0%: 100% kredit untuk bulan tersebut."
+      },
+      {
+        "title": "3. Pengecualian",
+        "content": "SLA tidak berlaku untuk: maintenance terjadwal, force majeure, masalah di luar kontrol kami, pelanggaran ToS oleh pelanggan, masalah jaringan ISP pelanggan."
+      },
+      {
+        "title": "4. Klaim SLA",
+        "content": "Klaim harus diajukan dalam 7 hari setelah insiden melalui support ticket. Sertakan detail waktu downtime dan dampaknya."
+      },
+      {
+        "title": "5. Response Time",
+        "content": "Ticket Priority High: response dalam 2 jam, Ticket Priority Medium: response dalam 6 jam, Ticket Priority Low: response dalam 24 jam."
+      }
+    ]
+  },
+  "refundPolicy": {
+    "title": "Refund Policy",
+    "lastUpdated": "2025-01-01",
+    "sections": [
+      {
+        "title": "1. Garansi 7 Hari",
+        "content": "Pelanggan baru dapat meminta refund penuh dalam 7 hari pertama setelah aktivasi layanan, tanpa alasan apapun."
+      },
+      {
+        "title": "2. Ketentuan Refund",
+        "content": "Refund dapat diproses jika: layanan tidak sesuai deskripsi, downtime berlebihan di luar SLA, atau masalah teknis yang tidak bisa kami selesaikan."
+      },
+      {
+        "title": "3. Pengecualian",
+        "content": "Refund tidak berlaku untuk: pelanggaran ToS, domain yang sudah terdaftar, layanan yang sudah digunakan lebih dari 7 hari, pembatalan sukarela setelah periode garansi."
+      },
+      {
+        "title": "4. Proses Refund",
+        "content": "Ajukan refund melalui support ticket. Proses refund memakan waktu 3-7 hari kerja. Refund akan dikembalikan ke metode pembayaran asal."
+      },
+      {
+        "title": "5. Kredit Account",
+        "content": "Sebagai alternatif refund, Anda dapat memilih kredit account yang dapat digunakan untuk layanan lain."
+      }
+    ]
+  }
+}

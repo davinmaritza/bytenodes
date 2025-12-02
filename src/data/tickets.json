@@ -1,0 +1,107 @@
+{
+  "tickets": [
+    {
+      "id": 1,
+      "userId": 1,
+      "subject": "Server tidak bisa diakses",
+      "priority": "high",
+      "status": "open",
+      "category": "Technical",
+      "messages": [
+        {
+          "id": 1,
+          "userId": 1,
+          "userName": "Demo User",
+          "message": "Halo, server saya dengan IP 103.xxx.xxx.xxx tidak bisa diakses sejak tadi pagi. Mohon bantuannya.",
+          "createdAt": "2025-01-20T08:00:00Z",
+          "isStaff": false
+        },
+        {
+          "id": 2,
+          "userId": 0,
+          "userName": "ByteNodes Support",
+          "message": "Halo, terima kasih sudah menghubungi kami. Kami sedang melakukan pengecekan pada server Anda. Mohon tunggu 15-30 menit.",
+          "createdAt": "2025-01-20T08:15:00Z",
+          "isStaff": true
+        },
+        {
+          "id": 3,
+          "userId": 0,
+          "userName": "ByteNodes Support",
+          "message": "Server Anda sudah aktif kembali. Masalah disebabkan oleh maintenance jaringan. Mohon maaf atas ketidaknyamanannya.",
+          "createdAt": "2025-01-20T08:45:00Z",
+          "isStaff": true
+        }
+      ],
+      "createdAt": "2025-01-20T08:00:00Z",
+      "updatedAt": "2025-01-20T08:45:00Z"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "subject": "Request upgrade RAM",
+      "priority": "medium",
+      "status": "in_progress",
+      "category": "Billing",
+      "messages": [
+        {
+          "id": 1,
+          "userId": 1,
+          "userName": "Demo User",
+          "message": "Saya ingin upgrade RAM dari 2GB ke 4GB untuk VPS saya. Berapa biaya tambahannya?",
+          "createdAt": "2025-01-19T14:00:00Z",
+          "isStaff": false
+        },
+        {
+          "id": 2,
+          "userId": 0,
+          "userName": "ByteNodes Support",
+          "message": "Untuk upgrade RAM dari 2GB ke 4GB, biaya tambahan adalah Rp 25.000/bulan. Apakah Anda ingin melanjutkan?",
+          "createdAt": "2025-01-19T14:30:00Z",
+          "isStaff": true
+        }
+      ],
+      "createdAt": "2025-01-19T14:00:00Z",
+      "updatedAt": "2025-01-19T14:30:00Z"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "subject": "Cara install Minecraft server",
+      "priority": "low",
+      "status": "closed",
+      "category": "General",
+      "messages": [
+        {
+          "id": 1,
+          "userId": 1,
+          "userName": "Demo User",
+          "message": "Bagaimana cara install Minecraft server di panel Pterodactyl?",
+          "createdAt": "2025-01-18T10:00:00Z",
+          "isStaff": false
+        },
+        {
+          "id": 2,
+          "userId": 0,
+          "userName": "ByteNodes Support",
+          "message": "Silahkan ikuti tutorial di Knowledge Base kami: https://bytenodes.id/blog/cara-setup-minecraft-server-pterodactyl. Jika masih ada kendala, silahkan hubungi kami kembali.",
+          "createdAt": "2025-01-18T10:20:00Z",
+          "isStaff": true
+        },
+        {
+          "id": 3,
+          "userId": 1,
+          "userName": "Demo User",
+          "message": "Terima kasih, sudah berhasil!",
+          "createdAt": "2025-01-18T11:00:00Z",
+          "isStaff": false
+        }
+      ],
+      "createdAt": "2025-01-18T10:00:00Z",
+      "updatedAt": "2025-01-18T11:00:00Z"
+    }
+  ],
+  "categories": ["Technical", "Billing", "General", "Sales"],
+  "priorities": ["low", "medium", "high"],
+  "statuses": ["open", "in_progress", "closed"]
+}

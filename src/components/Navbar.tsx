@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Server, Menu, X, User, LogOut } from "lucide-react";
+import { Menu, X, User, LogOut } from "lucide-react";
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
-import { ThemeToggle } from "@/components/ThemeToggle";
+import logo from "@/assets/logo.png";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -14,7 +14,7 @@ export const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2 text-xl font-bold">
-            <Server className="w-7 h-7 text-primary" />
+            <img src={logo} alt="ByteNodes" className="w-10 h-10 object-contain" />
             <span className="text-foreground">ByteNodes</span>
           </Link>
 
@@ -54,7 +54,6 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
             {user ? (
               <>
                 <Link to={user.role === 'admin' ? '/admin' : '/client/dashboard'}>
@@ -86,7 +85,6 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -187,7 +185,7 @@ export const Navbar = () => {
                     <Button variant="ghost" className="w-full">Login</Button>
                   </Link>
                   <Link to="/client/register" onClick={() => setMobileMenuOpen(false)}>
-                    <Button className="w-full gradient-cyan-navy">Get Started</Button>
+                    <Button className="w-full">Get Started</Button>
                   </Link>
                 </>
               )}
