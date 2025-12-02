@@ -1,0 +1,205 @@
+{
+  "servers": [
+    {
+      "id": 1,
+      "name": "MC-S1",
+      "category": "Shared",
+      "cpu": "Shared",
+      "ram": "1 GB",
+      "storage": "5 GB NVMe",
+      "price": 7500,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "24/7 Support"]
+    },
+    {
+      "id": 2,
+      "name": "MC-S2",
+      "category": "Shared",
+      "cpu": "Shared",
+      "ram": "2 GB",
+      "storage": "10 GB NVMe",
+      "price": 15000,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "24/7 Support"]
+    },
+    {
+      "id": 3,
+      "name": "MC-S3",
+      "category": "Shared",
+      "cpu": "Shared",
+      "ram": "3 GB",
+      "storage": "15 GB NVMe",
+      "price": 22500,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "24/7 Support"]
+    },
+    {
+      "id": 4,
+      "name": "MC-S4",
+      "category": "Shared",
+      "cpu": "Shared",
+      "ram": "4 GB",
+      "storage": "20 GB NVMe",
+      "price": 30000,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "24/7 Support"]
+    },
+    {
+      "id": 5,
+      "name": "MC-M1",
+      "category": "Medium",
+      "cpu": "Intel Xeon / Ryzen",
+      "ram": "4 GB",
+      "storage": "25 GB NVMe",
+      "price": 45000,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "Priority Support", "Auto Backup"]
+    },
+    {
+      "id": 6,
+      "name": "MC-M2",
+      "category": "Medium",
+      "cpu": "Intel Xeon / Ryzen",
+      "ram": "6 GB",
+      "storage": "35 GB NVMe",
+      "price": 65000,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "Priority Support", "Auto Backup"]
+    },
+    {
+      "id": 7,
+      "name": "MC-M3",
+      "category": "Medium",
+      "cpu": "Intel Xeon / Ryzen",
+      "ram": "8 GB",
+      "storage": "45 GB NVMe",
+      "price": 85000,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "Priority Support", "Auto Backup"]
+    },
+    {
+      "id": 8,
+      "name": "MC-P1",
+      "category": "Premium",
+      "cpu": "Dedicated Ryzen 9",
+      "ram": "8 GB",
+      "storage": "50 GB NVMe",
+      "price": 120000,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "Priority Support", "Auto Backup", "Dedicated Resources"]
+    },
+    {
+      "id": 9,
+      "name": "MC-P2",
+      "category": "Premium",
+      "cpu": "Dedicated Ryzen 9",
+      "ram": "12 GB",
+      "storage": "75 GB NVMe",
+      "price": 175000,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "Priority Support", "Auto Backup", "Dedicated Resources"]
+    },
+    {
+      "id": 10,
+      "name": "MC-P3",
+      "category": "Premium",
+      "cpu": "Dedicated Ryzen 9",
+      "ram": "16 GB",
+      "storage": "100 GB NVMe",
+      "price": 225000,
+      "features": ["Panel Pterodactyl", "DDoS Protection", "Priority Support", "Auto Backup", "Dedicated Resources"]
+    }
+  ],
+  "vps": [
+    {
+      "id": 1,
+      "name": "VPS-K1",
+      "category": "VPS KVM",
+      "cpu": "1 vCore",
+      "ram": "1 GB",
+      "storage": "20 GB NVMe",
+      "bandwidth": "Unlimited",
+      "price": 25000,
+      "features": ["Full Root Access", "KVM Virtualization", "DDoS Protection"]
+    },
+    {
+      "id": 2,
+      "name": "VPS-K2",
+      "category": "VPS KVM",
+      "cpu": "2 vCore",
+      "ram": "2 GB",
+      "storage": "40 GB NVMe",
+      "bandwidth": "Unlimited",
+      "price": 45000,
+      "features": ["Full Root Access", "KVM Virtualization", "DDoS Protection"]
+    },
+    {
+      "id": 3,
+      "name": "VPS-K3",
+      "category": "VPS KVM",
+      "cpu": "4 vCore",
+      "ram": "4 GB",
+      "storage": "80 GB NVMe",
+      "bandwidth": "Unlimited",
+      "price": 85000,
+      "features": ["Full Root Access", "KVM Virtualization", "DDoS Protection"]
+    },
+    {
+      "id": 4,
+      "name": "VPS-P1",
+      "category": "VPS Premium",
+      "cpu": "2 vCore Ryzen",
+      "ram": "4 GB",
+      "storage": "50 GB NVMe",
+      "bandwidth": "Unlimited",
+      "price": 95000,
+      "features": ["Full Root Access", "Premium Hardware", "DDoS Protection", "Priority Support"]
+    },
+    {
+      "id": 5,
+      "name": "VPS-P2",
+      "category": "VPS Premium",
+      "cpu": "4 vCore Ryzen",
+      "ram": "8 GB",
+      "storage": "100 GB NVMe",
+      "bandwidth": "Unlimited",
+      "price": 175000,
+      "features": ["Full Root Access", "Premium Hardware", "DDoS Protection", "Priority Support"]
+    },
+    {
+      "id": 6,
+      "name": "VPS-P3",
+      "category": "VPS Premium",
+      "cpu": "6 vCore Ryzen",
+      "ram": "16 GB",
+      "storage": "200 GB NVMe",
+      "bandwidth": "Unlimited",
+      "price": 325000,
+      "features": ["Full Root Access", "Premium Hardware", "DDoS Protection", "Priority Support"]
+    },
+    {
+      "id": 7,
+      "name": "RDP-W1",
+      "category": "RDP Windows",
+      "cpu": "2 vCore",
+      "ram": "4 GB",
+      "storage": "60 GB SSD",
+      "bandwidth": "Unlimited",
+      "price": 75000,
+      "features": ["Windows Server", "RDP Access", "Admin Rights"]
+    },
+    {
+      "id": 8,
+      "name": "RDP-W2",
+      "category": "RDP Windows",
+      "cpu": "4 vCore",
+      "ram": "8 GB",
+      "storage": "120 GB SSD",
+      "bandwidth": "Unlimited",
+      "price": 145000,
+      "features": ["Windows Server", "RDP Access", "Admin Rights"]
+    },
+    {
+      "id": 9,
+      "name": "RDP-W3",
+      "category": "RDP Windows",
+      "cpu": "6 vCore",
+      "ram": "16 GB",
+      "storage": "200 GB SSD",
+      "bandwidth": "Unlimited",
+      "price": 275000,
+      "features": ["Windows Server", "RDP Access", "Admin Rights"]
+    }
+  ]
+}
