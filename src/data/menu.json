@@ -1,0 +1,86 @@
+{
+  "mainNav": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Pricing",
+      "href": "/pricing",
+      "children": [
+        {
+          "label": "General Pricing",
+          "href": "/pricing",
+          "description": "Lihat semua paket hosting kami"
+        },
+        {
+          "label": "Game Servers",
+          "href": "/pricing/servers",
+          "description": "Minecraft & Game Server Hosting"
+        },
+        {
+          "label": "VPS & RDP",
+          "href": "/pricing/vps",
+          "description": "VPS KVM, Premium & RDP Windows"
+        }
+      ]
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "footerNav": {
+    "services": [
+      { "label": "Game Server", "href": "/pricing/servers" },
+      { "label": "VPS KVM", "href": "/pricing/vps" },
+      { "label": "VPS Premium", "href": "/pricing/vps" },
+      { "label": "RDP Windows", "href": "/pricing/vps" }
+    ],
+    "support": [
+      { "label": "Knowledge Base", "href": "/blog" },
+      { "label": "Tickets", "href": "/tickets" },
+      { "label": "Contact Us", "href": "/contact" }
+    ],
+    "company": [
+      { "label": "About Us", "href": "/about" },
+      { "label": "Blog", "href": "/blog" },
+      { "label": "Terms of Service", "href": "/terms" },
+      { "label": "Privacy Policy", "href": "/privacy" }
+    ]
+  },
+  "socialLinks": [
+    {
+      "label": "WhatsApp",
+      "href": "https://wa.me/6285126080236",
+      "icon": "whatsapp"
+    },
+    {
+      "label": "Instagram",
+      "href": "https://instagram.com/bytenodes",
+      "icon": "instagram"
+    },
+    {
+      "label": "Discord",
+      "href": "https://discord.gg/bytenodes",
+      "icon": "discord"
+    },
+    {
+      "label": "Email",
+      "href": "mailto:support@bytenodes.id",
+      "icon": "email"
+    }
+  ]
+}

@@ -3,67 +3,12 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User, ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-
-interface BlogPost {
-  id: number;
-  title: string;
-  excerpt: string;
-  content: string;
-  author: string;
-  date: string;
-  category: string;
-  image?: string;
-}
+import { Link } from "react-router-dom";
+import { getBlogPosts, BlogPost as BlogPostType } from "@/lib/dataService";
 
 const Blog = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // TODO: Replace with your PHP backend API endpoint
-    // fetch('https://your-vps-domain.com/api/blog/posts')
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     setPosts(data);
-    //     setLoading(false);
-    //   });
-
-    // Demo data for now
-    const demoData: BlogPost[] = [
-      {
-        id: 1,
-        title: "Getting Started with VPS Hosting",
-        excerpt: "Learn the basics of VPS hosting and how to set up your first virtual private server.",
-        content: "",
-        author: "ByteNodes Team",
-        date: "2025-01-15",
-        category: "Tutorial"
-      },
-      {
-        id: 2,
-        title: "How to Secure Your Dedicated Server",
-        excerpt: "Essential security practices to protect your dedicated hosting infrastructure.",
-        content: "",
-        author: "ByteNodes Team",
-        date: "2025-01-10",
-        category: "Security"
-      },
-      {
-        id: 3,
-        title: "Domain Management Best Practices",
-        excerpt: "Tips and tricks for managing your domains effectively and avoiding common pitfalls.",
-        content: "",
-        author: "ByteNodes Team",
-        date: "2025-01-05",
-        category: "Guide"
-      }
-    ];
-    
-    setPosts(demoData);
-    setLoading(false);
-  }, []);
+  const posts = getBlogPosts();
 
   return (
     <div className="min-h-screen">
@@ -82,46 +27,50 @@ const Blog = () => {
 
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          {loading ? (
-            <div className="text-center text-muted-foreground">Loading articles...</div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.map((post) => (
-                <Card key={post.id} className="hover:shadow-lg transition-shadow flex flex-col">
-                  <CardHeader>
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="secondary">{post.category}</Badge>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Calendar className="w-4 h-4 mr-1" />
-                        {new Date(post.date).toLocaleDateString('en-US', { 
-                          month: 'short', 
-                          day: 'numeric', 
-                          year: 'numeric' 
-                        })}
-                      </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post) => (
+              <Card key={post.id} className="hover:shadow-lg transition-shadow flex flex-col overflow-hidden">
+                {post.image && (
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src={post.image} 
+                      alt={post.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="secondary">{post.category}</Badge>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {new Date(post.createdAt).toLocaleDateString('id-ID', { 
+                        month: 'short', 
+                        day: 'numeric', 
+                        year: 'numeric' 
+                      })}
                     </div>
-                    <CardTitle className="text-xl">{post.title}</CardTitle>
-                    <CardDescription className="flex items-center mt-2">
-                      <User className="w-4 h-4 mr-1" />
-                      {post.author}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-muted-foreground mb-4">{post.excerpt}</p>
+                  </div>
+                  <CardTitle className="text-xl">{post.title}</CardTitle>
+                  <CardDescription className="flex items-center mt-2">
+                    <User className="w-4 h-4 mr-1" />
+                    {post.author}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <p className="text-muted-foreground mb-4">{post.excerpt}</p>
+                  <Link to={`/blog/${post.slug}`}>
                     <Button 
                       variant="link" 
                       className="p-0 h-auto text-cyan hover:text-cyan-light"
-                      onClick={() => {
-                        window.location.href = `/blog/${post.id}`;
-                      }}
                     >
                       Read more <ArrowRight className="w-4 h-4 ml-1" />
                     </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 

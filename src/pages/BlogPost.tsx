@@ -5,19 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar, User, Clock } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { useParams, Link } from "react-router-dom";
-
-interface BlogPost {
-  id: number;
-  title: string;
-  content: string;
-  author: string;
-  date: string;
-  category: string;
-  image?: string;
-  readTime?: string;
-}
+import { getBlogPostBySlug, getBlogPostById } from "@/lib/dataService";
 
 interface Comment {
   id: number;
@@ -28,108 +18,51 @@ interface Comment {
 
 const BlogPost = () => {
   const { id } = useParams();
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [comments, setComments] = useState<Comment[]>([]);
+  const [comments, setComments] = useState<Comment[]>([
+    {
+      id: 1,
+      author: "Budi Santoso",
+      date: "2025-01-16",
+      content: "Artikel yang sangat membantu! Terima kasih ByteNodes."
+    },
+    {
+      id: 2,
+      author: "Andi Pratama",
+      date: "2025-01-17",
+      content: "Tips keamanannya sangat berguna, saya sudah terapkan di server saya."
+    }
+  ]);
   const [newComment, setNewComment] = useState("");
   const [commentName, setCommentName] = useState("");
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // TODO: Replace with your PHP backend API endpoint
-    // fetch(`https://your-vps-domain.com/api/blog/posts/${id}`)
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     setPost(data.post);
-    //     setComments(data.comments);
-    //     setLoading(false);
-    //   });
-
-    // Demo data for now
-    const demoPost: BlogPost = {
-      id: parseInt(id || "1"),
-      title: "Getting Started with VPS Hosting",
-      content: `
-        <h2>Introduction to VPS Hosting</h2>
-        <p>Virtual Private Server (VPS) hosting is a powerful solution that bridges the gap between shared hosting and dedicated servers. It provides you with dedicated resources within a shared environment, offering better performance, control, and scalability.</p>
-        
-        <h2>Why Choose VPS Hosting?</h2>
-        <p>VPS hosting offers several advantages over traditional shared hosting:</p>
-        <ul>
-          <li><strong>Dedicated Resources:</strong> Get guaranteed CPU, RAM, and storage that aren't shared with other users</li>
-          <li><strong>Root Access:</strong> Full control over your server environment</li>
-          <li><strong>Scalability:</strong> Easily upgrade resources as your needs grow</li>
-          <li><strong>Better Performance:</strong> Faster loading times and better reliability</li>
-          <li><strong>Enhanced Security:</strong> Isolated environment protects your data</li>
-        </ul>
-
-        <h2>Setting Up Your First VPS</h2>
-        <p>Getting started with VPS hosting is straightforward. Follow these steps:</p>
-        <ol>
-          <li>Choose your operating system (Ubuntu, CentOS, Debian, etc.)</li>
-          <li>Select your server resources based on your needs</li>
-          <li>Configure your firewall and security settings</li>
-          <li>Install necessary software and applications</li>
-          <li>Set up your domain and DNS records</li>
-        </ol>
-
-        <h2>Best Practices for VPS Management</h2>
-        <p>To get the most out of your VPS hosting:</p>
-        <ul>
-          <li>Keep your system updated with the latest security patches</li>
-          <li>Implement regular backup strategies</li>
-          <li>Monitor server resources and performance</li>
-          <li>Use strong passwords and SSH keys</li>
-          <li>Configure fail2ban to prevent brute force attacks</li>
-        </ul>
-
-        <h2>Conclusion</h2>
-        <p>VPS hosting is an excellent choice for growing websites and applications. With the right setup and maintenance, it provides a robust, scalable platform for your online presence.</p>
-      `,
-      author: "ByteNodes Team",
-      date: "2025-01-15",
-      category: "Tutorial",
-      readTime: "5 min read"
-    };
-
-    const demoComments: Comment[] = [
-      {
-        id: 1,
-        author: "John Doe",
-        date: "2025-01-16",
-        content: "Great article! Very helpful for someone just starting with VPS hosting."
-      },
-      {
-        id: 2,
-        author: "Jane Smith",
-        date: "2025-01-17",
-        content: "Thanks for the detailed guide. The security tips are especially useful."
-      }
-    ];
-
-    setPost(demoPost);
-    setComments(demoComments);
-    setLoading(false);
+  // Try to find post by slug first, then by id
+  const post = useMemo(() => {
+    if (!id) return undefined;
+    
+    // Try slug first
+    let foundPost = getBlogPostBySlug(id);
+    
+    // If not found and id is numeric, try by id
+    if (!foundPost && !isNaN(parseInt(id))) {
+      foundPost = getBlogPostById(parseInt(id));
+    }
+    
+    return foundPost;
   }, [id]);
+
+  // Estimate read time
+  const readTime = useMemo(() => {
+    if (!post) return "5 min";
+    const words = post.content.split(/\s+/).length;
+    const minutes = Math.ceil(words / 200);
+    return `${minutes} min read`;
+  }, [post]);
 
   const handleSubmitComment = (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!newComment.trim() || !commentName.trim()) return;
 
-    // TODO: Replace with your PHP backend API endpoint
-    // fetch(`https://your-vps-domain.com/api/blog/posts/${id}/comments`, {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ name: commentName, content: newComment })
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     setComments([...comments, data]);
-    //     setNewComment("");
-    //     setCommentName("");
-    //   });
-
-    // Demo: Add comment locally
     const newCommentObj: Comment = {
       id: comments.length + 1,
       author: commentName,
@@ -142,29 +75,15 @@ const BlogPost = () => {
     setCommentName("");
   };
 
-  if (loading) {
-    return (
-      <div className="min-h-screen">
-        <Navbar />
-        <div className="pt-24 pb-12 px-4">
-          <div className="container mx-auto text-center">
-            <p className="text-muted-foreground">Loading article...</p>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
-
   if (!post) {
     return (
       <div className="min-h-screen">
         <Navbar />
         <div className="pt-24 pb-12 px-4">
           <div className="container mx-auto text-center">
-            <h1 className="text-3xl font-bold mb-4">Article Not Found</h1>
+            <h1 className="text-3xl font-bold mb-4">Artikel Tidak Ditemukan</h1>
             <Link to="/blog">
-              <Button>Back to Blog</Button>
+              <Button>Kembali ke Blog</Button>
             </Link>
           </div>
         </div>
@@ -180,8 +99,18 @@ const BlogPost = () => {
       <div className="pt-24 pb-12 px-4">
         <article className="container mx-auto max-w-4xl">
           <Link to="/blog" className="inline-flex items-center text-cyan hover:text-cyan-light mb-6">
-            ← Back to Blog
+            ← Kembali ke Blog
           </Link>
+
+          {post.image && (
+            <div className="aspect-video rounded-xl overflow-hidden mb-8">
+              <img 
+                src={post.image} 
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
 
           <div className="mb-6">
             <Badge variant="secondary" className="mb-4">{post.category}</Badge>
@@ -194,55 +123,53 @@ const BlogPost = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>{new Date(post.date).toLocaleDateString('en-US', { 
+                <span>{new Date(post.createdAt).toLocaleDateString('id-ID', { 
                   month: 'long', 
                   day: 'numeric', 
                   year: 'numeric' 
                 })}</span>
               </div>
-              {post.readTime && (
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  <span>{post.readTime}</span>
-                </div>
-              )}
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                <span>{readTime}</span>
+              </div>
             </div>
           </div>
 
           <div 
-            className="prose prose-lg max-w-none mb-12"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+            className="prose prose-lg max-w-none mb-12 prose-headings:text-foreground prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground prose-code:bg-muted prose-code:px-1 prose-code:rounded"
+            dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br/>') }}
           />
 
           <div className="border-t pt-8">
-            <h2 className="text-2xl font-bold mb-6">Comments ({comments.length})</h2>
+            <h2 className="text-2xl font-bold mb-6">Komentar ({comments.length})</h2>
             
             <Card className="mb-6">
               <CardContent className="pt-6">
                 <form onSubmit={handleSubmitComment}>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium mb-2">Name</label>
+                      <label className="block text-sm font-medium mb-2">Nama</label>
                       <input
                         type="text"
                         value={commentName}
                         onChange={(e) => setCommentName(e.target.value)}
-                        placeholder="Your name"
+                        placeholder="Nama Anda"
                         className="w-full px-3 py-2 border rounded-md bg-background"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Comment</label>
+                      <label className="block text-sm font-medium mb-2">Komentar</label>
                       <Textarea
                         value={newComment}
                         onChange={(e) => setNewComment(e.target.value)}
-                        placeholder="Share your thoughts..."
+                        placeholder="Tulis komentar Anda..."
                         className="min-h-[100px]"
                         required
                       />
                     </div>
-                    <Button type="submit">Post Comment</Button>
+                    <Button type="submit">Kirim Komentar</Button>
                   </div>
                 </form>
               </CardContent>
@@ -255,7 +182,7 @@ const BlogPost = () => {
                     <div className="flex items-start justify-between mb-2">
                       <div className="font-semibold">{comment.author}</div>
                       <div className="text-sm text-muted-foreground">
-                        {new Date(comment.date).toLocaleDateString('en-US', { 
+                        {new Date(comment.date).toLocaleDateString('id-ID', { 
                           month: 'short', 
                           day: 'numeric', 
                           year: 'numeric' 

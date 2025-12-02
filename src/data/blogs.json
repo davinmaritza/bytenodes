@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Cara Setup Minecraft Server dengan Pterodactyl",
+      "slug": "cara-setup-minecraft-server-pterodactyl",
+      "excerpt": "Panduan lengkap untuk membuat dan mengkonfigurasi Minecraft server menggunakan panel Pterodactyl.",
+      "content": "## Pendahuluan\n\nPterodactyl adalah panel management server game yang populer dan mudah digunakan. Dalam tutorial ini, kita akan membahas langkah-langkah setup Minecraft server.\n\n## Langkah 1: Login ke Panel\n\nPertama, login ke panel Pterodactyl Anda menggunakan kredensial yang diberikan.\n\n## Langkah 2: Buat Server Baru\n\nKlik tombol 'Create Server' dan pilih Minecraft sebagai game.\n\n## Langkah 3: Konfigurasi Server\n\n- Pilih versi Minecraft yang diinginkan\n- Set RAM sesuai paket Anda\n- Konfigurasi port dan settings lainnya\n\n## Langkah 4: Start Server\n\nKlik tombol Start dan tunggu server Anda online!\n\n## Tips Optimasi\n\n1. Gunakan Paper/Purpur untuk performa lebih baik\n2. Install plugin anti-lag\n3. Set view-distance yang reasonable",
+      "category": "Tutorial",
+      "author": "ByteNodes Team",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+      "createdAt": "2025-01-15T10:00:00Z",
+      "published": true
+    },
+    {
+      "id": 2,
+      "title": "Optimasi VPS untuk Website WordPress",
+      "slug": "optimasi-vps-wordpress",
+      "excerpt": "Tips dan trik untuk mengoptimalkan VPS Anda agar WordPress berjalan dengan cepat dan efisien.",
+      "content": "## Mengapa Optimasi Penting?\n\nWebsite yang lambat akan kehilangan pengunjung. Berikut cara optimasi VPS untuk WordPress.\n\n## Install Stack yang Tepat\n\nGunakan LEMP stack (Linux, Nginx, MySQL, PHP) untuk performa terbaik.\n\n## Konfigurasi PHP\n\n```\nphp_value memory_limit 256M\nphp_value max_execution_time 300\n```\n\n## Install Redis Cache\n\nRedis akan mempercepat query database secara signifikan.\n\n## Gunakan CDN\n\nCloudflare CDN gratis dan sangat membantu mempercepat loading website.",
+      "category": "Tutorial",
+      "author": "ByteNodes Team",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800",
+      "createdAt": "2025-01-10T14:30:00Z",
+      "published": true
+    },
+    {
+      "id": 3,
+      "title": "Panduan Keamanan Server untuk Pemula",
+      "slug": "panduan-keamanan-server-pemula",
+      "excerpt": "Pelajari dasar-dasar keamanan server untuk melindungi data dan layanan Anda dari ancaman.",
+      "content": "## Keamanan Server 101\n\nKeamanan adalah prioritas utama dalam mengelola server.\n\n## Update Sistem Secara Rutin\n\n```bash\nsudo apt update && sudo apt upgrade -y\n```\n\n## Konfigurasi Firewall\n\nGunakan UFW untuk mengatur firewall:\n\n```bash\nsudo ufw allow 22\nsudo ufw allow 80\nsudo ufw allow 443\nsudo ufw enable\n```\n\n## Disable Root Login\n\nEdit `/etc/ssh/sshd_config` dan set `PermitRootLogin no`\n\n## Gunakan SSH Key\n\nSSH key lebih aman daripada password.",
+      "category": "Security",
+      "author": "ByteNodes Team",
+      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800",
+      "createdAt": "2025-01-05T09:00:00Z",
+      "published": true
+    },
+    {
+      "id": 4,
+      "title": "Mengenal DDoS Protection dan Cara Kerjanya",
+      "slug": "mengenal-ddos-protection",
+      "excerpt": "Apa itu DDoS attack dan bagaimana ByteNodes melindungi server Anda dari serangan tersebut.",
+      "content": "## Apa itu DDoS?\n\nDDoS (Distributed Denial of Service) adalah serangan yang membanjiri server dengan traffic palsu.\n\n## Jenis-jenis DDoS\n\n1. **Volumetric Attacks** - Membanjiri bandwidth\n2. **Protocol Attacks** - Mengeksploitasi kelemahan protokol\n3. **Application Layer Attacks** - Menargetkan aplikasi\n\n## Bagaimana ByteNodes Melindungi Anda\n\n- Traffic filtering\n- Rate limiting\n- Anycast network\n- 24/7 monitoring\n\n## Tips Tambahan\n\n- Selalu gunakan CDN\n- Monitor traffic secara rutin\n- Siapkan failover plan",
+      "category": "Security",
+      "author": "ByteNodes Team",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800",
+      "createdAt": "2024-12-28T11:00:00Z",
+      "published": true
+    },
+    {
+      "id": 5,
+      "title": "Backup Strategy untuk Game Server",
+      "slug": "backup-strategy-game-server",
+      "excerpt": "Strategi backup yang efektif untuk menjaga data game server Anda tetap aman.",
+      "content": "## Pentingnya Backup\n\nKehilangan data game server bisa sangat menyakitkan. Mari pelajari strategi backup yang baik.\n\n## Rule 3-2-1\n\n- 3 copies of data\n- 2 different storage types\n- 1 offsite backup\n\n## Automated Backups\n\nGunakan cron job untuk backup otomatis:\n\n```bash\n0 */6 * * * /path/to/backup-script.sh\n```\n\n## Apa yang Perlu di-Backup\n\n1. World/map files\n2. Plugin configurations\n3. Player data\n4. Server settings\n\n## Test Restore\n\nSelalu test restore backup Anda secara berkala!",
+      "category": "Tutorial",
+      "author": "ByteNodes Team",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+      "createdAt": "2024-12-20T16:00:00Z",
+      "published": true
+    }
+  ]
+}
