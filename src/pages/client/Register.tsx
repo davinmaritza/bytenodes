@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Server } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { toast } from "sonner";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -13,15 +15,31 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
+  const [loading, setLoading] = useState(false);
+  const { register } = useAuth();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords don't match!");
+      toast.error("Passwords don't match!");
       return;
     }
-    // Handle registration
-    alert("Registration functionality will be implemented");
+
+    if (formData.password.length < 6) {
+      toast.error("Password must be at least 6 characters");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await register(formData.name, formData.email, formData.password);
+      // Navigation to login happens in AuthContext
+    } catch (error) {
+      // Error toast handled in AuthContext
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -102,8 +120,12 @@ const Register = () => {
             </span>
           </div>
 
-          <Button type="submit" className="w-full gradient-cyan-navy glow-cyan">
-            Create Account
+          <Button 
+            type="submit" 
+            className="w-full gradient-cyan-navy glow-cyan"
+            disabled={loading}
+          >
+            {loading ? "Creating account..." : "Create Account"}
           </Button>
         </form>
 

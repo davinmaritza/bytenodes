@@ -1,19 +1,35 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { Server } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { login, user } = useAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Redirect if already logged in
+  if (user) {
+    navigate(user.role === 'admin' ? '/admin' : '/client/dashboard');
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle login
-    alert("Login functionality will be implemented");
+    setLoading(true);
+    try {
+      await login(email, password);
+      // Navigation happens in AuthContext
+    } catch (error) {
+      // Error toast handled in AuthContext
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -65,8 +81,12 @@ const Login = () => {
             </a>
           </div>
 
-          <Button type="submit" className="w-full gradient-cyan-navy glow-cyan">
-            Sign In
+          <Button 
+            type="submit" 
+            className="w-full gradient-cyan-navy glow-cyan"
+            disabled={loading}
+          >
+            {loading ? "Signing in..." : "Sign In"}
           </Button>
         </form>
 
