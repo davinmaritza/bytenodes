@@ -59,25 +59,25 @@ export const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="p-6 hover:shadow-xl hover:shadow-cyan/5 transition-all duration-300 hover:-translate-y-1 bg-card border-border group"
+              className="p-8 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2 bg-card border-border/50 hover:border-primary/50 group"
             >
-              <div className="mb-4 p-3 rounded-lg bg-cyan/10 w-fit group-hover:bg-cyan/20 transition-all">
-                <service.icon className="w-8 h-8 text-cyan" />
+              <div className="mb-6 p-4 rounded-xl bg-primary/5 w-fit group-hover:bg-primary/15 transition-all duration-300 group-hover:scale-110">
+                <service.icon className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2 text-foreground">
+              <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-foreground/60 mb-4 text-sm leading-relaxed">{service.description}</p>
-              <ul className="space-y-2 mb-6">
+              <p className="text-muted-foreground mb-6 text-sm leading-relaxed">{service.description}</p>
+              <ul className="space-y-3 mb-8">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-xs text-foreground/70">
-                    <div className="w-1.5 h-1.5 rounded-full bg-cyan mr-2"></div>
+                  <li key={idx} className="flex items-center text-sm text-foreground/80">
+                    <div className="w-2 h-2 rounded-full bg-primary mr-3 group-hover:scale-125 transition-transform duration-300"></div>
                     {feature}
                   </li>
                 ))}
               </ul>
               <Link to="/pricing">
-                <Button variant="outline" className="w-full text-sm">
+                <Button variant="outline" className="w-full text-sm group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                   Learn More
                 </Button>
               </Link>

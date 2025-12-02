@@ -3,7 +3,7 @@ import { Server, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-card/50 border-t border-border py-16 px-4">
+    <footer className="bg-card/30 border-t border-border/50 py-16 px-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
           {/* Company Info */}
@@ -16,16 +16,16 @@ export const Footer = () => {
               Professional hosting solutions for businesses of all sizes. Reliable, fast, and secure infrastructure.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-cyan transition-colors" aria-label="Facebook">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-cyan transition-colors" aria-label="Twitter">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="Twitter">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-cyan transition-colors" aria-label="Instagram">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-cyan transition-colors" aria-label="LinkedIn">
+              <a href="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
@@ -36,32 +36,32 @@ export const Footer = () => {
             <h4 className="font-bold mb-4 text-foreground">Products</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Hosting Dedicated
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   VPS KVM
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Game Server
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   RDP
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Domain Registration
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/services" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Website Service
                 </Link>
               </li>
@@ -73,32 +73,32 @@ export const Footer = () => {
             <h4 className="font-bold mb-4 text-foreground">Company</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/about" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/about" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/blog" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link to="/pricing" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/pricing" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Affiliates
                 </Link>
               </li>
@@ -110,32 +110,32 @@ export const Footer = () => {
             <h4 className="font-bold mb-4 text-foreground">Support</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/blog" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/blog" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Knowledge Base
                 </Link>
               </li>
               <li>
-                <Link to="/tickets" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/tickets" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Support Tickets
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/contact" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Contact Support
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="/blog" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Documentation
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   System Status
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   FAQs
                 </Link>
               </li>
@@ -147,32 +147,32 @@ export const Footer = () => {
             <h4 className="font-bold mb-4 text-foreground">Legal</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Cookie Policy
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Acceptable Use
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   SLA
                 </Link>
               </li>
               <li>
-                <Link to="#" className="text-muted-foreground hover:text-cyan transition-colors">
+                <Link to="#" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   Refund Policy
                 </Link>
               </li>
@@ -184,9 +184,9 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>&copy; 2025 ByteNodes. All rights reserved.</p>
             <div className="flex gap-6">
-              <Link to="#" className="hover:text-cyan transition-colors">Payment Methods</Link>
-              <Link to="#" className="hover:text-cyan transition-colors">Security</Link>
-              <Link to="#" className="hover:text-cyan transition-colors">Compliance</Link>
+              <Link to="#" className="hover:text-primary transition-all duration-300 hover:scale-105">Payment Methods</Link>
+              <Link to="#" className="hover:text-primary transition-all duration-300 hover:scale-105">Security</Link>
+              <Link to="#" className="hover:text-primary transition-all duration-300 hover:scale-105">Compliance</Link>
             </div>
           </div>
         </div>
