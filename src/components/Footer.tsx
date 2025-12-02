@@ -3,7 +3,7 @@ import { Server, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border py-16 px-4">
+    <footer className="bg-card/50 border-t border-border py-16 px-4">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-12">
           {/* Company Info */}
