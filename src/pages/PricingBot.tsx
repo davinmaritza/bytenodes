@@ -9,79 +9,17 @@ import { useScrollAnimation, scrollVariants, staggerContainer } from "@/hooks/us
 import { FaDiscord } from "react-icons/fa";
 
 const botPackages = [
-  {
-    name: "Bot Starter",
-    price: 10000,
-    ram: "512 MB",
-    storage: "5 GB SSD",
-    features: [
-      "1 Bot Instance",
-      "24/7 Uptime",
-      "Auto Restart",
-      "Basic Support"
-    ],
-    note: "Perfect for small Discord bots",
-    popular: false
-  },
-  {
-    name: "Bot Basic",
-    price: 20000,
-    ram: "1 GB",
-    storage: "10 GB SSD",
-    features: [
-      "2 Bot Instances",
-      "24/7 Uptime",
-      "Auto Restart",
-      "Priority Support"
-    ],
-    note: "For growing Discord communities",
-    popular: false
-  },
-  {
-    name: "Bot Pro",
-    price: 35000,
-    ram: "2 GB",
-    storage: "20 GB SSD",
-    features: [
-      "5 Bot Instances",
-      "24/7 Uptime",
-      "Auto Restart",
-      "Priority Support",
-      "Custom Domain"
-    ],
-    note: "Best for multiple bots",
-    popular: true
-  },
-  {
-    name: "Bot Enterprise",
-    price: 60000,
-    ram: "4 GB",
-    storage: "40 GB SSD",
-    features: [
-      "Unlimited Bot Instances",
-      "24/7 Uptime",
-      "Auto Restart",
-      "Premium Support",
-      "Custom Domain",
-      "Database Included"
-    ],
-    note: "For large-scale bot operations",
-    popular: false
-  }
+  { name: "Bot Starter", price: 0.60, ram: "512 MB", storage: "5 GB SSD", features: ["1 Bot Instance", "24/7 Uptime", "Auto Restart", "Basic Support"], note: "Perfect for small Discord bots", popular: false },
+  { name: "Bot Basic", price: 1.20, ram: "1 GB", storage: "10 GB SSD", features: ["2 Bot Instances", "24/7 Uptime", "Auto Restart", "Priority Support"], note: "For growing Discord communities", popular: false },
+  { name: "Bot Pro", price: 2.10, ram: "2 GB", storage: "20 GB SSD", features: ["5 Bot Instances", "24/7 Uptime", "Auto Restart", "Priority Support", "Custom Domain"], note: "Best for multiple bots", popular: true },
+  { name: "Bot Enterprise", price: 3.60, ram: "4 GB", storage: "40 GB SSD", features: ["Unlimited Bot Instances", "24/7 Uptime", "Auto Restart", "Premium Support", "Custom Domain", "Database Included"], note: "For large-scale bot operations", popular: false }
 ];
 
 const PricingBot = () => {
   const { ref: heroRef, isInView: heroInView } = useScrollAnimation();
   const { ref: packagesRef, isInView: packagesInView } = useScrollAnimation();
 
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0
-    }).format(price);
-  };
+  const formatPrice = (price: number) => `$${price.toFixed(2)}`;
 
   return (
     <div className="min-h-screen">

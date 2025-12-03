@@ -40,6 +40,9 @@ export const Navbar = () => {
                 <Link to="/pricing/vps" className="block px-4 py-3 hover:bg-secondary hover:text-primary transition-all text-sm">
                   VPS & RDP
                 </Link>
+                <Link to="/pricing/bot" className="block px-4 py-3 hover:bg-secondary hover:text-primary transition-all text-sm">
+                  Discord Bot Hosting
+                </Link>
               </div>
             </div>
             <Link to="/blog" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
@@ -133,6 +136,13 @@ export const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   VPS & RDP
+                </Link>
+                <Link
+                  to="/pricing/bot"
+                  className="text-sm font-medium hover:text-primary transition-all duration-300 block pl-4"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Discord Bot Hosting
                 </Link>
               </div>
               <Link

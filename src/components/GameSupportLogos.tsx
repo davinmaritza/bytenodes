@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
+import fivemLogo from "@/assets/fivem-logo.png";
+import minecraftLogo from "@/assets/minecraft-logo.png";
+import rustLogo from "@/assets/rust-logo.png";
+import terrariaLogo from "@/assets/terraria-logo.png";
+import sampLogo from "@/assets/samp-logo.png";
 
 export const GameSupportLogos = () => {
   const games = [
-    { name: "FiveM", color: "#F97316" },
-    { name: "Minecraft", color: "#62B47A" },
-    { name: "Rust", color: "#CE422B" },
-    { name: "Terraria", color: "#14B8A6" },
-    { name: "SA-MP", color: "#F59E0B" },
+    { name: "FiveM", logo: fivemLogo },
+    { name: "Minecraft", logo: minecraftLogo },
+    { name: "Rust", logo: rustLogo },
+    { name: "Terraria", logo: terrariaLogo },
+    { name: "SA-MP", logo: sampLogo },
   ];
 
   return (
@@ -31,14 +36,13 @@ export const GameSupportLogos = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border/50 hover:border-primary/50 transition-colors"
+              className="flex items-center gap-3 px-5 py-3 rounded-lg bg-card border border-border/50 hover:border-primary/50 transition-colors"
             >
-              <div 
-                className="w-8 h-8 rounded-md flex items-center justify-center text-white font-bold text-sm"
-                style={{ backgroundColor: game.color }}
-              >
-                {game.name.charAt(0)}
-              </div>
+              <img 
+                src={game.logo} 
+                alt={game.name} 
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-semibold text-sm">{game.name}</span>
             </motion.div>
           ))}
