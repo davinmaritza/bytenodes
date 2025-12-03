@@ -15,8 +15,8 @@ import { GameSupportLogos } from "@/components/GameSupportLogos";
 const pricingPlans = [
   {
     name: "Starter VPS",
-    monthlyPrice: 25000,
-    yearlyPrice: 20000,
+    monthlyPrice: 1.50,
+    yearlyPrice: 1.20,
     description: "Perfect for small projects and testing",
     features: [
       "1 CPU Core",
@@ -32,8 +32,8 @@ const pricingPlans = [
   },
   {
     name: "Business VPS",
-    monthlyPrice: 50000,
-    yearlyPrice: 40000,
+    monthlyPrice: 3.00,
+    yearlyPrice: 2.40,
     description: "Ideal for growing businesses",
     features: [
       "2 CPU Cores",
@@ -49,8 +49,8 @@ const pricingPlans = [
   },
   {
     name: "Dedicated Server",
-    monthlyPrice: 150000,
-    yearlyPrice: 120000,
+    monthlyPrice: 9.00,
+    yearlyPrice: 7.20,
     description: "Maximum performance and control",
     features: [
       "4 CPU Cores",
@@ -67,11 +67,11 @@ const pricingPlans = [
 ];
 
 const formatPrice = (price: number) => {
-  return new Intl.NumberFormat('id-ID', {
+  return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'IDR',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
+    currency: 'USD',
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
   }).format(price);
 };
 
@@ -84,36 +84,36 @@ const Pricing = () => {
       
       <div className="relative pt-24 pb-20 px-4 overflow-hidden">
         {/* Background with gradients and shapes */}
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-dark to-cyan/20">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-navy-light/30 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-cyan/10 to-transparent rounded-full"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/30 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/10 to-transparent rounded-full"></div>
         </div>
 
         {/* Floating Shapes */}
         <FloatingShapes />
 
         <div className="container mx-auto text-center relative z-10">
-          <div className="inline-block mb-4 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-            <span className="text-white/90 text-sm font-semibold">🎉 Special Offer: Save up to 20% on yearly plans</span>
+          <div className="inline-block mb-4 px-4 py-2 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20">
+            <span className="text-primary text-sm font-semibold">🎉 Special Offer: Save up to 20% on yearly plans</span>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-white animate-fade-in">
-            Simple, <span className="text-cyan">Transparent</span> Pricing
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-foreground animate-fade-in">
+            Simple, <span className="text-primary">Transparent</span> Pricing
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in">
             Choose the perfect plan for your needs. All plans include 24/7 support, 99.9% uptime SLA, and free migration.
           </p>
 
           <AnimatedStats />
 
           {/* Billing Toggle */}
-          <div className="mt-12 inline-flex items-center gap-4 bg-white rounded-full p-1.5 shadow-lg border border-border/50 backdrop-blur-sm animate-fade-in">
+          <div className="mt-12 inline-flex items-center gap-4 bg-card rounded-full p-1.5 shadow-lg border border-border/50 backdrop-blur-sm animate-fade-in">
             <button
               onClick={() => setIsYearly(false)}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
                 !isYearly
-                  ? "bg-navy text-white shadow-md"
+                  ? "bg-primary text-primary-foreground shadow-md"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -123,12 +123,12 @@ const Pricing = () => {
               onClick={() => setIsYearly(true)}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
                 isYearly
-                  ? "bg-navy text-white shadow-md"
+                  ? "bg-primary text-primary-foreground shadow-md"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               Yearly
-              <span className="ml-2 text-xs bg-cyan text-white px-2 py-0.5 rounded-full">
+              <span className="ml-2 text-xs bg-accent text-accent-foreground px-2 py-0.5 rounded-full">
                 Save 20%
               </span>
             </button>
@@ -147,12 +147,12 @@ const Pricing = () => {
                   key={index}
                   className={`p-8 relative hover:shadow-xl transition-all duration-300 ${
                     plan.popular
-                      ? "border-cyan shadow-lg scale-105 bg-gradient-to-b from-white via-white to-cyan/5"
-                      : "border-border/50 hover:border-cyan/30"
+                      ? "border-primary shadow-lg scale-105 bg-gradient-to-b from-card via-card to-primary/5"
+                      : "border-border/50 hover:border-primary/30"
                   }`}
                 >
                   {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-cyan to-navy text-white text-sm font-bold rounded-full shadow-md">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-sm font-bold rounded-full shadow-md">
                       Most Popular
                     </div>
                   )}
@@ -161,7 +161,7 @@ const Pricing = () => {
                     <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                     <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-4xl font-bold text-navy">{formatPrice(price)}</span>
+                      <span className="text-4xl font-bold text-primary">{formatPrice(price)}</span>
                     </div>
                     <span className="text-muted-foreground text-sm">/month</span>
                     {isYearly && (
@@ -174,7 +174,7 @@ const Pricing = () => {
                   <div className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <Check className="w-5 h-5 text-cyan flex-shrink-0" />
+                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </div>
                     ))}
