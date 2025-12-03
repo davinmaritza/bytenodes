@@ -10,17 +10,18 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import { GameSupportLogos } from "@/components/GameSupportLogos";
 
 const pricingPlans = [
   {
     name: "Starter VPS",
-    monthlyPrice: 19,
-    yearlyPrice: 15,
+    monthlyPrice: 25000,
+    yearlyPrice: 20000,
     description: "Perfect for small projects and testing",
     features: [
-      "2 CPU Cores",
-      "4GB RAM",
-      "50GB SSD Storage",
+      "1 CPU Core",
+      "2GB RAM",
+      "25GB SSD Storage",
       "1TB Bandwidth",
       "1 IPv4 Address",
       "KVM Virtualization",
@@ -31,15 +32,15 @@ const pricingPlans = [
   },
   {
     name: "Business VPS",
-    monthlyPrice: 49,
-    yearlyPrice: 39,
+    monthlyPrice: 50000,
+    yearlyPrice: 40000,
     description: "Ideal for growing businesses",
     features: [
-      "4 CPU Cores",
-      "8GB RAM",
-      "150GB SSD Storage",
+      "2 CPU Cores",
+      "4GB RAM",
+      "50GB SSD Storage",
       "3TB Bandwidth",
-      "2 IPv4 Addresses",
+      "1 IPv4 Address",
       "KVM Virtualization",
       "Daily Backups",
       "Priority Support",
@@ -48,15 +49,15 @@ const pricingPlans = [
   },
   {
     name: "Dedicated Server",
-    monthlyPrice: 99,
-    yearlyPrice: 79,
+    monthlyPrice: 150000,
+    yearlyPrice: 120000,
     description: "Maximum performance and control",
     features: [
-      "8 CPU Cores",
-      "32GB RAM",
-      "1TB NVMe Storage",
+      "4 CPU Cores",
+      "8GB RAM",
+      "100GB NVMe Storage",
       "Unlimited Bandwidth",
-      "5 IPv4 Addresses",
+      "1 IPv4 Address",
       "Full Root Access",
       "DDoS Protection",
       "Managed Service Available",
@@ -64,6 +65,15 @@ const pricingPlans = [
     popular: false,
   },
 ];
+
+const formatPrice = (price: number) => {
+  return new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  }).format(price);
+};
 
 const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
@@ -151,12 +161,12 @@ const Pricing = () => {
                     <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                     <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-5xl font-bold text-navy">${price}</span>
-                      <span className="text-muted-foreground">/month</span>
+                      <span className="text-4xl font-bold text-navy">{formatPrice(price)}</span>
                     </div>
+                    <span className="text-muted-foreground text-sm">/month</span>
                     {isYearly && (
                       <p className="text-sm text-muted-foreground mt-2">
-                        Billed ${price * 12} annually
+                        Billed {formatPrice(price * 12)} annually
                       </p>
                     )}
                   </div>
@@ -185,11 +195,13 @@ const Pricing = () => {
             })}
           </div>
 
+          <GameSupportLogos />
+
           <div className="mt-16 text-center space-y-8">
             <div>
               <h3 className="text-2xl font-bold mb-4">Looking for Specific Packages?</h3>
               <p className="text-muted-foreground mb-6">
-                Explore our specialized pricing for Game Servers, VPS, and RDP
+                Explore our specialized pricing for Game Servers, VPS, RDP, and Discord Bots
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link to="/pricing/servers">
@@ -200,6 +212,11 @@ const Pricing = () => {
                 <Link to="/pricing/vps">
                   <Button variant="default" size="lg" className="hover-lift">
                     VPS & RDP Pricing
+                  </Button>
+                </Link>
+                <Link to="/pricing/bot">
+                  <Button variant="default" size="lg" className="hover-lift">
+                    Discord Bot Hosting
                   </Button>
                 </Link>
               </div>

@@ -27,7 +27,7 @@ export const Footer = () => {
               <a href="https://discord.gg/bytenodes" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Discord">
                 <FaDiscord className="w-5 h-5" />
               </a>
-              <a href="mailto:support@bytenodes.id" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Email">
+              <a href="mailto:support@bytenodes.icu" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Email">
                 <Mail className="w-5 h-5" />
               </a>
             </div>
@@ -49,12 +49,17 @@ export const Footer = () => {
               </li>
               <li>
                 <Link to="/pricing/vps" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
-                  VPS Premium
+                  Dedicated Server
                 </Link>
               </li>
               <li>
                 <Link to="/pricing/vps" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
                   RDP Windows
+                </Link>
+              </li>
+              <li>
+                <Link to="/pricing/bot" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:translate-x-1 inline-block">
+                  Discord Bot Hosting
                 </Link>
               </li>
             </ul>
@@ -160,7 +165,7 @@ export const Footer = () => {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>&copy; 2025 ByteNodes. All rights reserved.</p>
-            <p>Made with ❤️ in Indonesia</p>
+            <p>Powered By Yeng</p>
           </div>
         </div>
       </div>
