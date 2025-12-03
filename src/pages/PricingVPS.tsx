@@ -7,106 +7,101 @@ import { Check, Server } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useScrollAnimation, scrollVariants, staggerContainer } from "@/hooks/useScrollAnimation";
+import { GameSupportLogos } from "@/components/GameSupportLogos";
 
 const vpsKvmPackages = [
   {
     name: "VPS Nano",
     price: 15000,
-    cpu: "1 Core",
     ram: "1 GB",
-    storage: "15 GB",
-    storageType: "SSD/HDD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "15 GB SSD/HDD",
     os: "Linux (Ubuntu/Debian)",
-    note: "Cocok untuk Tunneling/VPN/Belajar",
+    note: "Perfect for Tunneling/VPN/Learning",
     popular: false
   },
   {
     name: "VPS Micro",
     price: 25000,
-    cpu: "1 Core",
     ram: "2 GB",
-    storage: "25 GB",
-    storageType: "SSD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "25 GB SSD",
     os: "Linux (Ubuntu/Debian)",
-    note: "Best Seller: Bot WA/Discord Ringan",
+    note: "Best Seller: Light WA/Discord Bot",
     popular: true
   },
   {
     name: "VPS Turbo",
     price: 50000,
-    cpu: "2 Core",
     ram: "4 GB",
-    storage: "50 GB",
-    storageType: "SSD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "50 GB SSD",
     os: "Linux (Ubuntu/Debian)",
-    note: "Cocok untuk Web Server/Docker",
+    note: "Perfect for Web Server/Docker",
     popular: false
   },
   {
     name: "VPS Power",
     price: 90000,
-    cpu: "4 Core",
     ram: "8 GB",
-    storage: "80 GB",
-    storageType: "SSD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "80 GB SSD",
     os: "Linux (Ubuntu/Debian)",
-    note: "Cocok untuk Database Berat",
+    note: "Perfect for Heavy Database",
     popular: false
   },
   {
     name: "VPS Storage 1",
     price: 30000,
-    cpu: "1 Core",
     ram: "1 GB",
-    storage: "100 GB",
-    storageType: "HDD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "100 GB HDD",
     os: "Linux (Ubuntu/Debian)",
-    note: "Khusus File Server / Backup",
+    note: "For File Server / Backup",
     popular: false
   },
   {
     name: "VPS Storage 2",
     price: 60000,
-    cpu: "2 Core",
     ram: "4 GB",
-    storage: "250 GB",
-    storageType: "HDD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "250 GB HDD",
     os: "Linux (Ubuntu/Debian)",
-    note: "Khusus File Server / Backup",
+    note: "For File Server / Backup",
     popular: false
   }
 ];
 
-const vpsPremiumPackages = [
+const dedicatedPackages = [
   {
-    name: "Hi-Speed 1",
+    name: "Dedicated 1",
     price: 45000,
-    cpu: "2 Core (Gen 12)",
     ram: "2 GB",
-    storage: "20 GB",
-    storageType: "SSD NVMe",
-    hardware: "Intel i5-12400",
+    storage: "20 GB NVMe",
     os: "Linux (Ubuntu/Debian)",
-    note: "Anti-Lag / Single Core Tinggi",
+    note: "Anti-Lag / High Single Core",
     popular: false
   },
   {
-    name: "Hi-Speed 2",
+    name: "Dedicated 2",
     price: 85000,
-    cpu: "3 Core (Gen 12)",
     ram: "4 GB",
-    storage: "40 GB",
-    storageType: "SSD NVMe",
-    hardware: "Intel i5-12400",
+    storage: "40 GB NVMe",
     os: "Linux (Ubuntu/Debian)",
-    note: "Anti-Lag / Single Core Tinggi",
+    note: "Anti-Lag / High Single Core",
     popular: true
+  },
+  {
+    name: "Dedicated 3",
+    price: 120000,
+    ram: "6 GB",
+    storage: "60 GB NVMe",
+    os: "Linux (Ubuntu/Debian)",
+    note: "Anti-Lag / High Single Core",
+    popular: false
+  },
+  {
+    name: "Dedicated 4",
+    price: 160000,
+    ram: "8 GB",
+    storage: "80 GB NVMe",
+    os: "Linux (Ubuntu/Debian)",
+    note: "Anti-Lag / High Single Core",
+    popular: false
   }
 ];
 
@@ -114,58 +109,55 @@ const rdpWindowsPackages = [
   {
     name: "RDP Starter",
     price: 50000,
-    cpu: "2 Core",
     ram: "2 GB",
-    storage: "30 GB",
-    storageType: "SSD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "30 GB SSD",
     os: "Windows Server 2012/2019",
-    note: "Browsing Ringan / Idle",
+    note: "Light Browsing / Idle",
     popular: false
   },
   {
     name: "RDP Worker",
     price: 80000,
-    cpu: "2 Core",
     ram: "4 GB",
-    storage: "50 GB",
-    storageType: "SSD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "50 GB SSD",
     os: "Windows Server 2019/10",
-    note: "Botting / Tool Ringan",
+    note: "Botting / Light Tools",
     popular: true
   },
   {
     name: "RDP Pro",
     price: 120000,
-    cpu: "4 Core",
     ram: "6 GB",
-    storage: "60 GB",
-    storageType: "SSD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "60 GB SSD",
     os: "Windows Server 2019/2022",
-    note: "Multitasking Lancar",
+    note: "Smooth Multitasking",
     popular: false
   },
   {
     name: "RDP Sultan",
     price: 160000,
-    cpu: "4 Core",
     ram: "8 GB",
-    storage: "80 GB",
-    storageType: "SSD",
-    hardware: "Xeon E5-2630 v4",
+    storage: "80 GB SSD",
     os: "Windows Server 2019/2022",
-    note: "Emulator Android Ringan",
+    note: "Light Android Emulator",
+    popular: false
+  },
+  {
+    name: "RDP Ultra",
+    price: 200000,
+    ram: "12 GB",
+    storage: "120 GB SSD",
+    os: "Windows Server 2022",
+    note: "Heavy Multitasking",
     popular: false
   }
 ];
 
 const PricingVPS = () => {
-  const [selectedCategory, setSelectedCategory] = useState<"vps-kvm" | "vps-premium" | "rdp">("vps-kvm");
+  const [selectedCategory, setSelectedCategory] = useState<"vps-kvm" | "dedicated" | "rdp">("vps-kvm");
   const { ref: heroRef, isInView: heroInView } = useScrollAnimation();
   const { ref: vpsKvmRef, isInView: vpsKvmInView } = useScrollAnimation();
-  const { ref: vpsPremiumRef, isInView: vpsPremiumInView } = useScrollAnimation();
+  const { ref: dedicatedRef, isInView: dedicatedInView } = useScrollAnimation();
   const { ref: rdpRef, isInView: rdpInView } = useScrollAnimation();
 
   const formatPrice = (price: number) => {
@@ -206,29 +198,25 @@ const PricingVPS = () => {
                 <div className="flex items-baseline justify-center gap-1 mb-2">
                   <span className="text-3xl font-bold text-primary">{formatPrice(pkg.price)}</span>
                 </div>
-                <p className="text-xs text-muted-foreground">/bulan</p>
+                <p className="text-xs text-muted-foreground">/month</p>
               </div>
 
               <div className="space-y-3 mb-6">
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">{pkg.cpu}</span>
-                </div>
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm">{pkg.ram} RAM</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">{pkg.storage} {pkg.storageType}</span>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">{pkg.hardware}</span>
+                  <span className="text-sm">{pkg.storage}</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
                   <span className="text-sm">{pkg.os}</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">DDoS Protection</span>
                 </div>
                 <div className="pt-2 border-t border-border/50">
                   <p className="text-xs text-muted-foreground italic">{pkg.note}</p>
@@ -275,7 +263,7 @@ const PricingVPS = () => {
             VPS & <span className="text-primary">RDP</span> PACKAGES
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-            VPS KVM untuk Linux, VPS Premium dengan Intel Gen 12, dan RDP Windows untuk berbagai kebutuhan.
+            VPS KVM for Linux, Dedicated servers with high performance, and RDP Windows for various needs.
           </p>
 
           {/* Category Toggle */}
@@ -291,14 +279,14 @@ const PricingVPS = () => {
               VPS KVM
             </button>
             <button
-              onClick={() => setSelectedCategory("vps-premium")}
+              onClick={() => setSelectedCategory("dedicated")}
               className={`px-6 py-2.5 rounded-md text-sm font-semibold transition-all ${
-                selectedCategory === "vps-premium"
+                selectedCategory === "dedicated"
                   ? "bg-primary text-primary-foreground shadow-md"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              VPS Premium
+              Dedicated
             </button>
             <button
               onClick={() => setSelectedCategory("rdp")}
@@ -326,7 +314,7 @@ const PricingVPS = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">VPS KVM Packages</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Virtual Private Server berbasis KVM dengan Linux OS, cocok untuk web server, bot, dan tunneling
+                KVM-based Virtual Private Server with Linux OS, perfect for web servers, bots, and tunneling
               </p>
             </motion.div>
             {renderPackages(vpsKvmPackages, vpsKvmInView)}
@@ -334,22 +322,22 @@ const PricingVPS = () => {
         </section>
       )}
 
-      {/* VPS Premium Packages */}
-      {selectedCategory === "vps-premium" && (
-        <section ref={vpsPremiumRef} className="py-16 px-4 bg-background">
+      {/* Dedicated Packages */}
+      {selectedCategory === "dedicated" && (
+        <section ref={dedicatedRef} className="py-16 px-4 bg-background">
           <div className="container mx-auto">
             <motion.div
               initial="hidden"
-              animate={vpsPremiumInView ? "visible" : "hidden"}
+              animate={dedicatedInView ? "visible" : "hidden"}
               variants={scrollVariants}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">VPS Premium Packages</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dedicated Packages</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                VPS dengan Intel i5 Gen 12 dan NVMe storage, performa tinggi dengan single core kuat
+                High-performance dedicated servers with NVMe storage, anti-lag with strong single core performance
               </p>
             </motion.div>
-            {renderPackages(vpsPremiumPackages, vpsPremiumInView)}
+            {renderPackages(dedicatedPackages, dedicatedInView)}
           </div>
         </section>
       )}
@@ -366,13 +354,15 @@ const PricingVPS = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">RDP Windows Packages</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Remote Desktop dengan Windows Server untuk browsing, botting, hingga emulator Android
+                Remote Desktop with Windows Server for browsing, botting, to Android emulator
               </p>
             </motion.div>
             {renderPackages(rdpWindowsPackages, rdpInView)}
           </div>
         </section>
       )}
+
+      <GameSupportLogos />
 
       <Footer />
     </div>

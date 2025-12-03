@@ -10,7 +10,28 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState, useEffect } from "react";
-import { Ticket, FileText, ShoppingCart, Plus, Eye, MessageSquare } from "lucide-react";
+import { Ticket, FileText, ShoppingCart, Plus, Eye, MessageSquare, Users, Trash2, Edit, Server } from "lucide-react";
+import { toast } from "sonner";
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  role: 'user' | 'admin';
+  balance: number;
+  createdAt: string;
+  services?: Service[];
+}
+
+interface Service {
+  id: string;
+  name: string;
+  type: string;
+  status: string;
+  ip: string;
+  sshPort?: string;
+  expires: string;
+}
 
 interface TicketItem {
   id: number;
@@ -30,46 +51,117 @@ interface BlogPostItem {
   created: string;
 }
 
-interface Order {
-  id: number;
-  customer: string;
-  product: string;
-  amount: string;
-  status: string;
-  date: string;
-}
+const USERS_KEY = 'bytenodes_users';
 
 const AdminDashboard = () => {
+  const [users, setUsers] = useState<User[]>([]);
   const [tickets, setTickets] = useState<TicketItem[]>([]);
   const [blogPosts, setBlogPosts] = useState<BlogPostItem[]>([]);
-  const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
+  
+  // Add service dialog
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [newService, setNewService] = useState({
+    name: '',
+    type: 'VPS KVM',
+    ip: '',
+    sshPort: '22',
+    expires: ''
+  });
 
   useEffect(() => {
-    // TODO: Replace with your PHP backend API endpoint
-    // fetch('https://your-vps-domain.com/api/admin/tickets')
-    //   .then(res => res.json())
-    //   .then(data => setTickets(data));
+    loadData();
+  }, []);
 
-    // Demo data
-    setTickets([
-      { id: 1, subject: "Server downtime issue", status: "open", priority: "high", customer: "John Doe", created: "2025-01-15" },
-      { id: 2, subject: "Billing question", status: "pending", priority: "medium", customer: "Jane Smith", created: "2025-01-14" },
-      { id: 3, subject: "Domain transfer", status: "closed", priority: "low", customer: "Bob Johnson", created: "2025-01-13" }
-    ]);
+  const loadData = () => {
+    // Load users from localStorage
+    const storedUsers = localStorage.getItem(USERS_KEY);
+    if (storedUsers) {
+      setUsers(JSON.parse(storedUsers));
+    }
 
+    // Load tickets from localStorage
+    const storedTickets = localStorage.getItem('bytenodes_tickets');
+    if (storedTickets) {
+      const ticketsData = JSON.parse(storedTickets);
+      setTickets(ticketsData.map((t: any) => ({
+        id: t.id,
+        subject: t.subject,
+        status: t.status,
+        priority: t.priority,
+        customer: t.userName || 'Unknown',
+        created: t.createdAt?.split('T')[0] || 'N/A'
+      })));
+    }
+
+    // Demo blog posts
     setBlogPosts([
       { id: 1, title: "Getting Started with VPS", category: "Tutorial", status: "published", author: "Admin", created: "2025-01-15" },
       { id: 2, title: "Security Best Practices", category: "Security", status: "draft", author: "Admin", created: "2025-01-14" }
     ]);
 
-    setOrders([
-      { id: 1, customer: "John Doe", product: "VPS KVM", amount: "$29.99", status: "paid", date: "2025-01-15" },
-      { id: 2, customer: "Jane Smith", product: "Dedicated Server", amount: "$99.99", status: "pending", date: "2025-01-14" }
-    ]);
-
     setLoading(false);
-  }, []);
+  };
+
+  const saveUsers = (updatedUsers: User[]) => {
+    localStorage.setItem(USERS_KEY, JSON.stringify(updatedUsers));
+    setUsers(updatedUsers);
+  };
+
+  const addServiceToUser = (userId: number) => {
+    if (!newService.name || !newService.ip || !newService.expires) {
+      toast.error('Please fill all required fields');
+      return;
+    }
+
+    const updatedUsers = users.map(user => {
+      if (user.id === userId) {
+        const services = user.services || [];
+        return {
+          ...user,
+          services: [...services, {
+            id: `srv-${Date.now()}`,
+            name: newService.name,
+            type: newService.type,
+            status: 'Active',
+            ip: newService.ip,
+            sshPort: newService.sshPort,
+            expires: newService.expires
+          }]
+        };
+      }
+      return user;
+    });
+
+    saveUsers(updatedUsers);
+    setNewService({ name: '', type: 'VPS KVM', ip: '', sshPort: '22', expires: '' });
+    setSelectedUser(null);
+    toast.success('Service added successfully');
+  };
+
+  const removeService = (userId: number, serviceId: string) => {
+    const updatedUsers = users.map(user => {
+      if (user.id === userId) {
+        return {
+          ...user,
+          services: (user.services || []).filter(s => s.id !== serviceId)
+        };
+      }
+      return user;
+    });
+    saveUsers(updatedUsers);
+    toast.success('Service removed');
+  };
+
+  const deleteUser = (userId: number) => {
+    if (userId === 1) {
+      toast.error('Cannot delete admin user');
+      return;
+    }
+    const updatedUsers = users.filter(u => u.id !== userId);
+    saveUsers(updatedUsers);
+    toast.success('User deleted');
+  };
 
   const getStatusBadge = (status: string) => {
     const variants: Record<string, "default" | "secondary" | "destructive"> = {
@@ -78,7 +170,7 @@ const AdminDashboard = () => {
       closed: "default",
       published: "default",
       draft: "secondary",
-      paid: "default",
+      Active: "default",
     };
     return <Badge variant={variants[status] || "default"}>{status}</Badge>;
   };
@@ -91,18 +183,22 @@ const AdminDashboard = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="mb-8">
             <h1 className="text-4xl font-bold mb-2">Admin Dashboard</h1>
-            <p className="text-muted-foreground">Manage tickets, blog posts, and customer orders</p>
+            <p className="text-muted-foreground">Manage users, tickets, and blog posts</p>
           </div>
 
-          <Tabs defaultValue="tickets" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-3 max-w-md">
+          <Tabs defaultValue="users" className="space-y-6">
+            <TabsList className="grid w-full grid-cols-4 max-w-lg">
+              <TabsTrigger value="users">
+                <Users className="w-4 h-4 mr-2" />
+                Users
+              </TabsTrigger>
               <TabsTrigger value="tickets">
                 <Ticket className="w-4 h-4 mr-2" />
                 Tickets
               </TabsTrigger>
               <TabsTrigger value="blog">
                 <FileText className="w-4 h-4 mr-2" />
-                Blog Posts
+                Blog
               </TabsTrigger>
               <TabsTrigger value="orders">
                 <ShoppingCart className="w-4 h-4 mr-2" />
@@ -110,58 +206,151 @@ const AdminDashboard = () => {
               </TabsTrigger>
             </TabsList>
 
+            {/* Users Tab */}
+            <TabsContent value="users">
+              <Card>
+                <CardHeader>
+                  <CardTitle>User Management</CardTitle>
+                  <CardDescription>Manage registered users and their services</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>User ID</TableHead>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Email</TableHead>
+                        <TableHead>Role</TableHead>
+                        <TableHead>Services</TableHead>
+                        <TableHead>Balance</TableHead>
+                        <TableHead>Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      {users.map((user) => (
+                        <TableRow key={user.id}>
+                          <TableCell className="font-mono">#{user.id}</TableCell>
+                          <TableCell className="font-medium">{user.name}</TableCell>
+                          <TableCell>{user.email}</TableCell>
+                          <TableCell>
+                            <Badge variant={user.role === 'admin' ? 'default' : 'secondary'}>
+                              {user.role}
+                            </Badge>
+                          </TableCell>
+                          <TableCell>{(user.services || []).length}</TableCell>
+                          <TableCell>Rp {user.balance?.toLocaleString() || 0}</TableCell>
+                          <TableCell>
+                            <div className="flex gap-2">
+                              <Dialog>
+                                <DialogTrigger asChild>
+                                  <Button size="sm" variant="outline" onClick={() => setSelectedUser(user)}>
+                                    <Server className="w-4 h-4 mr-1" />
+                                    Services
+                                  </Button>
+                                </DialogTrigger>
+                                <DialogContent className="max-w-2xl">
+                                  <DialogHeader>
+                                    <DialogTitle>Services for {user.name}</DialogTitle>
+                                    <DialogDescription>User ID: #{user.id}</DialogDescription>
+                                  </DialogHeader>
+                                  
+                                  {/* Current Services */}
+                                  <div className="space-y-4">
+                                    <h4 className="font-semibold">Current Services</h4>
+                                    {(user.services || []).length === 0 ? (
+                                      <p className="text-muted-foreground text-sm">No services assigned</p>
+                                    ) : (
+                                      <div className="space-y-2">
+                                        {(user.services || []).map((service) => (
+                                          <div key={service.id} className="flex items-center justify-between p-3 border rounded-lg">
+                                            <div>
+                                              <p className="font-medium">{service.name}</p>
+                                              <p className="text-sm text-muted-foreground">
+                                                {service.type} | IP: {service.ip}:{service.sshPort} | Expires: {service.expires}
+                                              </p>
+                                            </div>
+                                            <Button 
+                                              size="sm" 
+                                              variant="destructive"
+                                              onClick={() => removeService(user.id, service.id)}
+                                            >
+                                              <Trash2 className="w-4 h-4" />
+                                            </Button>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    )}
+                                    
+                                    {/* Add New Service */}
+                                    <div className="border-t pt-4 mt-4">
+                                      <h4 className="font-semibold mb-4">Add New Service</h4>
+                                      <div className="grid grid-cols-2 gap-4">
+                                        <Input 
+                                          placeholder="Service Name (e.g. VPS Server - US East)"
+                                          value={newService.name}
+                                          onChange={(e) => setNewService({...newService, name: e.target.value})}
+                                        />
+                                        <Select 
+                                          value={newService.type}
+                                          onValueChange={(v) => setNewService({...newService, type: v})}
+                                        >
+                                          <SelectTrigger>
+                                            <SelectValue />
+                                          </SelectTrigger>
+                                          <SelectContent>
+                                            <SelectItem value="VPS KVM">VPS KVM</SelectItem>
+                                            <SelectItem value="Dedicated">Dedicated</SelectItem>
+                                            <SelectItem value="RDP Windows">RDP Windows</SelectItem>
+                                            <SelectItem value="Game Server">Game Server</SelectItem>
+                                            <SelectItem value="Discord Bot">Discord Bot</SelectItem>
+                                          </SelectContent>
+                                        </Select>
+                                        <Input 
+                                          placeholder="IP Address"
+                                          value={newService.ip}
+                                          onChange={(e) => setNewService({...newService, ip: e.target.value})}
+                                        />
+                                        <Input 
+                                          placeholder="SSH/RDP Port"
+                                          value={newService.sshPort}
+                                          onChange={(e) => setNewService({...newService, sshPort: e.target.value})}
+                                        />
+                                        <Input 
+                                          type="date"
+                                          placeholder="Expiry Date"
+                                          value={newService.expires}
+                                          onChange={(e) => setNewService({...newService, expires: e.target.value})}
+                                        />
+                                        <Button onClick={() => addServiceToUser(user.id)}>
+                                          <Plus className="w-4 h-4 mr-2" />
+                                          Add Service
+                                        </Button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </DialogContent>
+                              </Dialog>
+                              {user.role !== 'admin' && (
+                                <Button size="sm" variant="destructive" onClick={() => deleteUser(user.id)}>
+                                  <Trash2 className="w-4 h-4" />
+                                </Button>
+                              )}
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
             {/* Tickets Tab */}
             <TabsContent value="tickets">
               <Card>
                 <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <CardTitle>Support Tickets</CardTitle>
-                      <CardDescription>Manage customer support tickets</CardDescription>
-                    </div>
-                    <Dialog>
-                      <DialogTrigger asChild>
-                        <Button>
-                          <Plus className="w-4 h-4 mr-2" />
-                          New Ticket
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent>
-                        <DialogHeader>
-                          <DialogTitle>Create New Ticket</DialogTitle>
-                          <DialogDescription>Create a ticket on behalf of a customer</DialogDescription>
-                        </DialogHeader>
-                        <div className="space-y-4 pt-4">
-                          <div>
-                            <label className="block text-sm font-medium mb-2">Customer Email</label>
-                            <Input placeholder="customer@example.com" />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium mb-2">Subject</label>
-                            <Input placeholder="Ticket subject" />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium mb-2">Priority</label>
-                            <Select>
-                              <SelectTrigger>
-                                <SelectValue placeholder="Select priority" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="low">Low</SelectItem>
-                                <SelectItem value="medium">Medium</SelectItem>
-                                <SelectItem value="high">High</SelectItem>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium mb-2">Message</label>
-                            <Textarea placeholder="Ticket details..." />
-                          </div>
-                          <Button className="w-full">Create Ticket</Button>
-                        </div>
-                      </DialogContent>
-                    </Dialog>
-                  </div>
+                  <CardTitle>Support Tickets</CardTitle>
+                  <CardDescription>Manage customer support tickets</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Table>
@@ -177,30 +366,38 @@ const AdminDashboard = () => {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {tickets.map((ticket) => (
-                        <TableRow key={ticket.id}>
-                          <TableCell>#{ticket.id}</TableCell>
-                          <TableCell className="font-medium">{ticket.subject}</TableCell>
-                          <TableCell>{ticket.customer}</TableCell>
-                          <TableCell>
-                            <Badge variant={ticket.priority === "high" ? "destructive" : "secondary"}>
-                              {ticket.priority}
-                            </Badge>
-                          </TableCell>
-                          <TableCell>{getStatusBadge(ticket.status)}</TableCell>
-                          <TableCell>{ticket.created}</TableCell>
-                          <TableCell>
-                            <div className="flex gap-2">
-                              <Button size="sm" variant="outline">
-                                <Eye className="w-4 h-4" />
-                              </Button>
-                              <Button size="sm" variant="outline">
-                                <MessageSquare className="w-4 h-4" />
-                              </Button>
-                            </div>
+                      {tickets.length === 0 ? (
+                        <TableRow>
+                          <TableCell colSpan={7} className="text-center text-muted-foreground">
+                            No tickets found
                           </TableCell>
                         </TableRow>
-                      ))}
+                      ) : (
+                        tickets.map((ticket) => (
+                          <TableRow key={ticket.id}>
+                            <TableCell>#{ticket.id}</TableCell>
+                            <TableCell className="font-medium">{ticket.subject}</TableCell>
+                            <TableCell>{ticket.customer}</TableCell>
+                            <TableCell>
+                              <Badge variant={ticket.priority === "high" ? "destructive" : "secondary"}>
+                                {ticket.priority}
+                              </Badge>
+                            </TableCell>
+                            <TableCell>{getStatusBadge(ticket.status)}</TableCell>
+                            <TableCell>{ticket.created}</TableCell>
+                            <TableCell>
+                              <div className="flex gap-2">
+                                <Button size="sm" variant="outline">
+                                  <Eye className="w-4 h-4" />
+                                </Button>
+                                <Button size="sm" variant="outline">
+                                  <MessageSquare className="w-4 h-4" />
+                                </Button>
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        ))
+                      )}
                     </TableBody>
                   </Table>
                 </CardContent>
@@ -249,7 +446,7 @@ const AdminDashboard = () => {
                           </div>
                           <div>
                             <label className="block text-sm font-medium mb-2">Content</label>
-                            <Textarea placeholder="Post content (HTML supported)..." className="min-h-[200px]" />
+                            <Textarea placeholder="Post content..." className="min-h-[200px]" />
                           </div>
                           <div className="flex gap-2">
                             <Button variant="outline" className="flex-1">Save as Draft</Button>
@@ -284,8 +481,12 @@ const AdminDashboard = () => {
                           <TableCell>{post.created}</TableCell>
                           <TableCell>
                             <div className="flex gap-2">
-                              <Button size="sm" variant="outline">Edit</Button>
-                              <Button size="sm" variant="outline">Delete</Button>
+                              <Button size="sm" variant="outline">
+                                <Edit className="w-4 h-4" />
+                              </Button>
+                              <Button size="sm" variant="destructive">
+                                <Trash2 className="w-4 h-4" />
+                              </Button>
                             </div>
                           </TableCell>
                         </TableRow>
@@ -304,34 +505,12 @@ const AdminDashboard = () => {
                   <CardDescription>View and manage customer orders</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Table>
-                    <TableHeader>
-                      <TableRow>
-                        <TableHead>Order ID</TableHead>
-                        <TableHead>Customer</TableHead>
-                        <TableHead>Product</TableHead>
-                        <TableHead>Amount</TableHead>
-                        <TableHead>Status</TableHead>
-                        <TableHead>Date</TableHead>
-                        <TableHead>Actions</TableHead>
-                      </TableRow>
-                    </TableHeader>
-                    <TableBody>
-                      {orders.map((order) => (
-                        <TableRow key={order.id}>
-                          <TableCell>#{order.id}</TableCell>
-                          <TableCell>{order.customer}</TableCell>
-                          <TableCell className="font-medium">{order.product}</TableCell>
-                          <TableCell>{order.amount}</TableCell>
-                          <TableCell>{getStatusBadge(order.status)}</TableCell>
-                          <TableCell>{order.date}</TableCell>
-                          <TableCell>
-                            <Button size="sm" variant="outline">View Details</Button>
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+                  <p className="text-center text-muted-foreground py-8">
+                    Orders are processed via Discord. Visit{" "}
+                    <a href="https://discord.gg/bytenodes" target="_blank" className="text-primary hover:underline">
+                      discord.gg/bytenodes
+                    </a>
+                  </p>
                 </CardContent>
               </Card>
             </TabsContent>

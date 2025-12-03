@@ -12,6 +12,7 @@ import Services from "./pages/Services";
 import Pricing from "./pages/Pricing";
 import PricingServer from "./pages/PricingServer";
 import PricingVPS from "./pages/PricingVPS";
+import PricingBot from "./pages/PricingBot";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
@@ -47,6 +48,7 @@ const AnimatedRoutes = () => {
         <Route path="/pricing" element={<PageTransition><Pricing /></PageTransition>} />
         <Route path="/pricing/servers" element={<PageTransition><PricingServer /></PageTransition>} />
         <Route path="/pricing/vps" element={<PageTransition><PricingVPS /></PageTransition>} />
+        <Route path="/pricing/bot" element={<PageTransition><PricingBot /></PageTransition>} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
         <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
         <Route path="/blog" element={<PageTransition><Blog /></PageTransition>} />
