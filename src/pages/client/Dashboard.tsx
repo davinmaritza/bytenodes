@@ -36,11 +36,7 @@ const Dashboard = () => {
   }, [user]);
 
   const formatPrice = (amount: number) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      minimumFractionDigits: 0
-    }).format(amount);
+    return `$${amount.toFixed(2)}`;
   };
 
   return (
@@ -187,7 +183,7 @@ const Dashboard = () => {
                     Open Ticket
                   </Button>
                 </Link>
-                <Link to="/docs">
+                <Link to="/documentation">
                   <Button variant="outline" className="w-full border-cyan/30">
                     Documentation
                   </Button>

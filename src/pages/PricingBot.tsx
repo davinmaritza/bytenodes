@@ -11,8 +11,8 @@ import { FaDiscord } from "react-icons/fa";
 const botPackages = [
   { name: "Bot Starter", price: 0.60, ram: "512 MB", storage: "5 GB SSD", features: ["1 Bot Instance", "24/7 Uptime", "Auto Restart", "Basic Support"], note: "Perfect for small Discord bots", popular: false },
   { name: "Bot Basic", price: 1.20, ram: "1 GB", storage: "10 GB SSD", features: ["2 Bot Instances", "24/7 Uptime", "Auto Restart", "Priority Support"], note: "For growing Discord communities", popular: false },
-  { name: "Bot Pro", price: 2.10, ram: "2 GB", storage: "20 GB SSD", features: ["5 Bot Instances", "24/7 Uptime", "Auto Restart", "Priority Support", "Custom Domain"], note: "Best for multiple bots", popular: true },
-  { name: "Bot Enterprise", price: 3.60, ram: "4 GB", storage: "40 GB SSD", features: ["Unlimited Bot Instances", "24/7 Uptime", "Auto Restart", "Premium Support", "Custom Domain", "Database Included"], note: "For large-scale bot operations", popular: false }
+  { name: "Bot Pro", price: 2.10, ram: "2 GB", storage: "20 GB SSD", features: ["5 Bot Instances", "24/7 Uptime", "Auto Restart", "Priority Support", "Custom Domain ($0.60)"], note: "Best for multiple bots", popular: true },
+  { name: "Bot Enterprise", price: 3.60, ram: "4 GB", storage: "40 GB SSD", features: ["Unlimited Bot Instances", "24/7 Uptime", "Auto Restart", "Premium Support", "Custom Domain ($0.60)", "Database Included"], note: "For large-scale bot operations", popular: false }
 ];
 
 const PricingBot = () => {
