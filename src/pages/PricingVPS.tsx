@@ -11,7 +11,7 @@ import { GameSupportLogos } from "@/components/GameSupportLogos";
 const vpsKvmPackages = [
   {
     name: "VPS Nano",
-    price: 0.90,
+    price: 1.50,
     ram: "1 GB",
     storage: "15 GB SSD/HDD",
     os: "Linux (Ubuntu/Debian)",
@@ -21,7 +21,7 @@ const vpsKvmPackages = [
   },
   {
     name: "VPS Micro",
-    price: 1.50,
+    price: 2.50,
     ram: "2 GB",
     storage: "25 GB SSD",
     os: "Linux (Ubuntu/Debian)",
@@ -31,7 +31,7 @@ const vpsKvmPackages = [
   },
   {
     name: "VPS Turbo",
-    price: 3.00,
+    price: 4.50,
     ram: "4 GB",
     storage: "50 GB SSD",
     os: "Linux (Ubuntu/Debian)",
@@ -41,7 +41,7 @@ const vpsKvmPackages = [
   },
   {
     name: "VPS Power",
-    price: 5.40,
+    price: 8.00,
     ram: "8 GB",
     storage: "80 GB SSD",
     os: "Linux (Ubuntu/Debian)",
@@ -50,8 +50,28 @@ const vpsKvmPackages = [
     popular: false
   },
   {
+    name: "VPS Ultra",
+    price: 14.00,
+    ram: "16 GB",
+    storage: "150 GB SSD",
+    os: "Linux (Ubuntu/Debian)",
+    features: ["DDoS Protection", "24/7 Uptime", "Premium Support", "Custom Domain ($0.60)"],
+    note: "Enterprise Applications",
+    popular: false
+  },
+  {
+    name: "VPS Extreme",
+    price: 26.00,
+    ram: "32 GB",
+    storage: "300 GB SSD",
+    os: "Linux (Ubuntu/Debian)",
+    features: ["DDoS Protection", "24/7 Uptime", "Premium Support", "Custom Domain ($0.60)", "Dedicated IP"],
+    note: "High Traffic / Big Projects",
+    popular: false
+  },
+  {
     name: "VPS Storage 1",
-    price: 1.80,
+    price: 3.00,
     ram: "1 GB",
     storage: "100 GB HDD",
     os: "Linux (Ubuntu/Debian)",
@@ -61,7 +81,7 @@ const vpsKvmPackages = [
   },
   {
     name: "VPS Storage 2",
-    price: 3.60,
+    price: 5.50,
     ram: "4 GB",
     storage: "250 GB HDD",
     os: "Linux (Ubuntu/Debian)",
@@ -74,7 +94,7 @@ const vpsKvmPackages = [
 const dedicatedPackages = [
   {
     name: "Dedicated 1",
-    price: 2.70,
+    price: 4.00,
     ram: "2 GB",
     storage: "20 GB NVMe",
     os: "Linux (Ubuntu/Debian)",
@@ -84,7 +104,7 @@ const dedicatedPackages = [
   },
   {
     name: "Dedicated 2",
-    price: 5.10,
+    price: 7.50,
     ram: "4 GB",
     storage: "40 GB NVMe",
     os: "Linux (Ubuntu/Debian)",
@@ -94,7 +114,7 @@ const dedicatedPackages = [
   },
   {
     name: "Dedicated 3",
-    price: 7.20,
+    price: 11.00,
     ram: "6 GB",
     storage: "60 GB NVMe",
     os: "Linux (Ubuntu/Debian)",
@@ -104,12 +124,32 @@ const dedicatedPackages = [
   },
   {
     name: "Dedicated 4",
-    price: 9.60,
+    price: 15.00,
     ram: "8 GB",
     storage: "80 GB NVMe",
     os: "Linux (Ubuntu/Debian)",
     features: ["Anti-Lag Performance", "24/7 Uptime", "Premium Support", "Custom Domain ($0.60)"],
     note: "High Single Core Performance",
+    popular: false
+  },
+  {
+    name: "Dedicated 5",
+    price: 25.00,
+    ram: "16 GB",
+    storage: "150 GB NVMe",
+    os: "Linux (Ubuntu/Debian)",
+    features: ["Anti-Lag Performance", "24/7 Uptime", "Premium Support", "Custom Domain ($0.60)", "Dedicated IP"],
+    note: "Enterprise Grade Performance",
+    popular: false
+  },
+  {
+    name: "Dedicated 6",
+    price: 45.00,
+    ram: "32 GB",
+    storage: "300 GB NVMe",
+    os: "Linux (Ubuntu/Debian)",
+    features: ["Anti-Lag Performance", "24/7 Uptime", "Premium Support", "Custom Domain ($0.60)", "Dedicated IP"],
+    note: "Maximum Power",
     popular: false
   }
 ];
@@ -117,7 +157,7 @@ const dedicatedPackages = [
 const rdpWindowsPackages = [
   {
     name: "RDP Starter",
-    price: 3.00,
+    price: 4.50,
     ram: "2 GB",
     storage: "30 GB SSD",
     os: "Windows Server 2012/2019",
@@ -127,7 +167,7 @@ const rdpWindowsPackages = [
   },
   {
     name: "RDP Worker",
-    price: 4.80,
+    price: 7.00,
     ram: "4 GB",
     storage: "50 GB SSD",
     os: "Windows Server 2019/10",
@@ -137,7 +177,7 @@ const rdpWindowsPackages = [
   },
   {
     name: "RDP Pro",
-    price: 7.20,
+    price: 11.00,
     ram: "6 GB",
     storage: "60 GB SSD",
     os: "Windows Server 2019/2022",
@@ -147,7 +187,7 @@ const rdpWindowsPackages = [
   },
   {
     name: "RDP Sultan",
-    price: 9.60,
+    price: 15.00,
     ram: "8 GB",
     storage: "80 GB SSD",
     os: "Windows Server 2019/2022",
@@ -157,12 +197,32 @@ const rdpWindowsPackages = [
   },
   {
     name: "RDP Ultra",
-    price: 12.00,
+    price: 20.00,
     ram: "12 GB",
     storage: "120 GB SSD",
     os: "Windows Server 2022",
     features: ["DDoS Protection", "24/7 Uptime", "Premium Support", "Custom Domain ($0.60)", "Database Included"],
     note: "Heavy Multitasking",
+    popular: false
+  },
+  {
+    name: "RDP Extreme",
+    price: 28.00,
+    ram: "16 GB",
+    storage: "200 GB SSD",
+    os: "Windows Server 2022",
+    features: ["DDoS Protection", "24/7 Uptime", "Premium Support", "Custom Domain ($0.60)", "Database Included"],
+    note: "Android Emulator / Heavy Apps",
+    popular: false
+  },
+  {
+    name: "RDP Beast",
+    price: 50.00,
+    ram: "32 GB",
+    storage: "400 GB SSD",
+    os: "Windows Server 2022",
+    features: ["DDoS Protection", "24/7 Uptime", "Premium Support", "Custom Domain ($0.60)", "Database Included", "Dedicated IP"],
+    note: "Multi-Instance Emulator",
     popular: false
   }
 ];
