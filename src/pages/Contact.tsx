@@ -93,7 +93,7 @@ const Contact = () => {
 
             <Card className="p-6 hover:shadow-lg transition-shadow md:col-span-2">
               <a 
-                href="https://discord.gg/bytenodes" 
+                href="https://discord.gg/2PMmPp6Yx8" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 group"

@@ -11,30 +11,34 @@ import { GameSupportLogos } from "@/components/GameSupportLogos";
 import minecraftLogo from "@/assets/minecraft-logo.png";
 
 const sharedPackages = [
-  { name: "Shared 1", price: 0.30, ram: "1 GB", storage: "6 GB", note: "Shared Resource / Fair Usage" },
-  { name: "Shared 2", price: 0.60, ram: "2 GB", storage: "6 GB", note: "Shared Resource / Fair Usage" },
-  { name: "Shared 3", price: 0.90, ram: "3 GB", storage: "9 GB", note: "Shared Resource / Fair Usage" },
-  { name: "Shared 4", price: 1.20, ram: "4 GB", storage: "9 GB", note: "Shared Resource / Fair Usage", popular: true }
+  { name: "Shared 1", price: 0.80, ram: "1 GB", storage: "6 GB", note: "Shared Resource / Fair Usage" },
+  { name: "Shared 2", price: 1.50, ram: "2 GB", storage: "8 GB", note: "Shared Resource / Fair Usage" },
+  { name: "Shared 3", price: 2.20, ram: "3 GB", storage: "10 GB", note: "Shared Resource / Fair Usage" },
+  { name: "Shared 4", price: 3.00, ram: "4 GB", storage: "12 GB", note: "Shared Resource / Fair Usage", popular: true },
+  { name: "Shared 5", price: 4.00, ram: "6 GB", storage: "15 GB", note: "Shared Resource / Fair Usage" }
 ];
 
 const premiumPackages = [
-  { name: "Premium 1", price: 2.30, ram: "2.5 GB", storage: "6 GB", note: "Dedicated Performance / Anti Lag" },
-  { name: "Premium 2", price: 3.70, ram: "4 GB", storage: "10 GB", note: "Dedicated Performance / Anti Lag", popular: true },
-  { name: "Premium 3", price: 4.70, ram: "6 GB", storage: "14 GB", note: "Dedicated Performance / Anti Lag" },
-  { name: "Premium 4", price: 6.10, ram: "8 GB", storage: "18 GB", note: "Dedicated Performance / Anti Lag" },
-  { name: "Premium 5", price: 8.10, ram: "10 GB", storage: "22 GB", note: "Dedicated Performance / Anti Lag" }
+  { name: "Premium 1", price: 4.00, ram: "2.5 GB", storage: "8 GB", note: "Dedicated Performance / Anti Lag" },
+  { name: "Premium 2", price: 6.50, ram: "4 GB", storage: "12 GB", note: "Dedicated Performance / Anti Lag", popular: true },
+  { name: "Premium 3", price: 9.00, ram: "6 GB", storage: "16 GB", note: "Dedicated Performance / Anti Lag" },
+  { name: "Premium 4", price: 12.00, ram: "8 GB", storage: "20 GB", note: "Dedicated Performance / Anti Lag" },
+  { name: "Premium 5", price: 15.00, ram: "10 GB", storage: "25 GB", note: "Dedicated Performance / Anti Lag" },
+  { name: "Premium 6", price: 22.00, ram: "16 GB", storage: "40 GB", note: "Dedicated Performance / Anti Lag" }
 ];
 
 const dedicatedPackages = [
-  { name: "Dedicated 1", price: 12.00, ram: "8 GB", storage: "50 GB NVMe", note: "Full Dedicated Resources" },
-  { name: "Dedicated 2", price: 18.00, ram: "16 GB", storage: "100 GB NVMe", note: "Full Dedicated Resources", popular: true },
-  { name: "Dedicated 3", price: 28.00, ram: "32 GB", storage: "200 GB NVMe", note: "Full Dedicated Resources" }
+  { name: "Dedicated 1", price: 18.00, ram: "8 GB", storage: "50 GB NVMe", note: "Full Dedicated Resources" },
+  { name: "Dedicated 2", price: 30.00, ram: "16 GB", storage: "100 GB NVMe", note: "Full Dedicated Resources", popular: true },
+  { name: "Dedicated 3", price: 50.00, ram: "32 GB", storage: "200 GB NVMe", note: "Full Dedicated Resources" },
+  { name: "Dedicated 4", price: 85.00, ram: "64 GB", storage: "400 GB NVMe", note: "Full Dedicated Resources" }
 ];
 
 const rdpPackages = [
-  { name: "RDP Basic", price: 5.00, ram: "2 GB", storage: "40 GB SSD", note: "Windows Server / Remote Desktop" },
-  { name: "RDP Standard", price: 8.00, ram: "4 GB", storage: "80 GB SSD", note: "Windows Server / Remote Desktop", popular: true },
-  { name: "RDP Pro", price: 15.00, ram: "8 GB", storage: "160 GB SSD", note: "Windows Server / Remote Desktop" }
+  { name: "RDP Basic", price: 8.00, ram: "2 GB", storage: "40 GB SSD", note: "Windows Server / Remote Desktop" },
+  { name: "RDP Standard", price: 14.00, ram: "4 GB", storage: "80 GB SSD", note: "Windows Server / Remote Desktop", popular: true },
+  { name: "RDP Pro", price: 24.00, ram: "8 GB", storage: "160 GB SSD", note: "Windows Server / Remote Desktop" },
+  { name: "RDP Ultra", price: 40.00, ram: "16 GB", storage: "300 GB SSD", note: "Windows Server / Remote Desktop" }
 ];
 
 const PricingServer = () => {
