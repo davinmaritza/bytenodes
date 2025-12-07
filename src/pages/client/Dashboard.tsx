@@ -188,7 +188,7 @@ const Dashboard = () => {
                     Documentation
                   </Button>
                 </Link>
-                <a href="https://discord.gg/bytenodes" target="_blank" rel="noopener noreferrer">
+                <a href="https://discord.gg/2PMmPp6Yx8" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full border-cyan/30">
                     Discord
                   </Button>
@@ -206,7 +206,7 @@ const Dashboard = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 Contact our support team via Discord or open a support ticket.
               </p>
-              <a href="https://discord.gg/bytenodes" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/2PMmPp6Yx8" target="_blank" rel="noopener noreferrer">
                 <Button className="w-full">
                   Join Discord Server
                 </Button>

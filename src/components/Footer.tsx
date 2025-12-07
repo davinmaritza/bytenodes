@@ -24,7 +24,7 @@ export const Footer = () => {
               <a href="https://instagram.com/bytenodes" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Instagram">
                 <FaInstagram className="w-5 h-5" />
               </a>
-              <a href="https://discord.gg/bytenodes" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Discord">
+              <a href="https://discord.gg/2PMmPp6Yx8" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Discord">
                 <FaDiscord className="w-5 h-5" />
               </a>
               <a href="mailto:support@bytenodes.icu" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Email">

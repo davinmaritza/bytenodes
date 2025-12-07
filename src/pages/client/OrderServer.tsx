@@ -32,7 +32,7 @@ const OrderServer = () => {
       toast.success(`Anda akan diarahkan ke Discord untuk order ${productName}`);
       setOrdering(null);
       // Redirect to Discord
-      window.open('https://discord.gg/bytenodes', '_blank');
+      window.open('https://discord.gg/2PMmPp6Yx8', '_blank');
     }, 500);
   };
 

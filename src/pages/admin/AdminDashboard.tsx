@@ -507,8 +507,8 @@ const AdminDashboard = () => {
                 <CardContent>
                   <p className="text-center text-muted-foreground py-8">
                     Orders are processed via Discord. Visit{" "}
-                    <a href="https://discord.gg/bytenodes" target="_blank" className="text-primary hover:underline">
-                      discord.gg/bytenodes
+                    <a href="https://discord.gg/2PMmPp6Yx8" target="_blank" className="text-primary hover:underline">
+                      discord.gg/2PMmPp6Yx8
                     </a>
                   </p>
                 </CardContent>

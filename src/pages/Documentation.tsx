@@ -140,7 +140,7 @@ const Documentation = () => {
                 Buat Support Ticket
               </Badge>
             </Link>
-            <a href="https://discord.gg/bytenodes" target="_blank" rel="noopener noreferrer">
+            <a href="https://discord.gg/2PMmPp6Yx8" target="_blank" rel="noopener noreferrer">
               <Badge variant="outline" className="px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
                 Join Discord Community
               </Badge>

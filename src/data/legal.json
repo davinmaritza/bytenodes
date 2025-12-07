@@ -4,36 +4,44 @@
     "lastUpdated": "2025-01-01",
     "sections": [
       {
-        "title": "1. Penerimaan Ketentuan",
-        "content": "Dengan mengakses dan menggunakan layanan ByteNodes, Anda setuju untuk terikat oleh Ketentuan Layanan ini. Jika Anda tidak setuju dengan ketentuan ini, harap jangan gunakan layanan kami."
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using ByteNodes services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. These terms constitute a legally binding agreement between you and ByteNodes. If you do not agree with any part of these terms, you must immediately discontinue use of our services. Your continued use of our platform constitutes your acceptance of these terms and any future modifications. We reserve the right to update these terms at any time, and it is your responsibility to review them periodically. ByteNodes provides hosting services including but not limited to Virtual Private Servers, Game Servers, Remote Desktop Protocol services, and related infrastructure solutions."
       },
       {
-        "title": "2. Deskripsi Layanan",
-        "content": "ByteNodes menyediakan layanan hosting termasuk VPS, Game Server, RDP, dan layanan terkait lainnya. Kami berhak untuk mengubah, menangguhkan, atau menghentikan layanan kapan saja dengan pemberitahuan yang wajar."
+        "title": "2. Service Description",
+        "content": "ByteNodes provides comprehensive hosting solutions including VPS KVM hosting, dedicated game server hosting, RDP Windows services, Discord bot hosting, and related technical infrastructure. Our services are designed to provide reliable, high-performance hosting with DDoS protection, 24/7 uptime monitoring, and professional technical support. We utilize enterprise-grade hardware including NVMe storage, high-frequency processors, and redundant network infrastructure. Service specifications, features, and pricing are subject to change with reasonable notice. We reserve the right to modify, suspend, or discontinue any aspect of our services at our discretion. All services are provided on an as-available basis, and we make no guarantees regarding specific performance metrics beyond those outlined in our Service Level Agreement."
       },
       {
-        "title": "3. Akun Pengguna",
-        "content": "Anda bertanggung jawab untuk menjaga kerahasiaan akun dan password Anda. Anda setuju untuk segera memberitahu kami tentang penggunaan akun Anda yang tidak sah. ByteNodes tidak bertanggung jawab atas kerugian yang timbul dari penggunaan akun Anda oleh pihak lain."
+        "title": "3. User Account Responsibilities",
+        "content": "When you create an account with ByteNodes, you are responsible for maintaining the confidentiality of your account credentials, including your username and password. You agree to notify us immediately of any unauthorized access to or use of your account. You are solely responsible for all activities that occur under your account, whether or not you have authorized such activities. ByteNodes shall not be liable for any loss or damage arising from your failure to protect your account credentials. You must provide accurate, current, and complete information during registration and keep this information updated. Multiple accounts per user are prohibited unless explicitly authorized. We reserve the right to suspend or terminate accounts that violate these terms or engage in suspicious activity."
       },
       {
-        "title": "4. Pembayaran dan Penagihan",
-        "content": "Semua pembayaran harus dilakukan di muka. Layanan akan diaktifkan setelah pembayaran dikonfirmasi. Harga dapat berubah dengan pemberitahuan 30 hari sebelumnya."
+        "title": "4. Payment and Billing Terms",
+        "content": "All payments for ByteNodes services must be made in advance through our approved payment methods. Service activation occurs only after payment confirmation is received. Prices are displayed in United States Dollars (USD) and are subject to change with 30 days advance notice. You agree to pay all applicable fees for services ordered, including any applicable taxes. Late payments may result in service suspension or termination. No refunds will be issued for partial months of service or unused portions of prepaid services, except as outlined in our Refund Policy. Disputed charges must be reported within 30 days of the billing date. Chargebacks or payment disputes initiated without first contacting our support team may result in immediate account suspension. We accept various payment methods including bank transfer, e-wallets, and other digital payment platforms."
       },
       {
-        "title": "5. Penggunaan yang Dilarang",
-        "content": "Anda dilarang menggunakan layanan kami untuk: aktivitas ilegal, spam, DDoS, phishing, distribusi malware, konten dewasa ilegal, pelanggaran hak cipta, atau aktivitas yang merugikan infrastruktur kami."
+        "title": "5. Prohibited Uses and Activities",
+        "content": "You are strictly prohibited from using ByteNodes services for any illegal, harmful, or unauthorized purposes. Prohibited activities include but are not limited to: launching or facilitating Distributed Denial of Service (DDoS) attacks or other network attacks; sending unsolicited bulk email (spam) or engaging in email bombing; hosting phishing websites or conducting social engineering attacks; distributing malware, viruses, trojans, or other malicious software; hosting, distributing, or linking to illegal content including child exploitation material; violating intellectual property rights through unauthorized distribution of copyrighted content; cryptocurrency mining without explicit written permission; operating open proxies, TOR exit nodes, or VPN services for illegal purposes; engaging in activities that negatively impact other customers or our infrastructure; violating any applicable local, national, or international laws and regulations."
       },
       {
-        "title": "6. Penangguhan dan Penghentian",
-        "content": "Kami berhak menangguhkan atau menghentikan akun Anda jika melanggar ketentuan ini. Tidak ada pengembalian dana untuk layanan yang ditangguhkan karena pelanggaran."
+        "title": "6. Suspension and Termination",
+        "content": "ByteNodes reserves the right to suspend or terminate your account and access to services immediately and without prior notice if we determine, in our sole discretion, that you have violated these Terms of Service or engaged in conduct that threatens the security, integrity, or reputation of our services or infrastructure. Upon termination, your right to use our services ceases immediately. We may delete your data within a reasonable timeframe following termination. No refunds will be provided for services suspended or terminated due to Terms of Service violations. We may also suspend services for non-payment, exceeding resource limits, or during investigation of suspected violations. You may terminate your account at any time by submitting a cancellation request through our support channels. Early termination by the customer does not entitle refunds for prepaid services."
       },
       {
-        "title": "7. Batasan Tanggung Jawab",
-        "content": "ByteNodes tidak bertanggung jawab atas kerusakan tidak langsung, insidental, atau konsekuensial. Tanggung jawab maksimum kami terbatas pada jumlah yang Anda bayarkan untuk layanan dalam 12 bulan terakhir."
+        "title": "7. Limitation of Liability",
+        "content": "To the maximum extent permitted by applicable law, ByteNodes, its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, business opportunities, or goodwill, arising out of or related to your use of our services. Our total liability for any claims arising from these terms or your use of our services shall not exceed the total amount paid by you for services during the twelve months preceding the claim. We do not guarantee uninterrupted, error-free, or secure service. You acknowledge that hosting services involve inherent risks including data loss, security breaches, and service interruptions. You agree to maintain appropriate backups of all data and implement reasonable security measures. ByteNodes is not responsible for third-party actions, network issues beyond our control, or force majeure events."
       },
       {
-        "title": "8. Perubahan Ketentuan",
-        "content": "Kami dapat mengubah ketentuan ini kapan saja. Perubahan akan berlaku setelah dipublikasikan di website kami. Penggunaan layanan setelah perubahan merupakan persetujuan Anda terhadap ketentuan baru."
+        "title": "8. Indemnification",
+        "content": "You agree to indemnify, defend, and hold harmless ByteNodes and its affiliates, officers, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable attorney fees) arising from: your use of our services; your violation of these Terms of Service; your violation of any third-party rights, including intellectual property rights; any content you upload, store, or transmit through our services; any illegal or unauthorized activities conducted through your account. This indemnification obligation shall survive the termination of your account and these terms."
+      },
+      {
+        "title": "9. Modifications to Terms",
+        "content": "ByteNodes reserves the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting on our website. We may provide notice of material changes through email or prominent website announcements, but we are not obligated to do so. Your continued use of our services after any modifications indicates your acceptance of the updated terms. If you do not agree with modified terms, you must discontinue use of our services. We recommend reviewing these terms periodically to stay informed of any updates. The most current version of these terms will always be available on our website with the last updated date clearly displayed."
+      },
+      {
+        "title": "10. Governing Law and Dispute Resolution",
+        "content": "These Terms of Service shall be governed by and construed in accordance with applicable international laws and the laws of the jurisdiction in which ByteNodes operates. Any disputes arising from these terms or your use of our services shall first be attempted to be resolved through good-faith negotiation. If negotiation fails, disputes may be resolved through binding arbitration or in the courts of competent jurisdiction. You agree to waive any right to participate in class action lawsuits against ByteNodes. The failure of ByteNodes to enforce any provision of these terms shall not constitute a waiver of such provision or any other provision."
       }
     ]
   },
@@ -42,32 +50,44 @@
     "lastUpdated": "2025-01-01",
     "sections": [
       {
-        "title": "1. Informasi yang Kami Kumpulkan",
-        "content": "Kami mengumpulkan informasi yang Anda berikan secara langsung seperti nama, email, nomor telepon, dan informasi pembayaran. Kami juga mengumpulkan data otomatis seperti alamat IP, browser, dan pola penggunaan."
+        "title": "1. Information We Collect",
+        "content": "ByteNodes collects information that you provide directly when using our services, creating an account, or contacting our support team. This includes personal identification information such as your full name, email address, phone number, billing address, and payment information. We also automatically collect technical information when you access our services, including your Internet Protocol (IP) address, browser type and version, operating system, device information, access times, pages viewed, and referring website addresses. Additionally, we collect usage data related to your service utilization, including bandwidth consumption, storage usage, server performance metrics, and login activity. We may collect information from third-party services you connect to your account, such as payment processors and identity verification services."
       },
       {
-        "title": "2. Penggunaan Informasi",
-        "content": "Informasi Anda digunakan untuk: menyediakan layanan, memproses pembayaran, mengirim pemberitahuan penting, meningkatkan layanan kami, dan mematuhi kewajiban hukum."
+        "title": "2. How We Use Your Information",
+        "content": "The information we collect is used for the following purposes: to provide, maintain, and improve our hosting services; to process transactions and send related billing and account notifications; to respond to your inquiries, support requests, and feedback; to monitor and analyze usage patterns to enhance user experience and service performance; to detect, prevent, and address technical issues, security threats, and fraudulent activities; to comply with legal obligations and enforce our terms of service; to send promotional communications about new services, special offers, and updates (you may opt out at any time); to personalize your experience and provide relevant content; to conduct research and development to improve our services; to maintain accurate records for accounting and regulatory compliance purposes."
       },
       {
-        "title": "3. Berbagi Informasi",
-        "content": "Kami tidak menjual informasi pribadi Anda. Kami hanya berbagi informasi dengan: penyedia layanan pembayaran, otoritas hukum jika diperlukan, dan pihak ketiga dengan persetujuan Anda."
+        "title": "3. Information Sharing and Disclosure",
+        "content": "ByteNodes does not sell, trade, or rent your personal information to third parties for marketing purposes. We may share your information in the following limited circumstances: with service providers who assist in operating our business, such as payment processors, data centers, and customer support platforms, under strict confidentiality agreements; with law enforcement agencies, government authorities, or other third parties when required by law, legal process, or to protect the rights, property, or safety of ByteNodes, our customers, or the public; in connection with a merger, acquisition, or sale of all or a portion of our business, where customer information may be transferred as part of the transaction; with your explicit consent for any other purposes not described in this policy. We require all third parties to respect the security of your personal information and to treat it in accordance with applicable laws."
       },
       {
-        "title": "4. Keamanan Data",
-        "content": "Kami menerapkan langkah-langkah keamanan yang wajar untuk melindungi informasi Anda. Namun, tidak ada metode transmisi internet yang 100% aman."
+        "title": "4. Data Security Measures",
+        "content": "We implement comprehensive security measures designed to protect your personal information from unauthorized access, alteration, disclosure, or destruction. These measures include encryption of sensitive data both in transit and at rest using industry-standard protocols; secure server infrastructure with regular security audits and vulnerability assessments; access controls that limit employee access to personal information on a need-to-know basis; regular employee training on data protection and security best practices; physical security measures at our data center facilities; intrusion detection and prevention systems; regular backups and disaster recovery procedures. Despite these measures, no method of transmission over the Internet or electronic storage is completely secure. We cannot guarantee absolute security, and you acknowledge this inherent risk when using our services."
       },
       {
-        "title": "5. Retensi Data",
-        "content": "Kami menyimpan informasi Anda selama akun Anda aktif atau selama diperlukan untuk menyediakan layanan. Data akan dihapus atas permintaan Anda, kecuali jika diperlukan untuk kewajiban hukum."
+        "title": "5. Data Retention",
+        "content": "We retain your personal information for as long as your account remains active or as needed to provide you with our services. After account termination, we may retain certain information for a reasonable period to comply with legal obligations, resolve disputes, enforce our agreements, and maintain business records. Specifically, transaction records and billing information may be retained for up to seven years for tax and regulatory compliance; support ticket history may be retained for up to three years to maintain service quality and resolve recurring issues; server logs and technical data may be retained for up to one year for security and troubleshooting purposes. You may request deletion of your personal information at any time, subject to our legal obligations to retain certain data."
       },
       {
-        "title": "6. Hak Anda",
-        "content": "Anda berhak untuk: mengakses informasi Anda, memperbarui informasi yang tidak akurat, meminta penghapusan data, dan menolak pemrosesan tertentu."
+        "title": "6. Your Privacy Rights",
+        "content": "Depending on your jurisdiction, you may have the following rights regarding your personal information: the right to access and obtain a copy of your personal data we hold about you; the right to request correction of inaccurate or incomplete personal information; the right to request deletion of your personal information, subject to certain exceptions; the right to object to or restrict certain processing activities; the right to data portability, allowing you to receive your data in a structured, commonly used format; the right to withdraw consent for processing activities based on consent; the right to lodge a complaint with a supervisory authority. To exercise any of these rights, please contact our support team with your specific request. We will respond to valid requests within the timeframe required by applicable law."
       },
       {
-        "title": "7. Cookie",
-        "content": "Kami menggunakan cookie untuk meningkatkan pengalaman Anda. Anda dapat mengontrol cookie melalui pengaturan browser Anda."
+        "title": "7. Cookies and Tracking Technologies",
+        "content": "ByteNodes uses cookies and similar tracking technologies to enhance your experience on our website and services. Cookies are small text files stored on your device that help us recognize you, remember your preferences, and understand how you interact with our services. We use essential cookies required for basic website functionality and security; performance cookies that collect anonymous usage data to improve our services; functional cookies that remember your preferences and settings; analytics cookies that help us understand traffic patterns and user behavior. You can control cookie settings through your browser preferences. However, disabling certain cookies may affect the functionality of our services. By continuing to use our website with cookies enabled, you consent to our use of cookies as described in this policy."
+      },
+      {
+        "title": "8. International Data Transfers",
+        "content": "Your personal information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that differ from your jurisdiction. By using our services, you consent to the transfer of your information to our facilities and to third parties with whom we share it as described in this policy. We implement appropriate safeguards to ensure that your personal information remains protected in accordance with this privacy policy, regardless of where it is processed. These safeguards may include standard contractual clauses, certification schemes, or other legally recognized transfer mechanisms."
+      },
+      {
+        "title": "9. Children's Privacy",
+        "content": "ByteNodes services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information without your consent, please contact us immediately. If we become aware that we have collected personal information from a child without parental consent, we will take steps to delete such information from our records promptly."
+      },
+      {
+        "title": "10. Changes to This Privacy Policy",
+        "content": "We may update this Privacy Policy periodically to reflect changes in our practices, technologies, legal requirements, or other factors. When we make material changes, we will notify you by posting the updated policy on our website with a new effective date. We may also send email notifications for significant changes. Your continued use of our services after any changes indicates your acceptance of the updated policy. We encourage you to review this policy regularly to stay informed about how we collect, use, and protect your information."
       }
     ]
   },
@@ -76,16 +96,16 @@
     "lastUpdated": "2025-01-01",
     "sections": [
       {
-        "title": "1. Apa itu Cookie?",
-        "content": "Cookie adalah file teks kecil yang disimpan di perangkat Anda saat mengunjungi website. Cookie membantu website mengingat preferensi Anda."
+        "title": "1. What Are Cookies?",
+        "content": "Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide a better user experience. Cookies allow websites to remember your actions and preferences over time, so you do not have to re-enter information each time you visit or navigate between pages. At ByteNodes, we use cookies and similar technologies to improve your experience on our website and services."
       },
       {
-        "title": "2. Jenis Cookie yang Kami Gunakan",
-        "content": "Essential Cookies: diperlukan untuk fungsi dasar website. Performance Cookies: membantu kami memahami bagaimana pengunjung menggunakan website. Functional Cookies: mengingat preferensi Anda."
+        "title": "2. Types of Cookies We Use",
+        "content": "Essential Cookies: These cookies are necessary for the website to function properly and cannot be disabled. They enable core functionality such as security, session management, and accessibility features. Performance Cookies: These cookies collect anonymous information about how visitors use our website, helping us improve site performance and user experience. Functional Cookies: These cookies remember your preferences and settings to provide personalized features and enhanced functionality. Analytics Cookies: We use analytics cookies to understand how visitors interact with our website, which pages are most popular, and how users navigate through our services."
       },
       {
-        "title": "3. Mengelola Cookie",
-        "content": "Anda dapat mengontrol cookie melalui pengaturan browser. Menonaktifkan cookie mungkin mempengaruhi pengalaman Anda di website kami."
+        "title": "3. Managing Cookies",
+        "content": "Most web browsers allow you to control cookies through their settings. You can choose to accept or reject cookies, delete existing cookies, or set your browser to notify you when a cookie is being placed. Please note that disabling certain cookies may affect the functionality of our website and services. To manage cookies, access your browser settings and look for privacy or security options related to cookies and site data."
       }
     ]
   },
@@ -94,24 +114,24 @@
     "lastUpdated": "2025-01-01",
     "sections": [
       {
-        "title": "1. Penggunaan yang Diperbolehkan",
-        "content": "Anda dapat menggunakan layanan kami untuk: hosting website, aplikasi web, game server, bot, development, dan keperluan bisnis yang sah lainnya."
+        "title": "1. Permitted Uses",
+        "content": "You may use ByteNodes services for legitimate purposes including: hosting websites, web applications, and APIs; running game servers for supported platforms including Minecraft, FiveM, Rust, Terraria, and SA-MP; operating Discord bots and automated services; software development, testing, and deployment; database hosting and data storage; email services and communication platforms; business applications and enterprise solutions; educational projects and learning environments. All usage must comply with applicable laws and regulations in your jurisdiction."
       },
       {
-        "title": "2. Penggunaan yang Dilarang",
-        "content": "Dilarang keras: DDoS atau serangan jaringan, spamming, phishing, malware distribution, illegal content hosting, crypto mining tanpa izin, torrent/file sharing ilegal, proxy untuk aktivitas ilegal."
+        "title": "2. Prohibited Activities",
+        "content": "The following activities are strictly prohibited on ByteNodes infrastructure: DDoS attacks, network attacks, or any activities designed to disrupt services; sending spam, bulk unsolicited emails, or email bombing; phishing, social engineering, or identity theft schemes; distribution of malware, viruses, ransomware, or other malicious software; hosting illegal content including child exploitation material or content that violates applicable laws; cryptocurrency mining without explicit written authorization; operating open proxies or TOR exit nodes for illegal purposes; copyright infringement or distribution of pirated content; any activities that negatively impact other customers or our infrastructure; violation of any applicable local, national, or international laws."
       },
       {
-        "title": "3. Penggunaan Resource",
-        "content": "Anda harus menggunakan resource sesuai dengan paket yang dibeli. Penggunaan berlebihan yang mempengaruhi pengguna lain akan ditindaklanjuti."
+        "title": "3. Resource Usage",
+        "content": "You must use resources within the limits of your purchased service plan. Excessive resource consumption that affects other customers or infrastructure stability may result in throttling, suspension, or termination. Fair usage policies apply to shared resources. We monitor resource usage to ensure optimal performance for all customers."
       },
       {
-        "title": "4. Konten",
-        "content": "Anda bertanggung jawab penuh atas konten yang Anda host. Konten yang melanggar hukum Indonesia akan dihapus tanpa pemberitahuan."
+        "title": "4. Content Responsibility",
+        "content": "You are solely responsible for all content hosted on your services. Content that violates applicable laws will be removed without notice. We do not actively monitor customer content but will respond to valid legal requests and abuse reports."
       },
       {
-        "title": "5. Konsekuensi Pelanggaran",
-        "content": "Pelanggaran dapat mengakibatkan: peringatan, suspensi sementara, penghentian layanan permanen, tanpa pengembalian dana."
+        "title": "5. Violation Consequences",
+        "content": "Violations of this policy may result in: written warnings and requests for corrective action; temporary service suspension pending investigation; permanent termination without refund; reporting to law enforcement for illegal activities. The severity of action taken depends on the nature and severity of the violation."
       }
     ]
   },
@@ -121,23 +141,35 @@
     "sections": [
       {
         "title": "1. Uptime Guarantee",
-        "content": "ByteNodes menjamin uptime 99.9% untuk semua layanan VPS dan Game Server. Uptime dihitung per bulan kalender, tidak termasuk maintenance terjadwal."
+        "content": "ByteNodes commits to maintaining 99.9% uptime for all VPS, Game Server, and RDP hosting services. Uptime is calculated on a monthly calendar basis, measuring the total minutes the service is available compared to total minutes in the month. This guarantee covers the availability of server infrastructure, network connectivity, and core service functions. Scheduled maintenance windows, which are announced at least 48 hours in advance, are excluded from uptime calculations. We continuously monitor all services using automated systems and proactively address issues before they impact customers whenever possible."
       },
       {
-        "title": "2. Kompensasi",
-        "content": "Jika uptime di bawah 99.9%, Anda berhak mendapat kredit: 99.0%-99.9%: 10% kredit, 98.0%-99.0%: 25% kredit, 95.0%-98.0%: 50% kredit, Di bawah 95.0%: 100% kredit untuk bulan tersebut."
+        "title": "2. Service Credit Compensation",
+        "content": "If we fail to meet our uptime guarantee, you are entitled to service credits based on the following schedule: 99.0% to 99.9% uptime results in 10% service credit; 98.0% to 99.0% uptime results in 25% service credit; 95.0% to 98.0% uptime results in 50% service credit; below 95.0% uptime results in 100% service credit for the affected month. Service credits are applied to your account and can be used toward future service payments. Credits are non-transferable and have no cash value. Maximum credit per month cannot exceed 100% of your monthly service fee."
       },
       {
-        "title": "3. Pengecualian",
-        "content": "SLA tidak berlaku untuk: maintenance terjadwal, force majeure, masalah di luar kontrol kami, pelanggaran ToS oleh pelanggan, masalah jaringan ISP pelanggan."
+        "title": "3. Exclusions from SLA",
+        "content": "The uptime guarantee does not apply in the following circumstances: scheduled maintenance announced at least 48 hours in advance; emergency maintenance required for security patches or critical updates; force majeure events including natural disasters, wars, government actions, or other events beyond our reasonable control; issues caused by customer actions, configurations, or software; problems with customer equipment, networks, or internet service providers; DDoS attacks or other malicious activities targeting customer services; suspension of services due to Terms of Service violations; third-party service outages that affect our infrastructure."
       },
       {
-        "title": "4. Klaim SLA",
-        "content": "Klaim harus diajukan dalam 7 hari setelah insiden melalui support ticket. Sertakan detail waktu downtime dan dampaknya."
+        "title": "4. SLA Claim Procedure",
+        "content": "To claim SLA credits, you must submit a support ticket within seven calendar days following the end of the month in which the downtime occurred. Your claim must include: the date and time of the incident; the duration of the downtime; the specific services affected; any relevant error messages or symptoms observed. Our team will investigate the claim and verify the downtime against our monitoring systems. Valid claims will be processed within 30 days, and credits will be applied to your account. Failure to submit claims within the specified timeframe will result in forfeiture of credits for that period."
       },
       {
-        "title": "5. Response Time",
-        "content": "Ticket Priority High: response dalam 2 jam, Ticket Priority Medium: response dalam 6 jam, Ticket Priority Low: response dalam 24 jam."
+        "title": "5. Support Response Times",
+        "content": "We are committed to providing timely support responses based on ticket priority: High Priority tickets (complete service outage, security incidents) receive initial response within 2 hours; Medium Priority tickets (partial service degradation, functional issues) receive initial response within 6 hours; Low Priority tickets (general inquiries, feature requests) receive initial response within 24 hours. Response times are measured during business hours. Complex issues may require additional time for resolution. We provide regular updates on ticket progress until resolution is achieved."
+      },
+      {
+        "title": "6. Network and Infrastructure Standards",
+        "content": "ByteNodes maintains enterprise-grade infrastructure to support our SLA commitments. This includes redundant network connections from multiple upstream providers; enterprise-class server hardware with ECC memory and RAID storage configurations; automated failover systems for critical infrastructure components; 24/7 network operations center monitoring; regular hardware maintenance and proactive replacement schedules; DDoS mitigation systems with multi-terabit capacity; fire suppression and environmental controls at data center facilities; physical security including biometric access controls and video surveillance."
+      },
+      {
+        "title": "7. Data Backup and Recovery",
+        "content": "While ByteNodes implements backup systems for critical infrastructure, customers are responsible for maintaining their own data backups. We strongly recommend implementing regular backup procedures for all important data. Our automated backup systems are designed for infrastructure recovery purposes and may not include customer data. For services that include backup features, backup frequency and retention periods are specified in the service description. Data recovery requests may be subject to additional fees depending on the complexity and urgency of the request."
+      },
+      {
+        "title": "8. Service Modifications",
+        "content": "ByteNodes reserves the right to modify service specifications, features, and this SLA with 30 days notice. Changes that materially reduce service levels will not apply to existing customers during their current billing period. We continuously invest in infrastructure improvements and may upgrade services without additional cost. Customers will be notified of significant changes through email and website announcements. This SLA represents the entire agreement regarding service levels and supersedes any prior agreements or representations."
       }
     ]
   },
@@ -146,24 +178,24 @@
     "lastUpdated": "2025-01-01",
     "sections": [
       {
-        "title": "1. Garansi 7 Hari",
-        "content": "Pelanggan baru dapat meminta refund penuh dalam 7 hari pertama setelah aktivasi layanan, tanpa alasan apapun."
+        "title": "1. 7-Day Money-Back Guarantee",
+        "content": "New customers may request a full refund within 7 days of initial service activation, no questions asked. This guarantee applies to first-time purchases of VPS, Game Server, and RDP services. To request a refund, contact our support team within the guarantee period."
       },
       {
-        "title": "2. Ketentuan Refund",
-        "content": "Refund dapat diproses jika: layanan tidak sesuai deskripsi, downtime berlebihan di luar SLA, atau masalah teknis yang tidak bisa kami selesaikan."
+        "title": "2. Refund Eligibility",
+        "content": "Refunds may be processed if: the service does not match the advertised description; excessive downtime occurs beyond our SLA commitments; technical issues prevent service use that we cannot resolve. All refund requests are evaluated on a case-by-case basis."
       },
       {
-        "title": "3. Pengecualian",
-        "content": "Refund tidak berlaku untuk: pelanggaran ToS, domain yang sudah terdaftar, layanan yang sudah digunakan lebih dari 7 hari, pembatalan sukarela setelah periode garansi."
+        "title": "3. Refund Exclusions",
+        "content": "Refunds are not available for: accounts suspended or terminated for Terms of Service violations; registered domain names (non-refundable once registered); services used beyond the 7-day guarantee period; voluntary cancellations after the guarantee period; add-on services and one-time setup fees."
       },
       {
-        "title": "4. Proses Refund",
-        "content": "Ajukan refund melalui support ticket. Proses refund memakan waktu 3-7 hari kerja. Refund akan dikembalikan ke metode pembayaran asal."
+        "title": "4. Refund Process",
+        "content": "Submit refund requests through a support ticket. Include your account details and reason for the request. Processing takes 3-7 business days after approval. Refunds are issued to the original payment method when possible."
       },
       {
-        "title": "5. Kredit Account",
-        "content": "Sebagai alternatif refund, Anda dapat memilih kredit account yang dapat digunakan untuk layanan lain."
+        "title": "5. Account Credits",
+        "content": "As an alternative to monetary refunds, you may choose to receive account credits. Credits can be used for any ByteNodes services and do not expire. Credit balances are non-transferable and have no cash value."
       }
     ]
   }

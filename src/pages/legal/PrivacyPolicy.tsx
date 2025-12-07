@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
       <div className="pt-24 pb-12 px-4 bg-gradient-to-b from-navy-dark to-background">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{privacyPolicy.title}</h1>
-          <p className="text-muted-foreground">Terakhir diperbarui: {privacyPolicy.lastUpdated}</p>
+          <p className="text-muted-foreground">Last Updated: {privacyPolicy.lastUpdated}</p>
         </div>
       </div>
 
