@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star } from "lucide-react";
 import { ParticleBackground } from "@/components/ParticleBackground";
+import logo from "@/assets/logo.png";
 
 const DISCORD_URL = "https://discord.gg/2PMmPp6Yx8";
 
@@ -59,14 +60,16 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - 3D Visual */}
+          {/* Right Content - Logo Visual */}
           <div className="relative h-[500px] lg:h-[600px] hidden lg:block">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-cyan-dark/20 rounded-3xl blur-3xl"></div>
             <div className="relative h-full flex items-center justify-center">
               <div className="w-72 h-72 bg-gradient-to-br from-cyan/30 to-cyan-dark/30 rounded-full blur-2xl absolute"></div>
-              <div className="relative text-9xl font-black text-foreground/5">
-                BN
-              </div>
+              <img 
+                src={logo} 
+                alt="ByteNodes Logo" 
+                className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl"
+              />
             </div>
           </div>
         </div>
