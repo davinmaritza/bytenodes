@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, User, LogOut } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { useAuth } from "@/contexts/AuthContext";
 import logo from "@/assets/logo.png";
+
+const DISCORD_URL = "https://discord.gg/2PMmPp6Yx8";
 
 export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { user, logout } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
@@ -43,6 +43,9 @@ export const Navbar = () => {
                 <Link to="/pricing/bot" className="block px-4 py-3 hover:bg-secondary hover:text-primary transition-all text-sm">
                   Discord Bot Hosting
                 </Link>
+                <Link to="/pricing/website" className="block px-4 py-3 hover:bg-secondary hover:text-primary transition-all text-sm">
+                  Website Hosting
+                </Link>
               </div>
             </div>
             <Link to="/blog" className="text-sm font-semibold text-foreground/80 hover:text-primary transition-all duration-300 hover:scale-105">
@@ -57,33 +60,9 @@ export const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            {user ? (
-              <>
-                <Link to={user.role === 'admin' ? '/admin' : '/client/dashboard'}>
-                  <Button variant="ghost" className="gap-2">
-                    <User className="w-4 h-4" />
-                    {user.name}
-                  </Button>
-                </Link>
-                <Button 
-                  onClick={logout}
-                  variant="outline" 
-                  className="gap-2"
-                >
-                  <LogOut className="w-4 h-4" />
-                  Logout
-                </Button>
-              </>
-            ) : (
-              <>
-                <Link to="/client/login">
-                  <Button variant="ghost">Login</Button>
-                </Link>
-                <Link to="/client/register">
-                  <Button className="rounded-full px-6 font-semibold">Get Started</Button>
-                </Link>
-              </>
-            )}
+            <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
+              <Button className="rounded-full px-6 font-semibold">Get Started</Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -144,6 +123,13 @@ export const Navbar = () => {
                 >
                   Discord Bot Hosting
                 </Link>
+                <Link
+                  to="/pricing/website"
+                  className="text-sm font-medium hover:text-primary transition-all duration-300 block pl-4"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Website Hosting
+                </Link>
               </div>
               <Link
                 to="/blog"
@@ -166,39 +152,9 @@ export const Navbar = () => {
               >
                 Contact
               </Link>
-              {user ? (
-                <>
-                  <Link 
-                    to={user.role === 'admin' ? '/admin' : '/client/dashboard'} 
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <Button variant="ghost" className="w-full gap-2">
-                      <User className="w-4 h-4" />
-                      {user.name}
-                    </Button>
-                  </Link>
-                  <Button 
-                    onClick={() => {
-                      logout();
-                      setMobileMenuOpen(false);
-                    }}
-                    variant="outline" 
-                    className="w-full gap-2"
-                  >
-                    <LogOut className="w-4 h-4" />
-                    Logout
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Link to="/client/login" onClick={() => setMobileMenuOpen(false)}>
-                    <Button variant="ghost" className="w-full">Login</Button>
-                  </Link>
-                  <Link to="/client/register" onClick={() => setMobileMenuOpen(false)}>
-                    <Button className="w-full">Get Started</Button>
-                  </Link>
-                </>
-              )}
+              <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                <Button className="w-full">Get Started</Button>
+              </a>
             </div>
           </div>
         )}
