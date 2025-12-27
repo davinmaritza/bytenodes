@@ -3,8 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AuthProvider } from "./contexts/AuthContext";
-import { ProtectedRoute } from "./components/ProtectedRoute";
 import { PageTransition } from "./components/PageTransition";
 import { AnimatePresence } from "framer-motion";
 import Index from "./pages/Index";
@@ -18,15 +16,8 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import Payment from "./pages/Payment";
-import Tickets from "./pages/Tickets";
 import FAQ from "./pages/FAQ";
 import Documentation from "./pages/Documentation";
-import Login from "./pages/client/Login";
-import Register from "./pages/client/Register";
-import Dashboard from "./pages/client/Dashboard";
-import OrderServer from "./pages/client/OrderServer";
 import NotFound from "./pages/NotFound";
 // Legal Pages
 import TermsOfService from "./pages/legal/TermsOfService";
@@ -66,48 +57,6 @@ const AnimatedRoutes = () => {
         <Route path="/sla" element={<PageTransition><SLA /></PageTransition>} />
         <Route path="/refund" element={<PageTransition><RefundPolicy /></PageTransition>} />
         
-        <Route path="/client/login" element={<PageTransition><Login /></PageTransition>} />
-        <Route path="/client/register" element={<PageTransition><Register /></PageTransition>} />
-        
-        {/* Protected User Routes */}
-        <Route path="/client/dashboard" element={
-          <PageTransition>
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          </PageTransition>
-        } />
-        <Route path="/client/order" element={
-          <PageTransition>
-            <ProtectedRoute>
-              <OrderServer />
-            </ProtectedRoute>
-          </PageTransition>
-        } />
-        <Route path="/tickets" element={
-          <PageTransition>
-            <ProtectedRoute>
-              <Tickets />
-            </ProtectedRoute>
-          </PageTransition>
-        } />
-        <Route path="/payment" element={
-          <PageTransition>
-            <ProtectedRoute>
-              <Payment />
-            </ProtectedRoute>
-          </PageTransition>
-        } />
-        
-        {/* Protected Admin Routes */}
-        <Route path="/admin" element={
-          <PageTransition>
-            <ProtectedRoute requireAdmin>
-              <AdminDashboard />
-            </ProtectedRoute>
-          </PageTransition>
-        } />
-        
         <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
       </Routes>
     </AnimatePresence>
@@ -120,9 +69,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <AuthProvider>
-          <AnimatedRoutes />
-        </AuthProvider>
+        <AnimatedRoutes />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
