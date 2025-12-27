@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { PricingFAQ } from "@/components/PricingFAQ";
@@ -8,76 +7,81 @@ import { FloatingShapes } from "@/components/FloatingShapes";
 import { TechnologyStack } from "@/components/TechnologyStack";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, Server, Bot, Globe, Gamepad2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { GameSupportLogos } from "@/components/GameSupportLogos";
 
-const pricingPlans = [
+const DISCORD_URL = "https://discord.gg/2PMmPp6Yx8";
+
+const pricingCategories = [
   {
-    name: "Starter VPS",
-    monthlyPrice: 1.50,
-    yearlyPrice: 1.20,
-    description: "Perfect for small projects and testing",
+    name: "Game Server",
+    icon: Gamepad2,
+    startingPriceRp: 8000,
+    startingPriceUsd: 0.50,
+    description: "Minecraft, FiveM, Rust, dan game lainnya",
     features: [
-      "1 CPU Core",
-      "2GB RAM",
-      "25GB SSD Storage",
-      "1TB Bandwidth",
-      "1 IPv4 Address",
-      "KVM Virtualization",
-      "Free Backup",
-      "24/7 Support",
-    ],
-    popular: false,
-  },
-  {
-    name: "Business VPS",
-    monthlyPrice: 3.00,
-    yearlyPrice: 2.40,
-    description: "Ideal for growing businesses",
-    features: [
-      "2 CPU Cores",
-      "4GB RAM",
-      "50GB SSD Storage",
-      "3TB Bandwidth",
-      "1 IPv4 Address",
-      "KVM Virtualization",
-      "Daily Backups",
-      "Priority Support",
-    ],
-    popular: true,
-  },
-  {
-    name: "Dedicated Server",
-    monthlyPrice: 9.00,
-    yearlyPrice: 7.20,
-    description: "Maximum performance and control",
-    features: [
-      "4 CPU Cores",
-      "8GB RAM",
-      "100GB NVMe Storage",
-      "Unlimited Bandwidth",
-      "1 IPv4 Address",
-      "Full Root Access",
+      "Shared & Premium Options",
       "DDoS Protection",
-      "Managed Service Available",
+      "24/7 Uptime",
+      "Pterodactyl Panel"
     ],
-    popular: false,
+    link: "/pricing/servers",
+    popular: true
   },
+  {
+    name: "Discord Bot",
+    icon: Bot,
+    startingPriceRp: 10000,
+    startingPriceUsd: 0.60,
+    description: "Hosting bot Discord dengan uptime 24/7",
+    features: [
+      "Auto Restart",
+      "Multiple Instances",
+      "Database Support",
+      "Easy Deployment"
+    ],
+    link: "/pricing/bot",
+    popular: false
+  },
+  {
+    name: "Website Hosting",
+    icon: Globe,
+    startingPriceRp: 5000,
+    startingPriceUsd: 0.30,
+    description: "Web Ptero, Turbo Web, & Jasa Coding",
+    features: [
+      "Free SSL (HTTPS)",
+      "Auto Backup",
+      "Cloudflare Tunnel",
+      "Managed Hosting"
+    ],
+    link: "/pricing/website",
+    popular: false
+  },
+  {
+    name: "VPS & Dedicated",
+    icon: Server,
+    startingPriceRp: 65000,
+    startingPriceUsd: 4.00,
+    description: "Dedicated server dengan performa tinggi",
+    features: [
+      "NVMe Storage",
+      "Anti-Lag Performance",
+      "Full Root Access",
+      "24/7 Support"
+    ],
+    link: "/pricing/vps",
+    popular: false
+  }
 ];
 
-const formatPrice = (price: number) => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  }).format(price);
-};
+const formatPrice = (priceRp: number, priceUsd: number) => ({
+  rp: `Rp ${priceRp.toLocaleString('id-ID')}`,
+  usd: `~$${priceUsd.toFixed(2)}`
+});
 
 const Pricing = () => {
-  const [isYearly, setIsYearly] = useState(false);
-
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -95,99 +99,79 @@ const Pricing = () => {
 
         <div className="container mx-auto text-center relative z-10">
           <div className="inline-block mb-4 px-4 py-2 bg-primary/10 backdrop-blur-sm rounded-full border border-primary/20">
-            <span className="text-primary text-sm font-semibold">🎉 Special Offer: Save up to 20% on yearly plans</span>
+            <span className="text-primary text-sm font-semibold">💰 Harga Terjangkau, Kualitas Premium</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight text-foreground animate-fade-in">
             Simple, <span className="text-primary">Transparent</span> Pricing
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in">
-            Choose the perfect plan for your needs. All plans include 24/7 support, 99.9% uptime SLA, and free migration.
+            Pilih paket yang sesuai dengan kebutuhan. Semua paket termasuk support 24/7, uptime 99.9%, dan free migration.
           </p>
 
           <AnimatedStats />
-
-          {/* Billing Toggle */}
-          <div className="mt-12 inline-flex items-center gap-4 bg-card rounded-full p-1.5 shadow-lg border border-border/50 backdrop-blur-sm animate-fade-in">
-            <button
-              onClick={() => setIsYearly(false)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                !isYearly
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setIsYearly(true)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                isYearly
-                  ? "bg-primary text-primary-foreground shadow-md"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Yearly
-              <span className="ml-2 text-xs bg-accent text-accent-foreground px-2 py-0.5 rounded-full">
-                Save 20%
-              </span>
-            </button>
-          </div>
         </div>
       </div>
 
       <section className="py-16 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingPlans.map((plan, index) => {
-              const price = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Katalog Layanan</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Semua harga dalam Rupiah (IDR) dengan konversi USD sebagai referensi
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {pricingCategories.map((category, index) => {
+              const price = formatPrice(category.startingPriceRp, category.startingPriceUsd);
+              const IconComponent = category.icon;
               
               return (
                 <Card
                   key={index}
-                  className={`p-8 relative hover:shadow-xl transition-all duration-300 ${
-                    plan.popular
-                      ? "border-primary shadow-lg scale-105 bg-gradient-to-b from-card via-card to-primary/5"
+                  className={`p-6 relative hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${
+                    category.popular
+                      ? "border-primary shadow-lg border-2 bg-gradient-to-b from-card via-card to-primary/5"
                       : "border-border/50 hover:border-primary/30"
                   }`}
                 >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-sm font-bold rounded-full shadow-md">
+                  {category.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground text-xs font-bold rounded-full shadow-md">
                       Most Popular
                     </div>
                   )}
 
                   <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{plan.description}</p>
+                    <IconComponent className="w-12 h-12 text-primary mx-auto mb-3" />
+                    <h3 className="text-xl font-bold mb-2">{category.name}</h3>
+                    <p className="text-muted-foreground text-sm mb-4">{category.description}</p>
                     <div className="flex items-baseline justify-center gap-1">
-                      <span className="text-4xl font-bold text-primary">{formatPrice(price)}</span>
+                      <span className="text-sm text-muted-foreground">Mulai dari</span>
                     </div>
-                    <span className="text-muted-foreground text-sm">/month</span>
-                    {isYearly && (
-                      <p className="text-sm text-muted-foreground mt-2">
-                        Billed {formatPrice(price * 12)} annually
-                      </p>
-                    )}
+                    <div className="flex items-baseline justify-center gap-1 mb-1">
+                      <span className="text-3xl font-bold text-primary">{price.rp}</span>
+                    </div>
+                    <span className="text-muted-foreground text-xs">{price.usd}/month</span>
                   </div>
 
-                  <div className="space-y-3 mb-8">
-                    {plan.features.map((feature, idx) => (
+                  <div className="space-y-2 mb-6">
+                    {category.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-2">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                        <Check className="w-4 h-4 text-primary flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </div>
                     ))}
                   </div>
 
-                  <Link to="/client/register">
+                  <Link to={category.link}>
                     <Button
                       className={`w-full ${
-                        plan.popular ? "shadow-md hover:shadow-lg" : ""
+                        category.popular ? "shadow-md hover:shadow-lg" : ""
                       }`}
-                      variant={plan.popular ? "default" : "outline"}
+                      variant={category.popular ? "default" : "outline"}
                     >
-                      Get Started
+                      Lihat Paket
                     </Button>
                   </Link>
                 </Card>
@@ -198,39 +182,15 @@ const Pricing = () => {
           <GameSupportLogos />
 
           <div className="mt-16 text-center space-y-8">
-            <div>
-              <h3 className="text-2xl font-bold mb-4">Looking for Specific Packages?</h3>
-              <p className="text-muted-foreground mb-6">
-                Explore our specialized pricing for Game Servers, VPS, RDP, and Discord Bots
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link to="/pricing/servers">
-                  <Button variant="default" size="lg" className="hover-lift">
-                    Game Server Pricing
-                  </Button>
-                </Link>
-                <Link to="/pricing/vps">
-                  <Button variant="default" size="lg" className="hover-lift">
-                    VPS & RDP Pricing
-                  </Button>
-                </Link>
-                <Link to="/pricing/bot">
-                  <Button variant="default" size="lg" className="hover-lift">
-                    Discord Bot Hosting
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
             <div className="pt-8 border-t border-border/50">
               <p className="text-muted-foreground mb-4">
-                Need a custom solution? Contact our sales team.
+                Butuh bantuan memilih paket? Hubungi tim kami di Discord.
               </p>
-              <Link to="/contact">
+              <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="outline" size="lg">
-                  Contact Sales
+                  Join Discord
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
