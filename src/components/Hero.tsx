@@ -69,6 +69,9 @@ export const Hero = () => {
                 src={logo} 
                 alt="ByteNodes Logo" 
                 className="relative w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl"
+                width={320}
+                height={320}
+                fetchPriority="high"
               />
             </div>
           </div>
