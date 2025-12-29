@@ -13,8 +13,8 @@ export const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-xl font-bold">
-            <img src={logo} alt="ByteNodes" className="w-10 h-10 object-contain" />
+          <Link to="/" className="flex items-center gap-2 text-xl font-bold" aria-label="ByteNodes Home">
+            <img src={logo} alt="" className="w-10 h-10 object-contain" width={40} height={40} />
             <span className="text-foreground">ByteNodes</span>
           </Link>
 
@@ -69,6 +69,9 @@ export const Navbar = () => {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              className="p-2 hover:bg-secondary rounded-lg transition-colors"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>

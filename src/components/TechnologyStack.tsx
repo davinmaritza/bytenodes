@@ -60,6 +60,9 @@ export const TechnologyStack = () => {
                 src={tech.logo}
                 alt={tech.name}
                 className="h-8 w-auto object-contain grayscale group-hover:grayscale-0 transition-all opacity-50 group-hover:opacity-100"
+                width={80}
+                height={32}
+                loading="lazy"
                 onError={(e) => {
                   // Fallback if image fails to load
                   e.currentTarget.style.display = 'none';

@@ -75,7 +75,7 @@ const Contact = () => {
 
             <Card className="p-6 hover:shadow-lg transition-shadow">
               <a 
-                href="https://instagram.com/bytenodes" 
+                href="https://www.instagram.com/bytenodeshost"
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 group"

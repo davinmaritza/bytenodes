@@ -10,8 +10,8 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           {/* Company Info */}
           <div className="col-span-2 lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-4">
-              <img src={logo} alt="ByteNodes" className="w-8 h-8 object-contain" />
+            <Link to="/" className="flex items-center gap-2 text-xl font-bold mb-4" aria-label="ByteNodes Home">
+              <img src={logo} alt="" className="w-8 h-8 object-contain" width={32} height={32} />
               <span className="text-gradient">ByteNodes</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6 max-w-xs">
@@ -21,7 +21,7 @@ export const Footer = () => {
               <a href="https://wa.me/6285126080236" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="WhatsApp">
                 <FaWhatsapp className="w-5 h-5" />
               </a>
-              <a href="https://instagram.com/bytenodes" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Instagram">
+              <a href="https://www.instagram.com/bytenodeshost" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Instagram">
                 <FaInstagram className="w-5 h-5" />
               </a>
               <a href="https://discord.gg/2PMmPp6Yx8" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110" aria-label="Discord">
